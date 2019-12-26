@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/styles';
 import { Link } from '@material-ui/core';
 import { Grid } from '@material-ui/core';
 
@@ -6,8 +8,14 @@ import { Grid } from '@material-ui/core';
 // import AuthDropdown from '../../components/AuthDropdown/AuthDropdown';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-// import IconButton from '@material-ui/core/IconButton';
-// import MenuIcon from '@material-ui/icons/Menu';
+
+const styles = theme => ({
+  tool: {
+    borderBottomStyle: "solid",
+    borderBottom: 8,
+    borderBottomColor: theme.palette.primary.main
+  }
+})
 
 class Navigation extends Component {
   // static contextType = AuthContext;
@@ -27,32 +35,30 @@ class Navigation extends Component {
     // const { collapsed } = this.state;
     // const targetClass = `collapse navbar-collapse ${!collapsed && 'show'}`;
     // const togglerClass = `navbar-toggler ${collapsed && 'collapsed'}`;
+    const { classes } = this.props;
 
     return (
-      <div>
-        <AppBar color="primary" position="static" component="nav">
-          <Toolbar>
-            {/* <IconButton edge="start" color="inherit" aria-label="menu">
-              <MenuIcon />
-            </IconButton> */}
+      <>
+        <AppBar color="secondary" position="static" component="header">
+          <Toolbar className={classes.tool}>
             <Grid container direction="row" spacing={2}
                 justify="flex-end" alignItems="center">
                 <Grid item component="p" style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
-                  <Link color="textSecondary" href="#"
+                  <Link color="textPrimary" href="#"
                   onClick={event => event.preventDefault()}>
                     Give
                   </Link>
                 </Grid>
 
                 <Grid item component="p" style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
-                  <Link color="textSecondary" href="#"
+                  <Link color="textPrimary" href="#"
                   onClick={event => event.preventDefault()}>
                     My Hillcrest
                   </Link>
                 </Grid>
 
                 <Grid item component="p" style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
-                  <Link color="textSecondary" href="#"
+                  <Link color="textPrimary" href="#"
                   onClick={event => event.preventDefault()}>
                     Times & Location
                   </Link>
@@ -84,9 +90,13 @@ class Navigation extends Component {
           </div> */}
           </Toolbar>
         </AppBar>
-      </div>
+      </>
     );
   }
 }
 
-export default Navigation;
+Navigation.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(Navigation);
