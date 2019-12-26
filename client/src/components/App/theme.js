@@ -17,7 +17,7 @@ const HillcrestTheme = createMuiTheme({
     },
     "primary":{
       "light":"rgba(255, 254, 200, 1)",
-      "main":"rgba(223, 203, 151, 1)",
+      "main":"rgba(223, 202, 151, 1)",
       "dark":"rgba(172, 154, 105, 1)",
       "contrastText":"#fff"
     },
@@ -34,7 +34,7 @@ const HillcrestTheme = createMuiTheme({
       "contrastText":"#fff"
     },
     "text":{
-      "primary":"rgba(0, 0, 0, 0.87)",
+      "primary":"rgba(255, 255, 255, 1)",
       "secondary":"rgba(8, 53, 108, 1)",
       "disabled":"rgba(155, 155, 155, 1)",
       "hint":"rgba(194, 194, 194, 1)"
