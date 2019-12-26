@@ -16,12 +16,13 @@ export default function MainNavTabs() {
   const classes = useStyles();
 
   return (
-    <Grid container component="nav"
-        className={classes.mainnav}
+    <Grid container className={classes.mainnav}
         direction="row"
         justify="space-evenly"
         alignItems="center">
-      <HillcrestLogo/>
+      <Link href="/" title="Hillcrest Charlotte | Home">
+        <HillcrestLogo/>
+      </Link>
       <Grid item component="span">
         <Link href="#" underline="none" color="textSecondary" variant="h6"
         title="I'm New" onClick={event => event.target.preventDefault()}>
