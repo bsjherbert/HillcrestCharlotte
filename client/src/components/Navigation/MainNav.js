@@ -6,7 +6,7 @@ import MainNavTabs from './MainNavTabs';
 class MainNav extends Component {
   render() {  
     return (
-      <AppBar color="default" position="static">
+      <AppBar color="default" position="static" component="nav">
         <Toolbar disableGutters>
           <MainNavTabs />
         </Toolbar>
