@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import ThemeProvider from '@material-ui/core/styles/MuiThemeProvider';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 
 import API from '../../lib/API';
 import TokenStore from '../../lib/TokenStore';
@@ -54,7 +54,7 @@ class App extends Component {
 
   render() {
     return (
-      <ThemeProvider theme={HillcrestTheme}>
+      <MuiThemeProvider theme={HillcrestTheme}>
           <AuthContext.Provider value={this.state.auth}>
             <div className='App'>
               <TopNav />
@@ -69,7 +69,7 @@ class App extends Component {
                 </Switch>
             </div>
           </AuthContext.Provider>
-      </ThemeProvider>
+      </MuiThemeProvider>
     );
   }
 }

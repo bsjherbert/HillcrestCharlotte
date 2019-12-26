@@ -57,7 +57,7 @@ function Footer() {
           </Grid>
         </Grid>
         <Box className={classes.copyright}>
-          <Typography variant="subtitle" color="textSecondary">
+          <Typography variant="subtitle1" color="textSecondary">
               <p>8501 Bellhaven Boulevard, Charlotte, NC 28214 | 704.392.1406 | churchoffice@hillcrestcharlotte.com</p>
               <p>&copy; {new Date().getFullYear()} Hillcrest Baptist Church. All rights reserved.</p>
           </Typography>                
