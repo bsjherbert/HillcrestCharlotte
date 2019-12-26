@@ -16,6 +16,7 @@ import HillcrestTheme from './theme';
 
 import './App.css';
 import PageContainer from '../PageContainer';
+import Footer from '../Footer';
 
 class App extends Component {
   constructor(props) {
@@ -58,6 +59,7 @@ class App extends Component {
             <div className='App'>
               <TopNav />
               <PageContainer />
+              <Footer />
                 <Switch>
                   <Route exact path='/' component={Home} />
                   <Route path='/login' component={Login} />
