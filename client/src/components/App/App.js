@@ -59,7 +59,6 @@ class App extends Component {
             <div className='App'>
               <TopNav />
               <PageContainer />
-              <Footer />
                 <Switch>
                   <Route exact path='/' component={Home} />
                   <Route path='/login' component={Login} />
@@ -67,6 +66,7 @@ class App extends Component {
                   <PrivateRoute path='/secret' component={Secret} />
                   <Route component={NotFound} />
                 </Switch>
+              <Footer />
             </div>
           </AuthContext.Provider>
       </MuiThemeProvider>
