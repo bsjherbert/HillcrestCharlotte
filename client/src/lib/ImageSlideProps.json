@@ -1,0 +1,61 @@
+[
+    {
+        "id": 1,
+        "linkTo": "https://parksidechurch.com",
+        "imageText": "The Quick Brown Fox Jumped Over the Lazy Dog",
+        "url": "/images/slides/slide3.jpg",
+        "position": "absolute",
+        "top": 100,
+        "left": 200,
+        "opacity": 0.4,
+        "height": "25%", 
+        "backgroundColor": "lightblue",
+        "color": "blue",
+        "width": 250
+    },
+    {
+        "id": 2,
+        "linkTo": "https://longhollow.com",
+        "imageText": "Hebrews 4:12  For the word of God is living and active and sharper than any two-edged sword, and piercing as far as the division of soul and spirit, of both joints and marrow, and able to judge the thoughts and intentions of the heart.",
+        "url": "/images/slides/slide2.jpg",
+        "position": "absolute",
+        "top": 50,
+        "left": 200,
+        "opacity": 0.7,
+        "height": "45%",
+        "backgroundColor": "lightgreen",
+        "color": "green",
+        "width": 800
+    },
+        {
+        "id": 3,
+        "linkTo": "https://www.google.com",
+        "imageText": "Happy New  Year 2020 - Let's Celebrate!",
+        "url": "http://lorempixel.com/1200/400/abstract/1/Sample/",
+        "position": "absolute",
+        "top": 30,
+        "left": 30,
+        "opacity": 0.6,
+        "height": "35%",
+        "backgroundColor": "white",
+        "color": "red",
+        "width": 175
+    },
+    {
+        "id": 4,
+        "linkTo": "https://www.google.com",
+        "imageText": "Demo Day - January 15th - Mark you Calendars",
+        "url": "http://lorempixel.com/1200/400/abstract/3/Sample/",
+        "position": "absolute",
+        "top": 50,
+        "left": 50,
+        "opacity": 0.6,
+        "height": "25%",
+        "backgroundColor": "white",
+        "color": "black",
+        "width": 175
+    }
+
+
+
+]

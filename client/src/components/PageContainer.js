@@ -2,12 +2,16 @@ import React, { Component } from 'react'
 import Container from '@material-ui/core/Container';
 import MainNav from './Navigation/MainNav';
 
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
+import Carousel from '@brainhubeu/react-carousel';
 import '@brainhubeu/react-carousel/lib/style.css';
 import ImageSlide from './ImageSlide';
 import SlideArrow from './SlideArrow';
+import imageSlideProps from '../lib/ImageSlideProps.json';
+
 
 class PageContainer extends Component {
+
+  // Map over the ImageSlideProps array to populate the Carousel slides 
  render () {
    return (
     <Container maxWidth="lg">
@@ -29,12 +33,23 @@ class PageContainer extends Component {
               }
               addArrowClickHandler        
             > 
-            <ImageSlide linkTo="#" imageText="Chris is here" url="./images/slides/slide1.jpg" />
-            <ImageSlide linkTo="#" imageText="Cindy is here" url="./images/slides/slide2.jpg" />
-            <ImageSlide linkTo="#" imageText="Brad is here" url="./images/slides/slide3.jpg" />
-            <ImageSlide linkTo="#" imageText="Laurie is here" url="./images/slides/slide4.jpg" />
-            <ImageSlide linkTo="#" imageText="Ozzie is here" url="./images/slides/slide5.jpg" />
-  
+            {imageSlideProps.map(slide => (
+              <ImageSlide
+                id = {slide.id} 
+                key = {slide.id}
+                linkTo = {slide.linkTo}
+                imageText={slide.imageText}
+                url = {slide.url}
+                position= {slide.position}
+                top= {slide.top}
+                left={slide.left}
+                opacity={slide.opacity}
+                height= {slide.height}
+                backgroundColor={slide.backgroundColor}
+                color= {slide.color}
+                width= {slide.width}
+                 />
+            ))}  
            </Carousel>
       </div>
     </Container>
