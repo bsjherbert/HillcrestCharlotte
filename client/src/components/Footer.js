@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
     borderTopStyle: "solid",
     borderTop: 10,
     borderTopColor: theme.palette.primary.main,
-    backgroundColor: theme.palette.background.default
+    backgroundColor: theme.palette.background.default    
   },
   copyright: {
     backgroundColor: theme.palette.primary.main
@@ -33,7 +33,7 @@ function Footer() {
 
   return(
     <>
-      <AppBar component="footer" position="fixed" className={classes.appBar}>
+      <AppBar component="footer" position="static" className={classes.appBar}>
         <Grid container alignItems="center" direction="column">
           <HillcrestLogo />
           <Grid item className={classes.text}>
