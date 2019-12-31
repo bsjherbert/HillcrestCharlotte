@@ -11,7 +11,7 @@ const styles = theme => ({
   tool: {
     borderBottomStyle: "solid",
     borderBottom: 8,
-    borderBottomColor: theme.palette.secondary.main,
+    borderBottomColor: theme.palette.default.main,
     position: "relative",
     top: "3vh",
     zIndex: 5
