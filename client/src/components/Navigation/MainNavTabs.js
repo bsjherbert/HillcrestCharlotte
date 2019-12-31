@@ -8,7 +8,10 @@ import HillcrestLogo from '../Logo/HillcrestLogo';
 const useStyles = makeStyles(theme => ({
   mainnav: {
     backgroundColor: theme.palette.background.default,
-    padding: "1% 0"
+    padding: "1% 0",
+    // [theme.breakpoints.down('sm')]: {
+    //   direction: "column"
+    // },
   },
 }))
 

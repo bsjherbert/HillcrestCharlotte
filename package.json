@@ -18,7 +18,5 @@
     "concurrently": "^4.1.0",
     "nodemon": "^1.18.10"
   },
-  "dependencies": {
-    "@brainhubeu/react-carousel": "^1.10.30"
-  }
+  "dependencies": {}
 }

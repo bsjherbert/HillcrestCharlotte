@@ -14,7 +14,7 @@ class PageContainer extends Component {
   // Map over the ImageSlideProps array to populate the Carousel slides 
  render () {
    return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" className="page-container">
       <MainNav />
       <div>
             <Carousel 

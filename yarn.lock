@@ -2,11 +2,6 @@
 # yarn lockfile v1
 
 
-"@brainhubeu/react-carousel@^1.10.30":
-  version "1.10.30"
-  resolved "https://registry.yarnpkg.com/@brainhubeu/react-carousel/-/react-carousel-1.10.30.tgz#693944fe0127ad6f1547ca9fa504d7502d35089c"
-  integrity sha512-2JfRxJkVz3saGOpDoKZkpDqkO/C9GzRj+RP6O4IKuuZ3+zjsdgQBTJ+Oo6Y6pdxcJP/CRxhXpQsmwhd/x/rNyw==
-
 abbrev@1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.1.tgz#f8f2c887ad10bf67f634f005b6987fed3179aac8"
