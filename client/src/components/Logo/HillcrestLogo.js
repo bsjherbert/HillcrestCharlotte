@@ -1,12 +1,13 @@
 import React from 'react';
 
 const HillcrestLogo = () => {
-    return (
+
+  return (
       <div>
         <img src={require ("./NameLogo_transparent.gif")} alt="Hillcrest Charlotte Logo" 
-        style={{ maxHeight: 250, maxWidth: 250 }} />
+        style={{ maxHeight: "30%", maxWidth: "30%" }} />
       </div>
     )
 }
 
-export default HillcrestLogo
+export default HillcrestLogo;
