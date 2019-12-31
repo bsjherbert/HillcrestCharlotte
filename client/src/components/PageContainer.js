@@ -5,7 +5,7 @@ import MainNav from './Navigation/MainNav';
 class PageContainer extends Component {
  render () {
    return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" className="page-container">
       <MainNav />
     </Container>
     );
