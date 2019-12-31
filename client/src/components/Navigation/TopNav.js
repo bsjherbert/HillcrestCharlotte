@@ -13,7 +13,10 @@ const styles = theme => ({
   tool: {
     borderBottomStyle: "solid",
     borderBottom: 8,
-    borderBottomColor: theme.palette.primary.main
+    borderBottomColor: theme.palette.primary.main,
+    position: "relative",
+    top: 0,
+    zIndex: 5
   }
 })
 
@@ -39,8 +42,8 @@ class Navigation extends Component {
 
     return (
       <>
-        <AppBar color="secondary" position="static" component="header">
-          <Toolbar className={classes.tool}>
+        <AppBar color="secondary" component="header" className={classes.tool}>
+          <Toolbar>
             <Grid container direction="row" spacing={2}
                 justify="flex-end" alignItems="center">
                 <Grid item component="p" style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
