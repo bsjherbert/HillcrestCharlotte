@@ -1,8 +1,9 @@
 import React from 'react';
+import { Link as ReactLink} from "react-router-dom";
 import { makeStyles } from '@material-ui/core';
-import { Grid, Link, Button } from '@material-ui/core';
+import { Grid, Link, Button, IconButton } from '@material-ui/core';
 import { AppBar, Box, Typography } from '@material-ui/core';
-import { CallRounded, RoomRounded } from '@material-ui/icons';
+import { CallRounded, RoomRounded, Facebook, Twitter } from '@material-ui/icons';
 
 import HillcrestLogo from './Logo/HillcrestLogo';
 
@@ -33,6 +34,12 @@ const useStyles = makeStyles(theme => ({
   margin: {
     margin: theme.spacing(3),
     alignItems: "center"
+  },
+  facebook: {
+    color: "rgb(59, 89, 152)"
+  },
+  twitter: {
+    color: "rgb(0, 172, 237)"
   }
 }))
 
@@ -43,10 +50,20 @@ function Footer() {
     <>
       <AppBar component="footer" position="static" className={classes.appBar}>
         <Grid container alignItems="center" direction="column">
-          <HillcrestLogo />
+          <image style={{ maxHeight: "18%", maxWidth: "18%", padding: "0.5rem"}}>
+            <HillcrestLogo />
+          </image>
           <Grid item className={classes.text}>
             <h4>Mission Statement</h4>
-            <p className={classes.mission}>Hillcrest Baptist Church exists to love and support people genuinely, share scripture faithfully and educate believers in service to Christ our Lord.</p>
+            <p className={classes.mission}>Hillcrest Baptist Church exists to love and support people genuinely,<br /> share scripture faithfully and educate believers in service to Christ our Lord.</p>
+          </Grid>
+          <Grid item>
+            <IconButton title="Hillcrest Facebook" aria-label="Hillcrest CLT Facebook" href="http://facebook.com/hillcrestclt" target="_blank" rel="noopener noreferrer">
+              <Facebook className={classes.facebook} />
+            </IconButton>
+            <IconButton title="Hillcrest Twitter" aria-label="Hillcrest CLT Twitter" href="http://twitter.com/hillcrestclt" target="_blank" rel="noopener noreferrer">
+                <Twitter className={classes.twitter} />
+            </IconButton>
           </Grid>
           <Grid item>
             <Button variant="contained" size="large" aria-label="Contact Us" title="Contact Us"
