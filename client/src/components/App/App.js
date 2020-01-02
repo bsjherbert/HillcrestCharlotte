@@ -15,7 +15,6 @@ import NotFound from '../../pages/NotFound/NotFound';
 import HillcrestTheme from './theme';
 
 import './App.css';
-import PageContainer from '../PageContainer';
 import Footer from '../Footer';
 
 class App extends Component {
@@ -58,7 +57,6 @@ class App extends Component {
           <AuthContext.Provider value={this.state.auth}>
             <div className='App'>
               <TopNav />
-              <PageContainer />
                 <Switch>
                   <Route exact path='/' component={Home} />
                   <Route path='/login' component={Login} />
