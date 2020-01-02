@@ -39,25 +39,116 @@ class ConnectionCardForm extends React.Component {
     return (
       <PageContainer>
         <form className={classes.form}>
-          <label>
-            Is going:
+          <div>
+            <label>Today's Date</label>
             <input
-              name="isGoing"
-              type="checkbox"
-              checked={this.state.isGoing}
+              name="date"
+              id="date"
+              type="date"
+              value={this.state.date}
               onChange={this.handleInputChange}
             />
-          </label>
-          <br />
-          <label>
-            Number of guests:
+          </div>
+          <div>
+            <label>Name(s)</label>
             <input
-              name="numberOfGuests"
-              type="number"
-              value={this.state.numberOfGuests}
+              name="name"
+              id="name"
+              type="text"
+              value={this.state.name}
               onChange={this.handleInputChange}
             />
-          </label>
+          </div>
+          <div>
+            <label>Address</label>
+            <input
+              name="address"
+              id="address"
+              type="text"
+              value={this.state.address}
+              onChange={this.handleInputChange}
+            />
+          </div>
+          <div>
+            <label>Email</label>
+            <input
+              name="email"
+              id="email"
+              type="email"
+              value={this.state.email}
+              onChange={this.handleInputChange}
+            />
+          </div>
+          <div>
+            <label>Telephone</label>
+            <input
+              name="telephone"
+              id="telephone"
+              type="tel"
+              value={this.state.telephone}
+              onChange={this.handleInputChange}
+            />
+          </div>
+          <div>
+            <p>Preferred Contact Method</p>
+            <div>
+              <label>Email</label>
+              <input
+                type="radio"
+                value="email"
+                checked={this.state.contactMethod === "email"}
+                onChange={this.handleChange}
+              />
+            </div>
+            <div>
+              <label>Phone Call</label>
+              <input
+                type="radio"
+                value="phone"
+                checked={this.state.contactMethod === "phone"}
+                onChange={this.handleChange}
+              />
+            </div>
+          </div>
+          <div>
+            <p>What would you like to do?</p>
+            <div>
+              <label htmlFor="speakPastor">
+                I'd like to speak to a Pastor:
+              </label>
+              <input
+                name="speakPastor"
+                id="speakPastor"
+                type="checkbox"
+                checked={this.state.speakPastor}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="moreInfo">
+                I'd like more info about Hillcrest:
+              </label>
+              <input
+                name="moreInfo"
+                id="moreInfo"
+                type="checkbox"
+                checked={this.state.moreInfo}
+                onChange={this.handleInputChange}
+              />
+            </div>
+            <div>
+              <label htmlFor="questions">
+                I have questions about my relationship with God:
+              </label>
+              <input
+                name="questions"
+                id="questions"
+                type="checkbox"
+                checked={this.state.questions}
+                onChange={this.handleInputChange}
+              />
+            </div>
+          </div>
         </form>
       </PageContainer>
     );
