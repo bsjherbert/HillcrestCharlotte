@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link as ReactLink} from "react-router-dom";
+// import { Link as ReactLink} from "react-router-dom";
 import { makeStyles } from '@material-ui/core';
 import { Grid, Link, Button, IconButton } from '@material-ui/core';
 import { AppBar, Box, Typography } from '@material-ui/core';
@@ -50,9 +50,9 @@ function Footer() {
     <>
       <AppBar component="footer" position="static" className={classes.appBar}>
         <Grid container alignItems="center" direction="column">
-          <image style={{ maxHeight: "18%", maxWidth: "18%", padding: "0.5rem"}}>
+          <span style={{ maxHeight: "18%", maxWidth: "18%", padding: "0.5rem"}}>
             <HillcrestLogo />
-          </image>
+          </span>
           <Grid item className={classes.text}>
             <h4>Mission Statement</h4>
             <p className={classes.mission}>Hillcrest Baptist Church exists to love and support people genuinely,<br /> share scripture faithfully and educate believers in service to Christ our Lord.</p>
