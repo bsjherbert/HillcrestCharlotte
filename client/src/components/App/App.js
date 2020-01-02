@@ -15,9 +15,8 @@ import Secret from "../../pages/Secret/Secret";
 import NotFound from "../../pages/NotFound/NotFound";
 import HillcrestTheme from "./theme";
 
-import "./App.css";
-import PageContainer from "../PageContainer";
-import Footer from "../Footer";
+import './App.css';
+import Footer from '../Footer';
 
 class App extends Component {
   constructor(props) {
