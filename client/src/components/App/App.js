@@ -1,22 +1,23 @@
-import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import React, { Component } from "react";
+import { Switch, Route } from "react-router-dom";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 
-import API from '../../lib/API';
-import TokenStore from '../../lib/TokenStore';
-import AuthContext from '../../contexts/AuthContext';
-import TopNav from '../Navigation/TopNav';
-import PrivateRoute from '../../components/PrivateRoute/PrivateRoute';
-import Home from '../../pages/Home/Home';
-import Login from '../../pages/Login/Login';
-import Register from '../../pages/Register/Register';
-import Secret from '../../pages/Secret/Secret';
-import NotFound from '../../pages/NotFound/NotFound';
-import HillcrestTheme from './theme';
+import API from "../../lib/API";
+import TokenStore from "../../lib/TokenStore";
+import AuthContext from "../../contexts/AuthContext";
+import TopNav from "../Navigation/TopNav";
+import PrivateRoute from "../../components/PrivateRoute/PrivateRoute";
+import Home from "../../pages/Home/Home";
+import Login from "../../pages/Login/Login";
+import Register from "../../pages/Register/Register";
+import ConnectionCard from "../../pages/ConnectionCard/ConnectionCard";
+import Secret from "../../pages/Secret/Secret";
+import NotFound from "../../pages/NotFound/NotFound";
+import HillcrestTheme from "./theme";
 
-import './App.css';
-import PageContainer from '../PageContainer';
-import Footer from '../Footer';
+import "./App.css";
+import PageContainer from "../PageContainer";
+import Footer from "../Footer";
 
 class App extends Component {
   constructor(props) {
@@ -24,13 +25,17 @@ class App extends Component {
 
     this.handleLogin = (user, authToken) => {
       TokenStore.setToken(authToken);
-      this.setState(prevState => ({ auth: { ...prevState.auth, user, authToken } }));
+      this.setState(prevState => ({
+        auth: { ...prevState.auth, user, authToken }
+      }));
     };
 
     this.handleLogout = () => {
       TokenStore.clearToken();
-      this.setState(prevState => ({ auth: { ...prevState.auth, user: undefined, authToken: undefined } }));
-    }
+      this.setState(prevState => ({
+        auth: { ...prevState.auth, user: undefined, authToken: undefined }
+      }));
+    };
 
     this.state = {
       auth: {
@@ -39,7 +44,7 @@ class App extends Component {
         onLogin: this.handleLogin,
         onLogout: this.handleLogout
       }
-    }
+    };
   }
 
   componentDidMount() {
@@ -48,7 +53,9 @@ class App extends Component {
 
     API.Users.getMe(authToken)
       .then(response => response.data)
-      .then(user => this.setState(prevState => ({ auth: { ...prevState.auth, user } })))
+      .then(user =>
+        this.setState(prevState => ({ auth: { ...prevState.auth, user } }))
+      )
       .catch(err => console.log(err));
   }
 
