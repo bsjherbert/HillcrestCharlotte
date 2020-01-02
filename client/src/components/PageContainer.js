@@ -37,6 +37,7 @@ class PageContainer extends Component {
                 padding={slide.padding}
                 margin={slide.margin}
                 url={slide.url}
+                alt={slide.alt}
                 position={slide.position}
                 top={slide.top}
                 left={slide.left}
