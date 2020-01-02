@@ -1,8 +1,9 @@
 import React from 'react';
+// import { Link as ReactLink} from "react-router-dom";
 import { makeStyles } from '@material-ui/core';
-import { Grid, Link, Button } from '@material-ui/core';
+import { Grid, Link, Button, IconButton } from '@material-ui/core';
 import { AppBar, Box, Typography } from '@material-ui/core';
-import { CallRounded, RoomRounded } from '@material-ui/icons'
+import { CallRounded, RoomRounded, Facebook, Twitter } from '@material-ui/icons';
 
 import HillcrestLogo from './Logo/HillcrestLogo';
 
@@ -11,13 +12,21 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.text.secondary
   },
   appBar: {
-    top: 'auto',
+    top: "2.5rem",
     bottom: 0,
+    marginTop: "2.5rem",
     padding: "1.5% 0 0 0",
     borderTopStyle: "solid",
     borderTop: 10,
     borderTopColor: theme.palette.primary.main,
-    backgroundColor: theme.palette.background.default
+    backgroundColor: theme.palette.background.default,
+    zIndex: 0
+  },
+  mission: {
+    [theme.breakpoints.down('sm')]: {
+      margin: "2rem"
+    },
+    textAlign: "justify-center"
   },
   copyright: {
     backgroundColor: theme.palette.primary.main
@@ -25,6 +34,12 @@ const useStyles = makeStyles(theme => ({
   margin: {
     margin: theme.spacing(3),
     alignItems: "center"
+  },
+  facebook: {
+    color: "rgb(59, 89, 152)"
+  },
+  twitter: {
+    color: "rgb(0, 172, 237)"
   }
 }))
 
@@ -33,13 +48,22 @@ function Footer() {
 
   return(
     <>
-      <AppBar component="footer" position="fixed" className={classes.appBar}>
+      <AppBar component="footer" position="static" className={classes.appBar}>
         <Grid container alignItems="center" direction="column">
-          <HillcrestLogo />
+          <span style={{ maxHeight: "18%", maxWidth: "18%", padding: "0.5rem"}}>
+            <HillcrestLogo />
+          </span>
           <Grid item className={classes.text}>
-            <h3>Mission Statement</h3>
-            <p>Hillcrest Baptist Church exists to love and support people genuinely, 
-              <br/> share scripture faithfully and educate believers in service to Christ our Lord.</p>
+            <h4>Mission Statement</h4>
+            <p className={classes.mission}>Hillcrest Baptist Church exists to love and support people genuinely,<br /> share scripture faithfully and educate believers in service to Christ our Lord.</p>
+          </Grid>
+          <Grid item>
+            <IconButton title="Hillcrest Facebook" aria-label="Hillcrest CLT Facebook" href="http://facebook.com/hillcrestclt" target="_blank" rel="noopener noreferrer">
+              <Facebook className={classes.facebook} />
+            </IconButton>
+            <IconButton title="Hillcrest Twitter" aria-label="Hillcrest CLT Twitter" href="http://twitter.com/hillcrestclt" target="_blank" rel="noopener noreferrer">
+                <Twitter className={classes.twitter} />
+            </IconButton>
           </Grid>
           <Grid item>
             <Button variant="contained" size="large" aria-label="Contact Us" title="Contact Us"
