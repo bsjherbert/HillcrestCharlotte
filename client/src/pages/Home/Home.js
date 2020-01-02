@@ -9,11 +9,14 @@ import MainNav from '../../components/Navigation/MainNav';
 import ImageSlide from '../../components/ImageSlide';
 import ImageSlideProps from '../../lib/ImageSlideProps.json';
 import SimpleCard from '../../components/SimpleCard';
+import InfoCard from '../../components/InfoCard';
 
 
 class HomePage extends Component {
 
   render() {
+
+    const infoCardTitle = "This is a test title for Info Card"
 
     const classes = {
       cardContainer:{
@@ -62,7 +65,7 @@ class HomePage extends Component {
           </Carousel>
         </div>
         <div style={classes.cardContainer}>
-          <SimpleCard />
+          <InfoCard title={infoCardTitle}/>
           <SimpleCard />
           <SimpleCard />
           <SimpleCard />
