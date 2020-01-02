@@ -1,15 +1,37 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Hillcrest Baptist Church - Charlotte, NC",
+  "short_name": "Hillcrest CLT",
+  "description": "The Hillcrest Baptist Church site provides visitors and members one-stop access to church information, member portal, educational resources, recorded sermons, online donations, etc.",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "src": "icons/favicon-16x16.png",
+      "sizes": "16x16",
       "type": "image/x-icon"
+    },
+    {
+      "src": "icons/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "icons/apple-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "density": "4.0"
+    },
+    {
+      "src": "icons/splashscreen-icon.png",
+      "sizes": "527x512",
+      "type": "image/png"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#DFCA97",
+  "background_color": "#F9F7F1"
 }
