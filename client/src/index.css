@@ -12,3 +12,18 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.BrainhubCarouselItem {
+}
+
+/* does not work */
+
+/* .BrainhubCarousel__custom-arrowLeft {
+  position: absolute;
+  left: 0;
+}
+
+BrainhubCarousel__custom-arrowRight {
+  position: absolute;
+  right: 0;
+} */
