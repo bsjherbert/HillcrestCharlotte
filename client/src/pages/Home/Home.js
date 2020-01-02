@@ -18,8 +18,9 @@ class HomePage extends Component {
     const classes = {
       cardContainer:{
         display:"flex",
-        justifyContent:"space-between"
-
+        justifyContent:"space-between",
+        position: "relative",
+        top: "2vh"
       }
     }
 
@@ -65,7 +66,6 @@ class HomePage extends Component {
           <SimpleCard />
           <SimpleCard />
           <SimpleCard />
-
         </div>
       </PageContainer>
     );
