@@ -8,10 +8,25 @@ import PageContainer from '../../components/PageContainer';
 import MainNav from '../../components/Navigation/MainNav';
 import ImageSlide from '../../components/ImageSlide';
 import ImageSlideProps from '../../lib/ImageSlideProps.json';
+import SimpleCard from '../../components/SimpleCard';
+import InfoCard from '../../components/InfoCard';
 
 
 class HomePage extends Component {
+
   render() {
+
+    const infoCardTitle = "This is a test title for Info Card"
+
+    const classes = {
+      cardContainer:{
+        display:"flex",
+        justifyContent:"space-between",
+        position: "relative",
+        top: "2vh"
+      }
+    }
+
     return (
       <PageContainer>
         <MainNav />
@@ -48,6 +63,12 @@ class HomePage extends Component {
               />
             ))}
           </Carousel>
+        </div>
+        <div style={classes.cardContainer}>
+          <InfoCard title={infoCardTitle}/>
+          <SimpleCard />
+          <SimpleCard />
+          <SimpleCard />
         </div>
       </PageContainer>
     );
