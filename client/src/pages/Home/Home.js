@@ -8,10 +8,21 @@ import PageContainer from '../../components/PageContainer';
 import MainNav from '../../components/Navigation/MainNav';
 import ImageSlide from '../../components/ImageSlide';
 import ImageSlideProps from '../../lib/ImageSlideProps.json';
+import SimpleCard from '../../components/SimpleCard';
 
 
 class HomePage extends Component {
+
   render() {
+
+    const classes = {
+      cardContainer:{
+        display:"flex",
+        justifyContent:"space-between"
+
+      }
+    }
+
     return (
       <PageContainer>
         <MainNav />
@@ -48,6 +59,13 @@ class HomePage extends Component {
               />
             ))}
           </Carousel>
+        </div>
+        <div style={classes.cardContainer}>
+          <SimpleCard />
+          <SimpleCard />
+          <SimpleCard />
+          <SimpleCard />
+
         </div>
       </PageContainer>
     );
