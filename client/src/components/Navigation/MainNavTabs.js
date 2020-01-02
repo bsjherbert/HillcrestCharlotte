@@ -25,11 +25,11 @@ export default function MainNavTabs() {
           direction="row"
           justify="space-evenly"
           alignItems="center">
-        <image style={{float: "left", maxHeight: "20%", maxWidth: "20%", padding: "0.5rem"}}>
-          <ReactLink href="/" title="Hillcrest Charlotte | Home">
+        <span style={{float: "left", maxHeight: "20%", maxWidth: "20%", padding: "0.5rem"}}>
+          <ReactLink href="/" to="/" title="Hillcrest Charlotte | Home">
             <HillcrestLogo />
           </ReactLink>
-        </image>
+        </span>
         <Grid item component="span">
           <Link href="#" underline="none" color="textSecondary" variant="h6"
           title="I'm New" onClick={event => event.target.preventDefault()}>
