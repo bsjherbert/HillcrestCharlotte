@@ -13,7 +13,7 @@ const styles = theme => ({
     zIndex: 5
   }
 });
-class ConnectionCardForm extends React.Component {
+class ConnectionCardForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
