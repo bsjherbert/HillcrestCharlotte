@@ -61,21 +61,19 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider theme={HillcrestTheme}>
-        <AuthContext.Provider value={this.state.auth}>
-          <div className="App">
-            <TopNav />
-            <PageContainer />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
-              <Route path="/connection" component={ConnectionCard} />
-              <PrivateRoute path="/secret" component={Secret} />
-              <Route component={NotFound} />
-            </Switch>
-            <Footer />
-          </div>
-        </AuthContext.Provider>
+          <AuthContext.Provider value={this.state.auth}>
+            <div className='App'>
+              <TopNav />
+                <Switch>
+                  <Route exact path='/' component={Home} />
+                  <Route path='/login' component={Login} />
+                  <Route path='/register' component={Register} />
+                  <PrivateRoute path='/secret' component={Secret} />
+                  <Route component={NotFound} />
+                </Switch>
+              <Footer />
+            </div>
+          </AuthContext.Provider>
       </MuiThemeProvider>
     );
   }
