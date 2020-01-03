@@ -13,10 +13,10 @@ import Register from "../../pages/Register/Register";
 import ConnectionCard from "../../pages/ConnectionCard/ConnectionCard";
 import Secret from "../../pages/Secret/Secret";
 import NotFound from "../../pages/NotFound/NotFound";
-import HillcrestTheme from "./theme";
-
-import './App.css';
 import Footer from '../Footer';
+
+import HillcrestTheme from "./theme";
+import './App.css';
 
 class App extends Component {
   constructor(props) {
@@ -61,19 +61,20 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider theme={HillcrestTheme}>
-          <AuthContext.Provider value={this.state.auth}>
-            <div className='App'>
-              <TopNav />
-                <Switch>
-                  <Route exact path='/' component={Home} />
-                  <Route path='/login' component={Login} />
-                  <Route path='/register' component={Register} />
-                  <PrivateRoute path='/secret' component={Secret} />
-                  <Route component={NotFound} />
-                </Switch>
-              <Footer />
-            </div>
-          </AuthContext.Provider>
+        <AuthContext.Provider value={this.state.auth}>
+          <div className="App">
+            <TopNav />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/login" component={Login} />
+              <Route path="/register" component={Register} />
+              <Route path="/connection" component={ConnectionCard} />
+              <PrivateRoute path="/secret" component={Secret} />
+              <Route component={NotFound} />
+            </Switch>
+            <Footer />
+          </div>
+        </AuthContext.Provider>
       </MuiThemeProvider>
     );
   }
