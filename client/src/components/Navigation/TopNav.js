@@ -49,21 +49,16 @@ class Navigation extends Component {
           <Toolbar>
             <Grid container direction="row" spacing={2}
                 justify="flex-end" alignItems="center">
-                <Grid item component="p" style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
-                  <Link color="textPrimary" href="#"
-                  onClick={event => event.preventDefault()}>
-                    Give
-                  </Link>
+                <Grid item style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
+                  <Link color="textPrimary" href="https://hillcrestcharlotte.churchcenter.com/giving?open-in-church-center-modal=true">Give</Link>
                 </Grid>
 
-                <Grid item component="p" style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
-                  <Link color="textPrimary" href="#">
-                    My Hillcrest
-                  </Link>
-                </Grid>
-
-                <Grid item component="a" style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
+                <Grid item style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
                   <TimeLocationModal />
+                </Grid>
+
+                <Grid item component="p" style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
+                  <Link color="textPrimary" href="#">My Hillcrest</Link>
                 </Grid>
             </Grid>
           {/*crbtemp <Link className='navbar-brand' to='#'>Project 3</Link>

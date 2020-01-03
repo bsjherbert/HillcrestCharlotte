@@ -3,9 +3,10 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import { Grid, Link, Button, IconButton } from '@material-ui/core';
 import { AppBar, Box, Typography } from '@material-ui/core';
-import { CallRounded, RoomRounded, Facebook, Twitter } from '@material-ui/icons';
+import { CallRounded, Facebook, Twitter } from '@material-ui/icons';
 
 import HillcrestLogo from './Logo/HillcrestLogo';
+import Background from './App/connected.png';
 
 const useStyles = makeStyles(theme => ({
   text: {
@@ -20,6 +21,7 @@ const useStyles = makeStyles(theme => ({
     borderTop: 10,
     borderTopColor: theme.palette.primary.main,
     backgroundColor: theme.palette.background.default,
+    backgroundImage: `url(${Background})`,
     zIndex: 0
   },
   mission: {
@@ -50,7 +52,7 @@ function Footer() {
     <>
       <AppBar component="footer" position="static" className={classes.appBar}>
         <Grid container alignItems="center" direction="column">
-          <span style={{ maxHeight: "18%", maxWidth: "18%", padding: "0.5rem"}}>
+          <span style={{ maxHeight: "18%", maxWidth: "18%"}}>
             <HillcrestLogo />
           </span>
           <Grid item className={classes.text}>
@@ -59,10 +61,10 @@ function Footer() {
           </Grid>
           <Grid item>
             <IconButton title="Hillcrest Facebook" aria-label="Hillcrest CLT Facebook" href="http://facebook.com/hillcrestclt" target="_blank" rel="noopener noreferrer">
-              <Facebook className={classes.facebook} />
+              <Facebook className={classes.facebook} fontSize="large" />
             </IconButton>
             <IconButton title="Hillcrest Twitter" aria-label="Hillcrest CLT Twitter" href="http://twitter.com/hillcrestclt" target="_blank" rel="noopener noreferrer">
-                <Twitter className={classes.twitter} />
+                <Twitter className={classes.twitter} fontSize="large" />
             </IconButton>
           </Grid>
           <Grid item>
@@ -70,12 +72,6 @@ function Footer() {
               className={classes.margin} color="secondary" startIcon={<CallRounded />}>
               <Link href="#" color="textPrimary" underline="none">
                 Contact Us
-              </Link>
-            </Button>
-            <Button variant="contained" size="large" aria-label="Find Us" title="Find Us"
-              className={classes.margin} color="secondary" startIcon={<RoomRounded />}>
-              <Link href="#" color="textPrimary" underline="none">
-                Find Us
               </Link>
             </Button>
           </Grid>
