@@ -3,15 +3,19 @@ import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/styles";
 import API from "../../lib/API";
 import PageContainer from "../PageContainer";
+import "./ConnectionCardForm.css";
 
 const styles = theme => ({
   form: {
-    borderBottomStyle: "solid",
-    borderBottom: 8,
-    borderBottomColor: theme.palette.default.main,
+    textAlign: "center",
     position: "relative",
     top: "3vh",
     zIndex: 5
+  },
+  FormPageContainer: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center"
   }
 });
 class ConnectionCardForm extends Component {
@@ -52,8 +56,8 @@ class ConnectionCardForm extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <PageContainer>
-        <div>
+      <PageContainer className={classes.formPageContainer}>
+        <div className="form-group">
           <form className={classes.form}>
             <div>
               <label>Today's Date</label>
