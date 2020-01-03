@@ -40,6 +40,14 @@ export default function InfoCard(props) {
         Hebrews 1-2
         Hebrews 3-4
         Hebrews 5-6
+        <Typography className={classes.title} color="textSecondary"gutterBottom>
+            Memory Verse
+        </Typography>
+        Philippians 3:7-8; Hebrews 4:14-16
+        <Typography className={classes.title} color="textSecondary"gutterBottom>
+            New City Catechism, Week 48
+        </Typography>
+        www.newcitycatechism.com
         {/* edit text content here */}
         {/* <Typography variant="h5" component="h2">
           be{bull}nev{bull}o{bull}lent
