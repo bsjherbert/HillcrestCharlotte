@@ -16,7 +16,7 @@ class HomePage extends Component {
 
   render() {
 
-    const infoCardTitle = "This is a test title for Info Card"
+   
 
     const classes = {
       cardContainer:{
@@ -65,7 +65,7 @@ class HomePage extends Component {
           </Carousel>
         </div>
         <div style={classes.cardContainer}>
-          <InfoCard title={infoCardTitle}/>
+          <InfoCard />
           <SimpleCard />
           <SimpleCard />
           <SimpleCard />

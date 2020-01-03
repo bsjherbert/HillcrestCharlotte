@@ -6,9 +6,11 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+//style text content here 
 const useStyles = makeStyles({
   card: {
     width: "23%",
+    backgroundColor: "brown"
   },
   bullet: {
     display: 'inline-block',
@@ -31,9 +33,15 @@ export default function InfoCard(props) {
     <Card className={classes.card}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          {props.title}
+         Reading Plan
         </Typography>
-        <Typography variant="h5" component="h2">
+        Philippians 1-2
+        Philippians 3-4
+        Hebrews 1-2
+        Hebrews 3-4
+        Hebrews 5-6
+        {/* edit text content here */}
+        {/* <Typography variant="h5" component="h2">
           be{bull}nev{bull}o{bull}lent
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
@@ -43,7 +51,7 @@ export default function InfoCard(props) {
           well meaning and kindly.
           <br />
           {'"a benevolent smile"'}
-        </Typography>
+        </Typography> */}
       </CardContent>
       <CardActions>
         <Button size="small">Learn More</Button>
