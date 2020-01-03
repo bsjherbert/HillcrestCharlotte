@@ -2,8 +2,11 @@
   text-align: center;
   position: relative;
   min-height: 100vh;
+  background-color: #f9f7f1;
+  background-image: url("./connected.png")
 }
 
 .page-container {
-  padding-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
 }

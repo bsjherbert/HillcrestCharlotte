@@ -7,13 +7,14 @@ import { withStyles } from '@material-ui/styles';
 
 import MainNavTabs from './MainNavTabs';
 
-const styles = theme => ({
+const styles = () => ({
   tool: {
-    borderBottomStyle: "solid",
-    borderBottom: 8,
-    borderBottomColor: theme.palette.default.main,
+    borderStyle: "solid",
+    borderWidth: 1,
+    borderBottomWidth: 6,
+    borderTopWidth: 6,
+    borderColor: "#08356c",
     position: "relative",
-    top: "3vh",
     zIndex: 5
   }
 })
