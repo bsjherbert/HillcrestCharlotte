@@ -9,8 +9,7 @@ const ConnCardSchema = new Schema({
       },
     address: {
         type: String,
-        trim: true,
-        required: "Name of Exercise is Required"
+        trim: true
       },
     email: {
         type: String,
