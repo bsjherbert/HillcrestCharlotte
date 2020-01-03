@@ -7,7 +7,7 @@ import { Grid } from '@material-ui/core';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 
-// import TimeLocationModal from '../Modals/TimeLocation';
+import TimeLocationModal from '../Modals/TimeLocation';
 
 // import AuthContext from '../../contexts/AuthContext';
 // import AuthDropdown from '../../components/AuthDropdown/AuthDropdown';
@@ -62,8 +62,8 @@ class Navigation extends Component {
                   </Link>
                 </Grid>
 
-                <Grid item component="p" style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
-                    <Link color="textPrimary">Times & Location</Link>
+                <Grid item component="a" style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
+                  <TimeLocationModal />
                 </Grid>
             </Grid>
           {/*crbtemp <Link className='navbar-brand' to='#'>Project 3</Link>
@@ -92,6 +92,7 @@ class Navigation extends Component {
           </div> */}
           </Toolbar>
         </AppBar>
+     
       </>
     );
   }
