@@ -16,7 +16,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
+}
+
+.MuiFormControl-root {
+  color: black;
 }
 .dropNav {
   background-color: #473d2e;
