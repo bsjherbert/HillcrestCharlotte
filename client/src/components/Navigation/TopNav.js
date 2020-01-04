@@ -50,7 +50,7 @@ class Navigation extends Component {
             <Grid container direction="row" spacing={2}
                 justify="flex-end" alignItems="center">
                 <Grid item style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
-                  <Link color="textPrimary" href="https://hillcrestcharlotte.churchcenter.com/giving?open-in-church-center-modal=true">Give</Link>
+                  <Link color="primary" href="https://hillcrestcharlotte.churchcenter.com/giving?open-in-church-center-modal=true">Give</Link>
                 </Grid>
 
                 <Grid item style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
@@ -58,7 +58,7 @@ class Navigation extends Component {
                 </Grid>
 
                 <Grid item component="p" style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
-                  <Link color="textPrimary" href="#">My Hillcrest</Link>
+                  <Link color="primary" href="#">My Hillcrest</Link>
                 </Grid>
             </Grid>
           {/*crbtemp <Link className='navbar-brand' to='#'>Project 3</Link>
