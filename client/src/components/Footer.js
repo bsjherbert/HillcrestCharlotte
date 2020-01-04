@@ -1,17 +1,14 @@
 import React from 'react';
 // import { Link as ReactLink} from "react-router-dom";
 import { makeStyles } from '@material-ui/core';
-import { Grid, Link, Button, IconButton } from '@material-ui/core';
+import { Grid, IconButton } from '@material-ui/core';
 import { AppBar, Box, Typography } from '@material-ui/core';
-import { CallRounded, Facebook, Twitter } from '@material-ui/icons';
+import { Facebook, Twitter } from '@material-ui/icons';
 
 import HillcrestLogo from './Logo/HillcrestLogo';
 import Background from './App/connected.png';
 
 const useStyles = makeStyles(theme => ({
-  text: {
-    color: theme.palette.text.secondary
-  },
   appBar: {
     top: "2.5rem",
     bottom: 0,
@@ -26,12 +23,15 @@ const useStyles = makeStyles(theme => ({
   },
   mission: {
     [theme.breakpoints.down('sm')]: {
-      margin: "2rem"
+      margin: "0.5rem"
     },
-    textAlign: "justify-center"
+    textAlign: "justify-center",
+    padding: "1em 0",
+    color: theme.palette.text.secondary
   },
   copyright: {
-    backgroundColor: theme.palette.primary.main
+    backgroundColor: theme.palette.primary.main,
+    padding: "1em"
   },
   margin: {
     margin: theme.spacing(3),
@@ -52,14 +52,18 @@ function Footer() {
     <>
       <AppBar component="footer" position="static" className={classes.appBar}>
         <Grid container alignItems="center" direction="column">
-          <span style={{ maxHeight: "18%", maxWidth: "18%"}}>
+          <span style={{ maxHeight: "20%", maxWidth: "20%"}}>
             <HillcrestLogo />
           </span>
-          <Grid item className={classes.text}>
-            <h4>Mission Statement</h4>
-            <p className={classes.mission}>Hillcrest Baptist Church exists to love and support people genuinely,<br /> share scripture faithfully and educate believers in service to Christ our Lord.</p>
+          <Grid item className={classes.mission} aria-label="Mission Statement">
+            <Typography component="h3" variant="h6">
+              Mission Statement
+            </Typography>
+            <Typography component="p">
+              Hillcrest Baptist Church exists to love and support people genuinely,<br /> share scripture faithfully and educate believers in service to Christ our Lord.
+            </Typography>
           </Grid>
-          <Grid item>
+          <Grid item style={{paddingBottom: "10px"}}>
             <IconButton title="Hillcrest Facebook" aria-label="Hillcrest CLT Facebook" href="http://facebook.com/hillcrestclt" target="_blank" rel="noopener noreferrer">
               <Facebook className={classes.facebook} fontSize="large" />
             </IconButton>
@@ -67,20 +71,14 @@ function Footer() {
                 <Twitter className={classes.twitter} fontSize="large" />
             </IconButton>
           </Grid>
-          <Grid item>
-            <Button variant="contained" size="large" aria-label="Contact Us" title="Contact Us"
-              className={classes.margin} color="secondary" startIcon={<CallRounded />}>
-              <Link href="#" color="textPrimary" underline="none">
-                Contact Us
-              </Link>
-            </Button>
-          </Grid>
         </Grid>
         <Box className={classes.copyright}>
-          <Typography variant="subtitle1" color="textSecondary">
-              <p>8501 Bellhaven Boulevard, Charlotte, NC 28214 | 704.392.1406 | churchoffice@hillcrestcharlotte.com</p>
-              <p>&copy; {new Date().getFullYear()} Hillcrest Baptist Church. All rights reserved.</p>
-          </Typography>                
+          <Typography component="p" variant="subtitle1" color="textSecondary" style={{marginBottom: "0.5em"}}>
+              8501 Bellhaven Boulevard, Charlotte, NC 28214 <br /> 704.392.1406 | churchoffice@hillcrestcharlotte.com
+          </Typography>
+          <Typography component="p" variant="subtitle2" color="textSecondary">
+              &copy; {new Date().getFullYear()} Hillcrest Baptist Church. All rights reserved.
+          </Typography>               
         </Box>  
       </AppBar>
     </>

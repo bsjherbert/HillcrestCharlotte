@@ -17,3 +17,16 @@
   justify-content: center;
   align-items: center;
 }
+.dropNav {
+  background-color: #473d2e;
+  background-image: url("./dark-tire.png");
+  height: 0;
+  transition: all 1s ease-in-out;
+}
+
+.show {
+  height: 200px;
+  width: inherit;
+  transition: all 1s ease-in-out;
+  padding: 3rem 0;
+}
