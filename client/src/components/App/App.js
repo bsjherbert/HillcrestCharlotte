@@ -7,16 +7,18 @@ import TokenStore from "../../lib/TokenStore";
 import AuthContext from "../../contexts/AuthContext";
 import TopNav from "../Navigation/TopNav";
 import PrivateRoute from "../../components/PrivateRoute/PrivateRoute";
+import MainNav from "../../components/Navigation/MainNav";
 import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
 import ConnectionCard from "../../pages/ConnectionCard/ConnectionCard";
 import Secret from "../../pages/Secret/Secret";
 import NotFound from "../../pages/NotFound/NotFound";
-import Footer from '../Footer';
+import Footer from "../Footer";
+import PageContainer from "../../components/PageContainer";
 
 import HillcrestTheme from "./theme";
-import './App.css';
+import "./App.css";
 
 class App extends Component {
   constructor(props) {
@@ -64,14 +66,17 @@ class App extends Component {
         <AuthContext.Provider value={this.state.auth}>
           <div className="App">
             <TopNav />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/login" component={Login} />
-              <Route path="/register" component={Register} />
-              <Route path="/connection" component={ConnectionCard} />
-              <PrivateRoute path="/secret" component={Secret} />
-              <Route component={NotFound} />
-            </Switch>
+            <PageContainer>
+              <MainNav />
+              <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/login" component={Login} />
+                <Route path="/register" component={Register} />
+                <Route path="/connection" component={ConnectionCard} />
+                <PrivateRoute path="/secret" component={Secret} />
+                <Route component={NotFound} />
+              </Switch>
+            </PageContainer>
             <Footer />
           </div>
         </AuthContext.Provider>
