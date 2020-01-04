@@ -3,9 +3,6 @@ import IconButton from "@material-ui/core/IconButton";
 import { ChevronLeft, ChevronRight } from "@material-ui/icons";
 import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
-
-import PageContainer from "../../components/PageContainer";
-import MainNav from "../../components/Navigation/MainNav";
 import ImageSlide from "../../components/ImageSlide";
 import ImageSlideProps from "../../lib/ImageSlideProps.json";
 import SimpleCard from "../../components/SimpleCard";

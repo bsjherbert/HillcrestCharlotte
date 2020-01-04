@@ -10,11 +10,6 @@ const styles = theme => ({
     position: "relative",
     top: "3vh",
     zIndex: 5
-  },
-  formPageContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center"
   }
 });
 class ConnectionCardForm extends Component {
@@ -58,13 +53,24 @@ class ConnectionCardForm extends Component {
       <div className="form-group">
         <form className={classes.form}>
           <div>
-            <label>Today's Date</label>
+            {/* <label>Today's Date</label>
             <input
               name="dateCreated"
               id="dateCreated"
               type="date"
               value={this.state.date}
               onChange={this.handleInputChange}
+            /> */}
+            <TextField
+              name="dateCreated"
+              id="date"
+              label="Date"
+              type="date"
+              value={this.state.dateCreated}
+              onChange={this.handleInputChange}
+              InputLabelProps={{
+                shrink: true
+              }}
             />
           </div>
           <div>
@@ -85,31 +91,52 @@ class ConnectionCardForm extends Component {
             />
           </div>
           <div>
-            <label>Address</label>
+            {/* <label>Address</label>
             <input
               name="address"
               id="address"
               type="text"
               value={this.state.address}
               onChange={this.handleInputChange}
+            /> */}
+            <TextField
+              name="address"
+              id="standard-address"
+              label="Address"
+              value={this.state.address}
+              onChange={this.handleInputChange}
             />
           </div>
           <div>
-            <label>Email</label>
+            {/* <label>Email</label>
             <input
               name="email"
               id="email"
               type="email"
               value={this.state.email}
               onChange={this.handleInputChange}
+            /> */}
+            <TextField
+              name="email"
+              id="standard-email"
+              label="Email"
+              value={this.state.email}
+              onChange={this.handleInputChange}
             />
           </div>
           <div>
-            <label>Telephone</label>
+            {/* <label>Telephone</label>
             <input
               name="telephone"
               id="telephone"
               type="tel"
+              value={this.state.telephone}
+              onChange={this.handleInputChange}
+            /> */}
+            <TextField
+              name="telephone"
+              id="standard-telephone"
+              label="Phone Number"
               value={this.state.telephone}
               onChange={this.handleInputChange}
             />
