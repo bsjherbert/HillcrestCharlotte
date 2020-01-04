@@ -3,7 +3,7 @@
   position: relative;
   min-height: 100vh;
   background-color: #f9f7f1;
-  background-image: url("./connected.png")
+  background-image: url("./connected.png");
 }
 
 .page-container {
@@ -11,6 +11,12 @@
   padding-top: 2rem;
 }
 
+.form-group {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .dropNav {
   background-color: #473d2e;
   background-image: url("./dark-tire.png");
@@ -22,5 +28,5 @@
   height: 200px;
   width: inherit;
   transition: all 1s ease-in-out;
-  padding: 3rem 0
+  padding: 3rem 0;
 }
