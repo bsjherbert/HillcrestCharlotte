@@ -59,6 +59,12 @@ export default function MainNavnavTabs() {
         </span>
         <Grid item component="span">
           <Link underline="hover" className="navTab" color="textSecondary" variant="h6"
+            title="Home" href="/" to="/" style={{ cursor: "pointer" }} aria-label="Home" aria-controls="home" aria-haspopup="false">
+            Home
+          </Link>
+        </Grid>
+        <Grid item component="span">
+          <Link underline="hover" className="navTab" color="textSecondary" variant="h6"
             title="I'm New" style={{ cursor: "pointer" }} aria-label="I'm New" aria-controls="new-menu" aria-haspopup="false" onClick={handleOpen}>
             I'm New
           </Link>
@@ -111,7 +117,9 @@ export default function MainNavnavTabs() {
 
                   <ListItem>
                     <ListItemText>
-                      Connection Card
+                      <RouterLink href="connection" to="connection" style={{color: "inherit", textDecoration: "none"}}>
+                        Connection Card
+                      </RouterLink>
                     </ListItemText>
                   </ListItem>
 

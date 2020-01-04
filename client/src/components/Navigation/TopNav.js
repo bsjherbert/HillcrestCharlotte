@@ -58,7 +58,7 @@ class Navigation extends Component {
                 </Grid>
 
                 <Grid item component="p" style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
-                  <Link color="primary" href="#">My Hillcrest</Link>
+                  <Link color="primary" href="login">My Hillcrest</Link>
                 </Grid>
             </Grid>
           {/*crbtemp <Link className='navbar-brand' to='#'>Project 3</Link>
