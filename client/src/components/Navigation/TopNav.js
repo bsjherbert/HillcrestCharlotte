@@ -45,7 +45,7 @@ class Navigation extends Component {
 
     return (
       <>
-        <AppBar color="secondary" component="header" className={classes.tool}>
+        <AppBar color="secondary" component="nav" className={classes.tool}>
           <Toolbar>
             <Grid container direction="row" spacing={2}
                 justify="flex-end" alignItems="center">
@@ -58,7 +58,7 @@ class Navigation extends Component {
                 </Grid>
 
                 <Grid item component="p" style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
-                  <Link color="primary" href="login">My Hillcrest</Link>
+                  <Link color="primary" href="login">MyHillcrest</Link>
                 </Grid>
             </Grid>
           {/*crbtemp <Link className='navbar-brand' to='#'>Project 3</Link>

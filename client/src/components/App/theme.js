@@ -19,7 +19,7 @@ const HillcrestTheme = createMuiTheme({
       "light":"rgba(255, 254, 200, 1)",
       "main":"rgba(223, 202, 151, 1)",
       "dark":"rgba(172, 154, 105, 1)",
-      "contrastText":"#fff"
+      "contrastText":"#473d2e"
     },
     "secondary":{
       "light":"rgba(68, 94, 155, 1)",
@@ -34,10 +34,15 @@ const HillcrestTheme = createMuiTheme({
       "contrastText":"#fff"
     },
     "text":{
-      "primary":"rgba(255, 255, 255, 1)",
+      "primary":"rgb(128,128,128)",
       "secondary":"rgba(8, 53, 108, 1)",
       "disabled":"rgba(155, 155, 155, 1)",
       "hint":"rgba(194, 194, 194, 1)"
+    },
+    "action":{
+      "active": "rgba(223, 202, 151, 1)",
+      "hover": "#778899",
+      "selected": "a9a9a9"
     }
   }
 });

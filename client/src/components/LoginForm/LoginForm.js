@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import { FormControl, TextField, InputAdornment, Button, Typography } from '@material-ui/core';
+import { EmailRounded, VpnKeyRounded, LockOpenRounded } from '@material-ui/icons';
 
-import Octicon, { Mail, Key } from '@githubprimer/octicons-react';
 
 class LoginForm extends Component {
   state = {
@@ -27,45 +28,39 @@ class LoginForm extends Component {
     const { email, password } = this.state;
 
     return (
-      <div className='LoginForm'>
-        <div className='card'>
-          <div className='card-body'>
-            <form className='LoginForm' onSubmit={this.handleSubmit}>
-              <div className='input-group mb-3'>
-                <div className="input-group-prepend">
-                  <span className="input-group-text"><Octicon icon={Mail} /></span>
-                </div>
-                <input
-                  className='form-control'
-                  id='email'
-                  type='email'
-                  name='email'
-                  placeholder='email@provider.com'
-                  value={email}
-                  onChange={this.handleInputChange}
-                />
-              </div>
+      <FormControl component="form" onSubmit={this.handleSubmit} fullWidth>
+        {/* Email field */}
+        <TextField label="Email address" placeholder="johndoe@website.com"
+          margin="normal" fullWidth aria-label="Email address field"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <EmailRounded color="action" />
+              </InputAdornment>
+            )
+          }} required autoFocus
+          onChange={this.handleInputChange}
+          name="email" type="email" value={email}
+           />
 
-              <div className='input-group mb-3'>
-                <div className="input-group-prepend">
-                  <span className="input-group-text"><Octicon icon={Key} /></span>
-                </div>
-                <input
-                  className='form-control'
-                  id='password'
-                  type='password'
-                  name='password'
-                  placeholder='password'
-                  value={password}
-                  onChange={this.handleInputChange}
-                />
-              </div>
+        {/* Password field */}
+        <TextField label="Password" placeholder="Enter your password"
+          margin="normal" fullWidth aria-label="password field"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start"> <VpnKeyRounded color="action" /> </InputAdornment>
+            )
+          }}
+          onChange={this.handleInputChange} required
+          name="password" type="password" value={password}
+           />
 
-              <button className='btn btn-primary' type='submit'>Login</button>
-            </form>
-          </div>
-        </div>
-      </div>
+        <Button type='submit' variant="contained" style={{margin: "5%"}}
+          color="secondary" size="large" aria-label="submit log in"
+          startIcon={<LockOpenRounded />}>
+            Login
+        </Button>
+      </FormControl>
     )
   }
 }

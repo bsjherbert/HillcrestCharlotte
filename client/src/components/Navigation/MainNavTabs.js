@@ -7,7 +7,7 @@ import { List, ListItem, ListItemText } from '@material-ui/core';
 import HillcrestLogo from '../Logo/HillcrestLogo'
 
 const useStyles = makeStyles(theme => ({
-  mainnav: {
+  navTabs: {
     backgroundColor: theme.palette.background.default,
     [theme.breakpoints.down('sm')]: {
       direction: "column",
@@ -21,6 +21,7 @@ export default function MainNavnavTabs() {
   const classes = useStyles();
   const [anchor, setAnchor] = useState(null)
   const [showMenu, setShowMenu] = useState("")
+
   const mainNav = useRef(null)
 
   const handleOpen = event => {
@@ -28,7 +29,7 @@ export default function MainNavnavTabs() {
       handleClose(event)
     } else {
       setAnchor(event.currentTarget.title)
-
+      
       if (!showMenu) {
         setShowMenu(true)
       }
@@ -47,11 +48,12 @@ export default function MainNavnavTabs() {
   }
 
   return (
+    <div >
     <span ref={mainNav} aria-label="main navigation">
-      <Grid component="span" container className={classes.mainnav} disableGutters
+      <Grid container component="span" disableGutters
         direction="row"
         justify="space-around"
-        alignItems="center">
+        alignItems="center" className={classes.navTabs}>
         <span style={{ float: "left", maxHeight: "25%", maxWidth: "25%", padding: "0.5rem" }}>
           <RouterLink href="/" to="/" title="Hillcrest Charlotte | Home">
             <HillcrestLogo />
@@ -59,7 +61,7 @@ export default function MainNavnavTabs() {
         </span>
         <Grid item component="span">
           <Link underline="hover" className="navTab" color="textSecondary" variant="h6"
-            title="Home" href="/" to="/" style={{ cursor: "pointer" }} aria-label="Home" aria-controls="home" aria-haspopup="false">
+            title="Home" href="/" to="/" style={{ cursor: "pointer"}} aria-label="Home" aria-controls="home" aria-haspopup="false">
             Home
           </Link>
         </Grid>
@@ -117,9 +119,9 @@ export default function MainNavnavTabs() {
 
                   <ListItem>
                     <ListItemText>
-                      <RouterLink href="connection" to="connection" style={{color: "inherit", textDecoration: "none"}}>
+                      <Link href="connection" color="inherit">
                         Connection Card
-                      </RouterLink>
+                      </Link>
                     </ListItemText>
                   </ListItem>
 
@@ -421,7 +423,7 @@ export default function MainNavnavTabs() {
         )}
 
       </Box>
-
     </span>
+    </div>
   );
 }

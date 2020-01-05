@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import { Link, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import { Typography, Paper, Link } from '@material-ui/core';
 
 import API from '../../lib/API';
 import AuthContext from '../../contexts/AuthContext';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import BlankLogo from '../../components/Logo/BlankLogo';
 
 class Login extends Component {
   static contextType = AuthContext;
@@ -47,27 +49,24 @@ class Login extends Component {
     }
 
     return (
-      <div className='Login'>
-        <div className='row'>
-          <div className='col'>
-            <h1>Login</h1>
-          </div>
+      <Paper style={{ padding: "2.5rem 20%", marginTop: "2em" }}>
+        <div style={{ height: "5rem", width: "5rem", textAlign:"center" }}>
+          <BlankLogo />
         </div>
+
+        <Typography component="h1" variant="h4" color="secondary" style={{ paddingBottom: "2%" }}>
+          MyHillcrest
+        </Typography>
         {this.state.error &&
-          <div className='row'>
-            <div className='col'>
-              <div className='alert alert-danger mb-3' role='alert'>
-                {this.state.error}
-              </div>
-            </div>
-          </div>}
-        <div className='row'>
-          <div className='col'>
-            <LoginForm onSubmit={this.handleSubmit} />
-            <div className='mt-3'>Don't have an account? <Link to='/register'>Click here to register.</Link></div>
-          </div>
-        </div>
-      </div>
+          <Typography component="span" variant="subtitle2" role="alert" color="error">
+            {this.state.error}
+          </Typography>
+        }
+        <LoginForm onSubmit={this.handleSubmit} />
+        <Typography component="p" variant="subtitle1" color="textSecondary" style={{ paddingTop: "2%" }}>
+          Don't have an account? <Link href="register" to='/register'>Click here to register.</Link>
+        </Typography>
+      </Paper>
     );
   }
 }
