@@ -34,3 +34,7 @@
   transition: all 1s ease-in-out;
   padding: 3rem 0;
 }
+
+.navTab:active {
+  color: "rgb(223, 202, 151)"
+}
