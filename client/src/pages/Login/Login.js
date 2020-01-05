@@ -31,7 +31,7 @@ class Login extends Component {
             message = 'Server error. Please try again later.';
             break;
           default:
-            message = 'Unknown error.';
+            message = 'An unknown error occurred. Please try again later.';
         }
 
         this.setState({ error: message });
@@ -39,7 +39,7 @@ class Login extends Component {
   }
 
   render() {
-    const { from } = this.props.location.state || { from: { pathname: "/secret" } };
+    const { from } = this.props.location.state || { from: { pathname: "/dashboard" } };
     const { redirectToReferrer } = this.state;
 
     if (redirectToReferrer) {
