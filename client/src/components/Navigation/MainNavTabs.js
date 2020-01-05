@@ -111,7 +111,9 @@ export default function MainNavnavTabs() {
 
                   <ListItem>
                     <ListItemText>
-                      Connection Card
+                      <RouterLink href="connection" to="connection" style={{color: "inherit", textDecoration: "none"}}>
+                          Connection Card
+                      </RouterLink>
                     </ListItemText>
                   </ListItem>
 
