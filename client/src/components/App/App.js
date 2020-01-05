@@ -12,7 +12,7 @@ import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
 import ConnectionCard from "../../pages/ConnectionCard/ConnectionCard";
-import Secret from "../../pages/Secret/Secret";
+import Dashboard from "../../pages/Dashboard/Dashboard";
 import NotFound from "../../pages/NotFound/NotFound";
 import Footer from "../Footer";
 import PageContainer from "../../components/PageContainer";
@@ -73,7 +73,7 @@ class App extends Component {
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/connection" component={ConnectionCard} />
-                <PrivateRoute path="/secret" component={Secret} />
+                <PrivateRoute path="/dashboard" component={Dashboard} />
                 <Route component={NotFound} />
               </Switch>
             </PageContainer>
