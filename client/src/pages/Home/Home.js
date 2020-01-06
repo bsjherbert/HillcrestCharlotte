@@ -10,12 +10,7 @@ import InfoCard from "../../components/InfoCard";
 
 class HomePage extends Component {
   render() {
-<<<<<<< HEAD
-
-   
-=======
     const infoCardTitle = "This is a test title for Info Card";
->>>>>>> 9895513d1f72b293777c4a001dfc693ecfc3577c
 
     const classes = {
       cardContainer: {
@@ -73,11 +68,7 @@ class HomePage extends Component {
           </Carousel>
         </div>
         <div style={classes.cardContainer}>
-<<<<<<< HEAD
-          <InfoCard />
-=======
           <InfoCard title={infoCardTitle} />
->>>>>>> 9895513d1f72b293777c4a001dfc693ecfc3577c
           <SimpleCard />
           <SimpleCard />
           <SimpleCard />
