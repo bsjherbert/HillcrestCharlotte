@@ -45,12 +45,12 @@ class Navigation extends Component {
 
     return (
       <>
-        <AppBar color="secondary" component="header" className={classes.tool}>
+        <AppBar color="secondary" component="nav" className={classes.tool}>
           <Toolbar>
             <Grid container direction="row" spacing={2}
                 justify="flex-end" alignItems="center">
                 <Grid item style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
-                  <Link color="textPrimary" href="https://hillcrestcharlotte.churchcenter.com/giving?open-in-church-center-modal=true">Give</Link>
+                  <Link color="primary" href="https://hillcrestcharlotte.churchcenter.com/giving?open-in-church-center-modal=true">Give</Link>
                 </Grid>
 
                 <Grid item style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
@@ -58,7 +58,7 @@ class Navigation extends Component {
                 </Grid>
 
                 <Grid item component="p" style={{borderRight: 1.5, borderColor: "primary", borderRightStyle: "dotted"}}>
-                  <Link color="textPrimary" href="#">My Hillcrest</Link>
+                  <Link color="primary" href="login">MyHillcrest</Link>
                 </Grid>
             </Grid>
           {/*crbtemp <Link className='navbar-brand' to='#'>Project 3</Link>
@@ -73,7 +73,7 @@ class Navigation extends Component {
               </li>
               {user &&
                 <li className='nav-item'>
-                  <Link className='nav-link' to='/secret' onClick={this.toggleCollapse}>Secret</Link>
+                  <Link className='nav-link' to='/dashboard' onClick={this.toggleCollapse}>My Dashboard</Link>
                 </li>}
             </ul>
             <ul className='navbar-nav'>
