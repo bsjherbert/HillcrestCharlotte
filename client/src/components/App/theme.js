@@ -42,7 +42,7 @@ const HillcrestTheme = createMuiTheme({
     "action":{
       "active": "rgba(223, 202, 151, 1)",
       "hover": "#778899",
-      "selected": "a9a9a9"
+      "selected": "#736757"
     }
   }
 });

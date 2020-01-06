@@ -13,9 +13,6 @@ const useStyles = makeStyles(theme => ({
       direction: "column",
       padding: "1%"
     }
-  },
-  subMenu: {
-    color: theme.palette.secondary.contrastText
   }
 }))
 
@@ -106,21 +103,21 @@ export default function MainNavnavTabs() {
                 <strong>Welcome to Hillcrest</strong>
               </Typography>
 
-              <Typography className={classes.subMenu} variant="subtitle2">
+              <Typography variant="subtitle2">
                 <List dense disablePadding>
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       About Us
                     </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       What to Expect
                     </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       <Link href="connection" color="inherit">
                         Connection Card
@@ -128,7 +125,7 @@ export default function MainNavnavTabs() {
                     </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Contact Us
                     </ListItemText>
@@ -142,21 +139,21 @@ export default function MainNavnavTabs() {
                 <strong>Our Beliefs</strong>
               </Typography>
 
-              <Typography className={classes.subMenu} variant="subtitle2">
+              <Typography variant="subtitle2">
                 <List dense disablePadding>
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       The Gospel
                     </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Statement of Faith
                     </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Constitution
                     </ListItemText>
@@ -170,21 +167,21 @@ export default function MainNavnavTabs() {
                 <strong>Leadership Team</strong>
               </Typography>
 
-              <Typography className={classes.subMenu} variant="subtitle2">
+              <Typography variant="subtitle2">
                 <List dense disablePadding>
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Pastors
                     </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Deacons
                     </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Hillcrest Kids
                     </ListItemText>
@@ -204,9 +201,9 @@ export default function MainNavnavTabs() {
                 <strong>Become a Member</strong>
               </Typography>
 
-              <Typography className={classes.subMenu} variant="subtitle2">
+              <Typography variant="subtitle2">
                 <List dense disablePadding>
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Information
                     </ListItemText>
@@ -220,21 +217,21 @@ export default function MainNavnavTabs() {
                 <strong>Join a Group</strong>
               </Typography>
 
-              <Typography className={classes.subMenu} variant="subtitle2">
+              <Typography variant="subtitle2">
                 <List dense disablePadding>
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Bible Study
                     </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Hillcrest Kids
                     </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Discipleship Groups
                     </ListItemText>
@@ -248,9 +245,9 @@ export default function MainNavnavTabs() {
                 <strong>Life Services</strong>
               </Typography>
 
-              <Typography className={classes.subMenu} variant="subtitle2">
+              <Typography variant="subtitle2">
                 <List dense disablePadding>
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Marriage Counseling
                     </ListItemText>
@@ -270,9 +267,9 @@ export default function MainNavnavTabs() {
                 <strong>Gather</strong>
               </Typography>
 
-              <Typography className={classes.subMenu} variant="subtitle2">
+              <Typography variant="subtitle2">
                 <List dense disablePadding>
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Sunday School (All ages) <br />
                       <Typography variant="caption" color="primary">
@@ -281,7 +278,7 @@ export default function MainNavnavTabs() {
                     </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Sunday Worship Service <br />
                       <Typography variant="caption" color="primary">
@@ -290,7 +287,7 @@ export default function MainNavnavTabs() {
                     </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       MidWeek Bible Study <br />
                       <Typography variant="caption" color="primary">
@@ -299,7 +296,7 @@ export default function MainNavnavTabs() {
                     </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Discipleship Group (D-Groups)
                     </ListItemText>
@@ -313,27 +310,27 @@ export default function MainNavnavTabs() {
                 <strong>Resources</strong>
               </Typography>
 
-              <Typography className={classes.subMenu} variant="subtitle2">
+              <Typography variant="subtitle2">
                 <List dense disablePadding>
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Service Sermons
                     </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Book of the Month
                     </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       365 Reading Plan
                     </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       e-Library
                     </ListItemText>
@@ -353,19 +350,19 @@ export default function MainNavnavTabs() {
                 <strong>Welcome to Hillcrest</strong>
               </Typography>
 
-              <Typography className={classes.subMenu} variant="subtitle2">
+              <Typography variant="subtitle2">
                 <List dense disablePadding>
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Connection Card
                   </ListItemText>
                   </ListItem>
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       What to Expect
                   </ListItemText>
                   </ListItem>
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       FAQs
                   </ListItemText>
@@ -379,21 +376,21 @@ export default function MainNavnavTabs() {
                 <strong>Our Beliefs</strong>
               </Typography>
 
-              <Typography className={classes.subMenu} variant="subtitle2">
+              <Typography variant="subtitle2">
                 <List dense disablePadding>
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       The Gospel
                   </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Statement of Faith
                   </ListItemText>
                   </ListItem>
 
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Constitution
                   </ListItemText>
@@ -407,14 +404,14 @@ export default function MainNavnavTabs() {
                 <strong>Leadership Team</strong>
               </Typography>
 
-              <Typography className={classes.subMenu} variant="subtitle2">
+              <Typography variant="subtitle2">
                 <List dense disablePadding>
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Elders
                   </ListItemText>
                   </ListItem>
-                  <ListItem>
+                  <ListItem className="subNav">
                     <ListItemText>
                       Deacons
                   </ListItemText>
