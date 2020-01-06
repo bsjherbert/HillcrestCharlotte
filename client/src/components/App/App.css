@@ -11,12 +11,12 @@
   padding-top: 2rem;
 }
 
-.form-group {
+/* .form-group {
   font-family: sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .MuiFormControl-root {
   color: black;
@@ -38,11 +38,11 @@
 
 /* NavTab State Colors */
 .navTab:active {
-  color: "rgb(223, 202, 151)"
+  color: "rgb(223, 202, 151)";
 }
 
 .navTab:hover {
-  color: #736757
+  color: #736757;
 }
 
 /* SubNav State Colors */
