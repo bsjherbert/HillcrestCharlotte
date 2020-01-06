@@ -25,7 +25,7 @@ const HillcrestTheme = createMuiTheme({
       "light":"rgba(68, 94, 155, 1)",
       "main":"rgba(8, 53, 108, 1)",
       "dark":"rgba(0, 15, 64, 1)",
-      "contrastText":"#fff"
+      "contrastText":"rgb(249, 247, 241)"
     },
     "error":{
       "light":"rgba(255, 123, 83, 1)",
@@ -42,7 +42,7 @@ const HillcrestTheme = createMuiTheme({
     "action":{
       "active": "rgba(223, 202, 151, 1)",
       "hover": "#778899",
-      "selected": "a9a9a9"
+      "selected": "#736757"
     }
   }
 });
