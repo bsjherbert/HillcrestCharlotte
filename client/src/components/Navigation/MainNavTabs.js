@@ -13,6 +13,9 @@ const useStyles = makeStyles(theme => ({
       direction: "column",
       padding: "1%"
     }
+  },
+  subMenu: {
+    color: theme.palette.secondary.contrastText
   }
 }))
 
@@ -103,7 +106,7 @@ export default function MainNavnavTabs() {
                 <strong>Welcome to Hillcrest</strong>
               </Typography>
 
-              <Typography color="textPrimary" variant="subtitle2">
+              <Typography className={classes.subMenu} variant="subtitle2">
                 <List dense disablePadding>
                   <ListItem>
                     <ListItemText>
@@ -139,7 +142,7 @@ export default function MainNavnavTabs() {
                 <strong>Our Beliefs</strong>
               </Typography>
 
-              <Typography color="textPrimary" variant="subtitle2">
+              <Typography className={classes.subMenu} variant="subtitle2">
                 <List dense disablePadding>
                   <ListItem>
                     <ListItemText>
@@ -167,7 +170,7 @@ export default function MainNavnavTabs() {
                 <strong>Leadership Team</strong>
               </Typography>
 
-              <Typography color="textPrimary" variant="subtitle2">
+              <Typography className={classes.subMenu} variant="subtitle2">
                 <List dense disablePadding>
                   <ListItem>
                     <ListItemText>
@@ -201,7 +204,7 @@ export default function MainNavnavTabs() {
                 <strong>Become a Member</strong>
               </Typography>
 
-              <Typography color="textPrimary" variant="subtitle2">
+              <Typography className={classes.subMenu} variant="subtitle2">
                 <List dense disablePadding>
                   <ListItem>
                     <ListItemText>
@@ -217,7 +220,7 @@ export default function MainNavnavTabs() {
                 <strong>Join a Group</strong>
               </Typography>
 
-              <Typography color="textPrimary" variant="subtitle2">
+              <Typography className={classes.subMenu} variant="subtitle2">
                 <List dense disablePadding>
                   <ListItem>
                     <ListItemText>
@@ -245,7 +248,7 @@ export default function MainNavnavTabs() {
                 <strong>Life Services</strong>
               </Typography>
 
-              <Typography color="textPrimary" variant="subtitle2">
+              <Typography className={classes.subMenu} variant="subtitle2">
                 <List dense disablePadding>
                   <ListItem>
                     <ListItemText>
@@ -267,7 +270,7 @@ export default function MainNavnavTabs() {
                 <strong>Gather</strong>
               </Typography>
 
-              <Typography color="textPrimary" variant="subtitle2">
+              <Typography className={classes.subMenu} variant="subtitle2">
                 <List dense disablePadding>
                   <ListItem>
                     <ListItemText>
@@ -310,7 +313,7 @@ export default function MainNavnavTabs() {
                 <strong>Resources</strong>
               </Typography>
 
-              <Typography color="textPrimary" variant="subtitle2">
+              <Typography className={classes.subMenu} variant="subtitle2">
                 <List dense disablePadding>
                   <ListItem>
                     <ListItemText>
@@ -344,13 +347,13 @@ export default function MainNavnavTabs() {
         {anchor === "Serve" && (
           <Grid container direction="row" alignItems="flex-start" style={{ height: "inherit", width: "inherit" }}
             justify="space-around" alignContent="center" aria-label="Visitor Resources">
-            {/* New: Sub Menu 1 */}
+            {/* SERVE: Sub Menu 1 */}
             <Grid item>
               <Typography component="p" variant="subtitle1" color="primary">
                 <strong>Welcome to Hillcrest</strong>
               </Typography>
 
-              <Typography color="textPrimary" variant="subtitle2">
+              <Typography className={classes.subMenu} variant="subtitle2">
                 <List dense disablePadding>
                   <ListItem>
                     <ListItemText>
@@ -370,13 +373,13 @@ export default function MainNavnavTabs() {
                 </List>
               </Typography>
             </Grid>
-            {/* New: Sub Menu 2 */}
+            {/* SERVE: Sub Menu 2 */}
             <Grid item>
               <Typography component="p" variant="subtitle1" color="primary" align="left">
                 <strong>Our Beliefs</strong>
               </Typography>
 
-              <Typography color="textPrimary" variant="subtitle2">
+              <Typography className={classes.subMenu} variant="subtitle2">
                 <List dense disablePadding>
                   <ListItem>
                     <ListItemText>
@@ -398,13 +401,13 @@ export default function MainNavnavTabs() {
                 </List>
               </Typography>
             </Grid>
-            {/* New: Sub Menu 3 */}
+            {/* SERVE: Sub Menu 3 */}
             <Grid item>
               <Typography component="p" variant="subtitle1" color="primary">
                 <strong>Leadership Team</strong>
               </Typography>
 
-              <Typography color="textPrimary" variant="subtitle2">
+              <Typography className={classes.subMenu} variant="subtitle2">
                 <List dense disablePadding>
                   <ListItem>
                     <ListItemText>
