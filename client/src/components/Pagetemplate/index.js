@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import flower from './images/flower.jpg'
 
+
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
@@ -23,8 +24,9 @@ const  Pagetemplate=(props)=> {
       <Grid container spacing={0}>
         <Grid item xs={4}>
           side navbar
+          turn into card with list nested list
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={8}>
           <img src ={flower} width="100%" alt = "plant"/>
             <MainComp/> 
         </Grid>
@@ -34,3 +36,4 @@ const  Pagetemplate=(props)=> {
   );
 }
 export default Pagetemplate
+

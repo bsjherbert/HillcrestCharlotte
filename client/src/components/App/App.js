@@ -15,9 +15,9 @@ import ConnectionCard from "../../pages/ConnectionCard/ConnectionCard";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import NotFound from "../../pages/NotFound/NotFound";
 import Footer from '../Footer';
-import test from '../../pages/testPage'
-import Footer from "../Footer";
 import PageContainer from "../../components/PageContainer";
+import test from '../../pages/testPage'
+
 
 import HillcrestTheme from "./theme";
 import "./App.css";
@@ -75,6 +75,7 @@ class App extends Component {
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/connection" component={ConnectionCard} />
+                <Route path="/test" component={test} />
                 <PrivateRoute path="/dashboard" component={Dashboard} />
                 <Route component={NotFound} />
               </Switch>
