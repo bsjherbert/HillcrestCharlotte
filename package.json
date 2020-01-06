@@ -19,7 +19,11 @@
     "nodemon": "^1.18.10"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@githubprimer/octicons-react": "^8.5.0",
+=======
+    "@date-io/date-fns": "^2.0.1",
+>>>>>>> 71160fce4ef9e9218d7fe4df3e49f9a32cfd79d0
     "@material-ui/pickers": "^3.2.8",
     "chart.js": "^2.9.3",
     "date-fns": "^2.0.0-beta.5",

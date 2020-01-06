@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { Typography, Paper, Link } from '@material-ui/core';
+import { Typography, Paper, Link, Divider } from '@material-ui/core';
 
 import API from '../../lib/API';
 import AuthContext from '../../contexts/AuthContext';
@@ -49,14 +49,19 @@ class Login extends Component {
     }
 
     return (
-      <Paper style={{ padding: "2.5rem 20%", marginTop: "2em" }}>
-        <div style={{ height: "5rem", width: "5rem", textAlign:"center" }}>
+      <Paper style={{ padding: "2.5rem 15%", marginTop: "2em" }}>
+        <div style={{ maxHeight: "200px", maxWidth:"150px", margin: "0 42% 3% 42%", display:"table", alignItems: "center"}}>
           <BlankLogo />
         </div>
 
         <Typography component="h1" variant="h4" color="secondary" style={{ paddingBottom: "2%" }}>
           MyHillcrest
         </Typography>
+        <Divider />
+        <Typography component="p" variant="subtitle1" color="textSecondary" style={{ paddingTop: "2%", fontWeight: "bolder"}}>
+          LOGIN
+        </Typography>
+
         {this.state.error &&
           <Typography component="span" variant="subtitle2" role="alert" color="error">
             {this.state.error}
@@ -64,7 +69,7 @@ class Login extends Component {
         }
         <LoginForm onSubmit={this.handleSubmit} />
         <Typography component="p" variant="subtitle1" color="textSecondary" style={{ paddingTop: "2%" }}>
-          Don't have an account? <Link href="register" to='/register'>Click here to register.</Link>
+          Don't have an account yet? <Link href="register" to='/register'>Register now!</Link>
         </Typography>
       </Paper>
     );

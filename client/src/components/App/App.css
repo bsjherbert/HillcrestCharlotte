@@ -11,30 +11,44 @@
   padding-top: 2rem;
 }
 
-.form-group {
+/* .form-group {
   font-family: sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+} */
 
 .MuiFormControl-root {
   color: black;
 }
+
 .dropNav {
-  background-color: #473d2e;
+  background-color: rgba(71, 61, 46, 0.7);
   background-image: url("./dark-tire.png");
   height: 0;
   transition: all 1s ease-in-out;
 }
 
 .show {
-  height: 200px;
+  height: inherit;
   width: inherit;
   transition: all 1s ease-in-out;
-  padding: 3rem 0;
+  padding: 3% 0;
 }
 
+/* NavTab State Colors */
 .navTab:active {
-  color: "rgb(223, 202, 151)"
+  color: "rgb(223, 202, 151)";
+}
+
+.navTab:hover {
+  color: #736757;
+}
+
+/* SubNav State Colors */
+.subNav {
+  color: rgb(249, 247, 241);
+}
+.subNav:hover {
+  color: #bfbfbf;
 }
