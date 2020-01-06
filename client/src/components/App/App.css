@@ -29,10 +29,10 @@
 }
 
 .show {
-  height: 200px;
+  height: inherit;
   width: inherit;
   transition: all 1s ease-in-out;
-  padding: 3rem 0;
+  padding: 3% 0;
 }
 
 .navTab:active {
