@@ -33,5 +33,20 @@ export default {
         }
       });
     }
+  },
+
+  Seeders: {
+    seed: function(seedData) {
+      return axios.get("/api/seeders", {
+
+
+
+
+        
+      });
+    }
   }
+
+
+
 };
