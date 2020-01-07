@@ -10,119 +10,86 @@ import InboxIcon from '@material-ui/icons/MoveToInbox';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import StarBorder from '@material-ui/icons/StarBorder';
+import {Link} from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    width: '100%',
-    // maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
-  },
-  nested: {
-    paddingLeft: theme.spacing(4),
-  },
+    root: {
+        width: '100%',
+        // maxWidth: 360,
+        backgroundColor: theme.palette.background.paper,
+    },
+    nested: {
+        paddingLeft: theme.spacing(4),
+    },
 }));
 
 export default function NestedList(props) {
-  const classes = useStyles();
-  const [open, setOpen] = React.useState(true);
+    const classes = useStyles();
+    // const [open, setOpen] = React.useState({});
+    const [open, setOpen] = React.useState();
 
-  const handleClick = () => {
-    setOpen(!open);
-  };
+    // const handleClick = (submenu) => {
+    const handleClick = () => {
+        // setOpen(!open[submenu]);
+        setOpen(!open);
+    };
 
-  return (
-    <List
-      component="nav"
-      aria-labelledby="sideNav"
-      subheader={
-        <ListSubheader component="menu" id="sideNav">
-          Nested List Items
-        </ListSubheader>
-      }
-      className={classes.root}
-    >
-      <ListItem button onClick={handleClick}>
-        <ListItemIcon>
-          <InboxIcon />
-        </ListItemIcon>
-        <ListItemText primary="What to expect" />
-        {open ? <ExpandLess /> : <ExpandMore />}
-      </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-              <StarBorder />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItem>
+    // React.useEffect(()=> {
+    //     // props.menu.submenus.map(submenu => {
+    //     //     open[submenu.id] = false;
+    //     // })
+    //     console.log(open)
+    // })
+
+    return (
+        <List
+            component="nav"
+            aria-labelledby="sideNav"
+            subheader={
+                <ListSubheader component="menu" id="sideNav">
+                    {props.menu.title}
+                </ListSubheader>
+            }
+            className={classes.root}
+        >
+
+            {props.menu.submenus.map(submenu => {
+                console.log(open)
+                return (
+                    <div>
+                        {/* <ListItem button onClick={() => handleClick(submenu.id)}> */}
+                        <ListItem button onClick={handleClick}>
+                            <ListItemIcon>
+                                <InboxIcon />
+                            </ListItemIcon>
+                            <ListItemText primary={submenu.title} />
+                            {/* {open[submenu.id] ? <ExpandLess /> : <ExpandMore />} */}
+                            {open ? <ExpandLess /> : <ExpandMore />}
+                        </ListItem>
+
+                        {submenu.links.map(link => {
+                            return (                                
+                                <Link color="primary" href={link.href}>
+                                    {/* <Collapse in={open[submenu.id]} timeout="auto" unmountOnExit> */}
+                                    <Collapse in={open} timeout="auto" unmountOnExit>
+                                        <List component="div" disablePadding>
+                                            <ListItem button className={classes.nested}>
+                                                <ListItemIcon>
+                                                    <StarBorder />
+                                                </ListItemIcon>
+                                                <ListItemText primary={link.title} />
+                                            </ListItem>
+                                        </List>
+                                    </Collapse>
+                                </Link>
+                            )
+                        })}
+
+                    </div>
+                )
+            })}
+
         </List>
-      </Collapse>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-              <StarBorder />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItem>
-        </List>
-      </Collapse>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-              <StarBorder />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItem>
-        </List>
-      </Collapse>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-              <StarBorder />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItem>
-        </List>
-      </Collapse>
-      <ListItem button onClick={handleClick}>
-        <ListItemIcon>
-          <InboxIcon />
-        </ListItemIcon>
-        <ListItemText primary="What to expect" />
-        {open ? <ExpandLess /> : <ExpandMore />}
-      </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-              <StarBorder />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItem>
-        </List>
-      </Collapse>
-      <ListItem button onClick={handleClick}>
-        <ListItemIcon>
-          <InboxIcon />
-        </ListItemIcon>
-        <ListItemText primary="What to expect" />
-        {open ? <ExpandLess /> : <ExpandMore />}
-      </ListItem>
-      <Collapse in={open} timeout="auto" unmountOnExit>
-        <List component="div" disablePadding>
-          <ListItem button className={classes.nested}>
-            <ListItemIcon>
-              <StarBorder />
-            </ListItemIcon>
-            <ListItemText primary="Starred" />
-          </ListItem>
-        </List>
-      </Collapse>
-    </List>
-    
-  );
+
+    );
 }
