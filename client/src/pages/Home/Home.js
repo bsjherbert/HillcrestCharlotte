@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import IconButton from "@material-ui/core/IconButton";
-import { ChevronLeft, ChevronRight } from "@material-ui/icons";
-import Carousel from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
+import CarouselWithDots from "../../components/CarouselWithDots";
 import ImageSlide from "../../components/ImageSlide";
 import ImageSlideProps from "../../lib/ImageSlideProps.json";
 import SimpleCard from "../../components/SimpleCard";
-import InfoCard from "../../components/InfoCard";
+import ReadingCard from "../../components/ReadingCard";
 
 class HomePage extends Component {
   render() {
@@ -25,24 +23,13 @@ class HomePage extends Component {
       // {/* Map over the ImageSlideProps array to populate the Carousel slides */}
       <div>
         <div style={{ zIndex: 5, marginTop: "6vh" }}>
-          <Carousel
+          <CarouselWithDots
             autoPlay={3500}
             animationSpeed={1500}
             infinite
             centered="true"
             stopAutoPlayOnHover="true"
-            arrowLeft={
-              <IconButton aria-label="Slide Reverse">
-                {" "}
-                <ChevronLeft color="secondary" />{" "}
-              </IconButton>
-            }
-            arrowRight={
-              <IconButton aria-label="Slide Forward">
-                {" "}
-                <ChevronRight color="secondary" />{" "}
-              </IconButton>
-            }
+            dots
             addArrowClickHandler
           >
             {ImageSlideProps.map(slide => (
@@ -65,10 +52,10 @@ class HomePage extends Component {
                 width={slide.width}
               />
             ))}
-          </Carousel>
+          </CarouselWithDots>
         </div>
         <div style={classes.cardContainer}>
-          <InfoCard title={infoCardTitle} />
+          <ReadingCard title={infoCardTitle} />
           <SimpleCard />
           <SimpleCard />
           <SimpleCard />
