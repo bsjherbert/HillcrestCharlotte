@@ -89,6 +89,42 @@ const  Pagetemplate = (props)=> {
     }
    ]
 
+
+   const testmenu = {
+        title: "Im a Title",
+        submenus: [
+            {
+                 title: "Welcome to Hillcrest",
+                 id: "welcomeHillcrest",
+                 links: [
+                     {
+                         title: "About Us",
+                         href:"#"
+                     },
+                     {
+                         title: "What to Expect",
+                         href:"#"
+                     }
+                 ]
+            },
+            {
+             title: "Our beliefs",
+             id: "ourBeliefs",
+             links: [
+                 {
+                     title: "The Gospel",
+                     href:"#"
+                 },
+                 {
+                     title: "Statement",
+                     href:"#"
+                 }
+             ]
+        }
+        ]
+    }
+
+
   return (
     <div className={classes.root}>
       <Grid container spacing={0}>

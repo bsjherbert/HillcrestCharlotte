@@ -25,21 +25,19 @@ const useStyles = makeStyles(theme => ({
 
 export default function NestedList(props) {
     const classes = useStyles();
-    // const [open, setOpen] = React.useState({});
-    const [open, setOpen] = React.useState();
+    
+    const initOpen = {};
+    props.menu.submenus.forEach(submenu => {
+        initOpen[submenu.id] = false;
+    })
 
-    // const handleClick = (submenu) => {
-    const handleClick = () => {
-        // setOpen(!open[submenu]);
-        setOpen(!open);
+    const [open, setOpen] = React.useState(initOpen);
+
+    const handleClick = (submenu) => {
+        setOpen({
+            ...open, [submenu]: !open[submenu]
+        });
     };
-
-    // React.useEffect(()=> {
-    //     // props.menu.submenus.map(submenu => {
-    //     //     open[submenu.id] = false;
-    //     // })
-    //     console.log(open)
-    // })
 
     return (
         <List
@@ -57,21 +55,18 @@ export default function NestedList(props) {
                 console.log(open)
                 return (
                     <div>
-                        {/* <ListItem button onClick={() => handleClick(submenu.id)}> */}
-                        <ListItem button onClick={handleClick}>
+                        <ListItem button onClick={() => handleClick(submenu.id)}>
                             <ListItemIcon>
                                 <InboxIcon />
                             </ListItemIcon>
                             <ListItemText primary={submenu.title} />
-                            {/* {open[submenu.id] ? <ExpandLess /> : <ExpandMore />} */}
-                            {open ? <ExpandLess /> : <ExpandMore />}
+                            {open[submenu.id] ? <ExpandLess /> : <ExpandMore />}
                         </ListItem>
 
                         {submenu.links.map(link => {
                             return (                                
                                 <Link color="primary" href={link.href}>
-                                    {/* <Collapse in={open[submenu.id]} timeout="auto" unmountOnExit> */}
-                                    <Collapse in={open} timeout="auto" unmountOnExit>
+                                    <Collapse in={open[submenu.id]} timeout="auto" unmountOnExit>
                                         <List component="div" disablePadding>
                                             <ListItem button className={classes.nested}>
                                                 <ListItemIcon>
