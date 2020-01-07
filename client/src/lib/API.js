@@ -33,5 +33,11 @@ export default {
         }
       });
     }
-  }
+  },
+
+  ReadingPlan:{ get: function(){
+    return axios.get("/api/bible-reading-plan/")
+  }}
+
+
 };
