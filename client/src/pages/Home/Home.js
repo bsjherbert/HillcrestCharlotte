@@ -4,7 +4,7 @@ import CarouselWithDots from "../../components/CarouselWithDots";
 import ImageSlide from "../../components/ImageSlide";
 import ImageSlideProps from "../../lib/ImageSlideProps.json";
 import SimpleCard from "../../components/SimpleCard";
-import InfoCard from "../../components/InfoCard";
+import ReadingCard from "../../components/ReadingCard";
 
 class HomePage extends Component {
   render() {
@@ -55,7 +55,7 @@ class HomePage extends Component {
           </CarouselWithDots>
         </div>
         <div style={classes.cardContainer}>
-          <InfoCard title={infoCardTitle} />
+          <ReadingCard title={infoCardTitle} />
           <SimpleCard />
           <SimpleCard />
           <SimpleCard />
