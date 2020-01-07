@@ -22,6 +22,10 @@
   color: black;
 }
 
+/* .MuiFormControl-fullWidth {
+  width: 75% !important;
+} */
+
 .dropNav {
   background-color: rgba(71, 61, 46, 0.7);
   background-image: url("./dark-tire.png");

@@ -17,8 +17,12 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Button from "@material-ui/core/Button";
+<<<<<<< HEAD
 
 
+=======
+import Modal from "../Modals/ConformationModal";
+>>>>>>> 35657c2f51225ee1ca02813c480d47acc68813a3
 const styles = theme => ({
   form: {
     textAlign: "center",
@@ -26,7 +30,6 @@ const styles = theme => ({
     top: "3vh",
     zIndex: 5
   },
-
   input: {
     color: "black"
   }
@@ -43,12 +46,11 @@ class ConnectionCardForm extends Component {
       contactMethod: "",
       speakPastor: false,
       moreInfo: false,
-      questions: false
+      questions: false,
+      status: false
     };
-
     this.handleInputChange = this.handleInputChange.bind(this);
   }
-
   handleInputChange(event) {
     if (event.target === undefined) {
       console.log(event);
@@ -67,10 +69,17 @@ class ConnectionCardForm extends Component {
     e.preventDefault();
     console.log(this.state);
     API.ConnectionCard.create(this.state)
+<<<<<<< HEAD
       .then(connCard => console.log(connCard))
       .catch(err => console.log(err));  
+=======
+      .then(connCard => {
+        console.log(connCard);
+        this.setState({ status: true });
+      })
+      .catch(err => console.log(err));
+>>>>>>> 35657c2f51225ee1ca02813c480d47acc68813a3
   };
-
   render() {
     const { classes } = this.props;
     return (
@@ -225,13 +234,12 @@ class ConnectionCardForm extends Component {
         </Button>
         {/* <button onClick={e => this.handleSubmit(e)}>Submit</button> */}
         {/* Button, Button needs to call function that is coded at top. Console log the state */}
+        <Modal opened={this.state.status} />
       </FormControl>
     );
   }
 }
-
 ConnectionCardForm.propTypes = {
   classes: PropTypes.object.isRequired
 };
-
 export default withStyles(styles)(ConnectionCardForm);
