@@ -35,6 +35,4 @@ bibleReadPlanController.get('/:week', (req, res) => {
 
 });
 
-
-
 module.exports = bibleReadPlanController;
