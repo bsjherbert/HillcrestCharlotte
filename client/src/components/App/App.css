@@ -20,6 +20,11 @@
 
 .MuiFormControl-root {
   color: black;
+  text-align: center;
+}
+
+.MuiFormControl-fullWidth {
+  width: 75% !important;
 }
 
 .dropNav {
