@@ -7,8 +7,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Collapse from '@material-ui/core/Collapse';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
-import DraftsIcon from '@material-ui/icons/Drafts';
-import SendIcon from '@material-ui/icons/Send';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import StarBorder from '@material-ui/icons/StarBorder';
@@ -16,7 +14,7 @@ import StarBorder from '@material-ui/icons/StarBorder';
 const useStyles = makeStyles(theme => ({
   root: {
     width: '100%',
-    maxWidth: 360,
+    // maxWidth: 360,
     backgroundColor: theme.palette.background.paper,
   },
   nested: {
@@ -24,7 +22,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function NestedList() {
+export default function NestedList(props) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(true);
 
@@ -35,31 +33,22 @@ export default function NestedList() {
   return (
     <List
       component="nav"
-      aria-labelledby="nested-list-subheader"
+      aria-labelledby="sideNav"
       subheader={
-        <ListSubheader component="div" id="nested-list-subheader">
+        <ListSubheader component="menu" id="sideNav">
           Nested List Items
         </ListSubheader>
       }
       className={classes.root}
     >
+
       <ListItem button>
-        <ListItemIcon>
-          <SendIcon />
-        </ListItemIcon>
-        <ListItemText primary="Sent mail" />
-      </ListItem>
-      <ListItem button>
-        <ListItemIcon>
-          <DraftsIcon />
-        </ListItemIcon>
-        <ListItemText primary="Drafts" />
       </ListItem>
       <ListItem button onClick={handleClick}>
         <ListItemIcon>
           <InboxIcon />
         </ListItemIcon>
-        <ListItemText primary="Inbox" />
+        <ListItemText primary="What to expect" />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>

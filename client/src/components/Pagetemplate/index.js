@@ -2,7 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import flower from './images/flower.jpg'
-import sidebar from '../../components/sidebarcard'
+import Sidebar from '../../components/sidebarcard'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -22,7 +22,7 @@ const  Pagetemplate=(props)=> {
     <div className={classes.root}>
       <Grid container spacing={0}>
         <Grid item xs={4}>
-          {props.sidebar}
+          <Sidebar/>
         </Grid>
         <Grid item xs={8}>
           <img src ={flower} width="100%" alt = "plant"/>
@@ -34,4 +34,3 @@ const  Pagetemplate=(props)=> {
   );
 }
 export default Pagetemplate
-

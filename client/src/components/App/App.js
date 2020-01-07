@@ -25,7 +25,7 @@ import "./App.css";
 class App extends Component {
   constructor(props) {
     super(props);
-
+    
     this.handleLogin = (user, authToken) => {
       TokenStore.setToken(authToken);
       this.setState(prevState => ({
@@ -40,12 +40,21 @@ class App extends Component {
       }));
     };
 
+    this.handleMenu = () => {
+      this.setState(state => ({
+        isOpen: !state.isOpen
+      }))
+    }
+
     this.state = {
       auth: {
         user: undefined,
         authToken: TokenStore.getToken(),
         onLogin: this.handleLogin,
         onLogout: this.handleLogout
+      },
+      menu: {
+        isOpen: false
       }
     };
   }
@@ -69,7 +78,7 @@ class App extends Component {
           <div className="App">
             <TopNav />
             <PageContainer>
-              <MainNav />
+              <MainNav isOpen={this.state.isOpen} />
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/login" component={Login} />
