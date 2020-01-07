@@ -6,8 +6,8 @@ import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { List, ListItem, ListItemText } from "@material-ui/core";
-import Api from '../../lib/API'
-import ReadingItems from "./ReadingItems"
+import Api from "../../lib/API";
+import ReadingItems from "./ReadingItems";
 
 //style text content here
 const useStyles = makeStyles(theme => ({
@@ -31,7 +31,7 @@ const useStyles = makeStyles(theme => ({
   //   }
 }));
 
-const InfoCard = (props) => {
+const ReadingCard = props => {
   function getWeekNumber(d) {
     // Copy date so don't modify original
     d = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
@@ -52,9 +52,9 @@ const InfoCard = (props) => {
 
   useEffect(() => {
     async function fetchData() {
-      Api.ReadingPlan.get().then((result)=>{
+      Api.ReadingPlan.get().then(result => {
         setReadingPlanArr(result.data);
-      })
+      });
     }
     fetchData();
   }, []);
@@ -69,13 +69,17 @@ const InfoCard = (props) => {
           Reading Plan
         </Typography>
         <List dense="true">
-            {readingPlanArr.length && <ReadingItems verses={readingPlanArr[weekNumber].dailyVerses}/>}
+          {readingPlanArr.length && (
+            <ReadingItems verses={readingPlanArr[weekNumber].dailyVerses} />
+          )}
         </List>
         <Typography variant="h6" color="primary">
           Memory Verse
         </Typography>
         <List dense="true" color="textPrimary" className={classes.p}>
-            {readingPlanArr.length && <ReadingItems verses={readingPlanArr[weekNumber].memoryVerses}/>}
+          {readingPlanArr.length && (
+            <ReadingItems verses={readingPlanArr[weekNumber].memoryVerses} />
+          )}
         </List>
       </CardContent>
       <CardActions>
@@ -83,6 +87,6 @@ const InfoCard = (props) => {
       </CardActions>
     </Card>
   );
-}
+};
 
-export default InfoCard;
+export default ReadingCard;
