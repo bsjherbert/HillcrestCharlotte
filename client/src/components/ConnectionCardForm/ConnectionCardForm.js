@@ -18,7 +18,16 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Button from "@material-ui/core/Button";
 import Modal from "../Modals/ConformationModal";
-const styles = theme => ({
+const styles = (theme) => ({
+  root: {
+    display: "block",
+    [theme.breakpoints.down('sm')]: {
+      textAlign: "left",
+    },
+    [theme.breakpoints.up(800)]: {
+      textAlign: "center",
+    },
+  },
   form: {
     textAlign: "center",
     position: "relative",
@@ -93,8 +102,6 @@ class ConnectionCardForm extends Component {
               }}
             />
           </MuiPickersUtilsProvider>
-        </div>
-        <div>
           <TextField
             fullWidth
             name="name"
@@ -103,8 +110,6 @@ class ConnectionCardForm extends Component {
             value={this.state.name}
             onChange={this.handleInputChange}
           />
-        </div>
-        <div>
           <TextField
             fullWidth
             name="address"
@@ -113,8 +118,6 @@ class ConnectionCardForm extends Component {
             value={this.state.address}
             onChange={this.handleInputChange}
           />
-        </div>
-        <div>
           <TextField
             fullWidth
             name="email"
@@ -123,8 +126,6 @@ class ConnectionCardForm extends Component {
             value={this.state.email}
             onChange={this.handleInputChange}
           />
-        </div>
-        <div>
           <TextField
             fullWidth
             name="telephone"
@@ -133,16 +134,15 @@ class ConnectionCardForm extends Component {
             value={this.state.telephone}
             onChange={this.handleInputChange}
           />
-        </div>
-        <div style={{ marginTop: "2em" }}>
-          <FormControl component="fieldset">
-            <FormLabel component="legend">Preferred Contact Method</FormLabel>
+
+          <FormControl component="fieldset" style={{ marginTop: "2rem", justifyContent: "center" }}>
+            <FormLabel component="legend" style={{paddingBottom: "1%"}}>Preferred Contact Method:</FormLabel>
             <RadioGroup
-              aria-label="position"
+              aria-label="preferred contact method"
               name="contactMethod"
               value={this.state.contactMethod}
               onChange={this.handleInputChange}
-              row
+              row style={{justifyContent: "center", marginBottom: "1rem"}}
             >
               <FormControlLabel
                 value="email"
@@ -157,13 +157,9 @@ class ConnectionCardForm extends Component {
                 labelPlacement="end"
               />
             </RadioGroup>
-          </FormControl>
-        </div>
-        <div style={{ marginTop: "2em" }}>
-          <FormControl component="fieldset">
-            <FormLabel component="legend">What would you like to do?</FormLabel>
-            <FormGroup aria-label="position">
-              <div>
+
+            <FormLabel component="legend" style={{paddingBottom: "2%"}}>What would you like to do?</FormLabel>
+            <FormGroup aria-label="options" className={classes.root}>
                 <FormControlLabel
                   value="speakPastor"
                   control={
@@ -177,8 +173,6 @@ class ConnectionCardForm extends Component {
                   label="I'd like to speak to a pastor"
                   labelPlacement="end"
                 />
-              </div>
-              <div>
                 <FormControlLabel
                   value="moreInfo"
                   control={
@@ -192,8 +186,6 @@ class ConnectionCardForm extends Component {
                   label="I'd like more info about Hillcrest"
                   labelPlacement="end"
                 />
-              </div>
-              <div>
                 <FormControlLabel
                   value="questions"
                   control={
@@ -207,7 +199,6 @@ class ConnectionCardForm extends Component {
                   label="I have questions about my relationship with God"
                   labelPlacement="end"
                 />
-              </div>
             </FormGroup>
           </FormControl>
         </div>
