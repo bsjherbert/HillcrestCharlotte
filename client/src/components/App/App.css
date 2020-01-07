@@ -22,9 +22,9 @@
   color: black;
 }
 
-.MuiFormControl-fullWidth {
+/* .MuiFormControl-fullWidth {
   width: 75% !important;
-}
+} */
 
 .dropNav {
   background-color: rgba(71, 61, 46, 0.7);
