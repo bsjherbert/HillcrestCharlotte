@@ -18,6 +18,7 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import Button from "@material-ui/core/Button";
 
+
 const styles = theme => ({
   form: {
     textAlign: "center",
@@ -67,7 +68,7 @@ class ConnectionCardForm extends Component {
     console.log(this.state);
     API.ConnectionCard.create(this.state)
       .then(connCard => console.log(connCard))
-      .catch(err => console.log(err));
+      .catch(err => console.log(err));  
   };
 
   render() {

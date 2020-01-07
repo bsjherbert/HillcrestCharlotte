@@ -9,14 +9,12 @@
   dependencies:
     regenerator-runtime "^0.13.2"
 
-<<<<<<< HEAD
 "@githubprimer/octicons-react@^8.5.0":
   version "8.5.0"
   resolved "https://registry.yarnpkg.com/@githubprimer/octicons-react/-/octicons-react-8.5.0.tgz#f3c9639b8efcd2789761822b7ac7715dd810b4c2"
   integrity sha512-Tb9Nu4usHON3EGiyCnppNQoJmSJvhUw+iD1URpOsoc69YWv96jIcxUAU4/Tw/D6ydzOubf3H9kPdLKVqz8XOnQ==
   dependencies:
     prop-types "^15.6.1"
-=======
 "@date-io/core@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@date-io/core/-/core-2.0.0.tgz#3a8685b8f5ea25513327e1273a673b5477573ce9"
@@ -28,7 +26,6 @@
   integrity sha512-wy3CWuV0dvrjm45ncO6duu4ZSOMxZpajFbEoj0X3DyNEYxjAdbv27waZYtJ2PwL85XZd9i/VaJQnh3GU7ZvP6g==
   dependencies:
     "@date-io/core" "^2.0.0"
->>>>>>> 71160fce4ef9e9218d7fe4df3e49f9a32cfd79d0
 
 "@material-ui/pickers@^3.2.8":
   version "3.2.8"
