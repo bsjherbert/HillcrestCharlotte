@@ -133,7 +133,7 @@ const  Pagetemplate = (props)=> {
         </Grid>
         <Grid item xs={8}>
           <img src ={flower} width="100%" alt = "plant"/>
-            <MainComp/> 
+            {/* <MainComp/>  */}
         </Grid>
 
       </Grid>
