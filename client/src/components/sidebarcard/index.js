@@ -27,9 +27,9 @@ export default function NestedList(props) {
     const classes = useStyles();
     
     const initOpen = {};
-    props.menu.submenus.forEach(submenu => {
-        initOpen[submenu.id] = false;
-    })
+    // props.sideNav.submenus.forEach(submenu => {
+    //     initOpen[submenu.id] = false;
+    // })
 
     const [open, setOpen] = React.useState(initOpen);
 
@@ -45,13 +45,13 @@ export default function NestedList(props) {
             aria-labelledby="sideNav"
             subheader={
                 <ListSubheader component="menu" id="sideNav">
-                    {props.menu.title}
+                    {/* {props.sideNav.title} */}
                 </ListSubheader>
             }
             className={classes.root}
         >
 
-            {props.menu.submenus.map(submenu => {
+            {/* {props.sideNav.submenus.map(submenu => {
                 console.log(open)
                 return (
                     <div>
@@ -82,7 +82,7 @@ export default function NestedList(props) {
 
                     </div>
                 )
-            })}
+            })} */}
 
         </List>
 

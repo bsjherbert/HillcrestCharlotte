@@ -16,11 +16,13 @@ import Dashboard from "../../pages/Dashboard/Dashboard";
 import NotFound from "../../pages/NotFound/NotFound";
 import Footer from '../Footer';
 import PageContainer from "../../components/PageContainer";
-import test from '../../pages/testPage'
+import PageTemplate from "../../components/Pagetemplate"
+// import test from '../../pages/testPage'
 
 
 import HillcrestTheme from "./theme";
 import "./App.css";
+import { Pages } from "@material-ui/icons";
 
 class App extends Component {
   constructor(props) {
@@ -55,9 +57,82 @@ class App extends Component {
       },
       menu: {
         isOpen: false
-      }
+      },
+      sideNav: {},
+      allMenus: [
+        {
+            title: "I'm New",
+            submenus: [
+                {
+                     title: "Welcome to Hillcrest",
+                     id: "welcomeHillcrest",
+                     links: [
+                         {
+                             title: "About Us",
+                             href:"#"
+                         },
+                         {
+                             title: "What to Expect",
+                             href:"#"
+                         }
+                     ]
+                },
+                {
+                 title: "Our beliefs",
+                 id: "ourBeliefs",
+                 links: [
+                     {
+                         title: "The Gospel",
+                         href:"#"
+                     },
+                     {
+                         title: "Statement",
+                         href:"#"
+                     }
+                 ]
+            }
+            ]
+        },
+        {
+            title: "Connect",
+            submenus: [
+                {
+                     title: "Become member",
+                     id: "becomeMember",
+                     links: [
+                         {
+                             title: "Information",
+                             href:"#"
+                         }
+                     ]
+                },
+                {
+                 title: "Join a Group",
+                 id: "joinGroup",
+                 links: [
+                     {
+                         title: "Bible Study",
+                         href:"#"
+                     },
+                     {
+                         title: "Hillcrest Kids",
+                         href:"#"
+                     },
+                     {
+                         title: "Discipleship Groups",
+                         href:"#"
+                     }
+                 ]
+            }
+            ]
+        },
+       ]
     };
   }
+
+ handlePageChange = (page) => {
+  this.setState({sideNav: this.state.allMenus[page]})
+}
 
   componentDidMount() {
     const { authToken } = this.state.auth;
@@ -71,6 +146,8 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  
+
   render() {
     return (
       <MuiThemeProvider theme={HillcrestTheme}>
@@ -78,13 +155,15 @@ class App extends Component {
           <div className="App">
             <TopNav />
             <PageContainer>
-              <MainNav isOpen={this.state.isOpen} />
+              <MainNav isOpen={this.state.isOpen}
+              onPageChange = {this.handlePageChange} />
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/connection" component={ConnectionCard} />
-                <Route path="/test" component={test} />
+                {/* <Route path="/pages" component={PageTemplate} /> */}
+                <Route path="/pages" render={(props) => <PageTemplate {...props} pagechange={this.handlePageChange} />} />
                 <PrivateRoute path="/dashboard" component={Dashboard} />
                 <Route component={NotFound} />
               </Switch>

@@ -3,6 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import {Grid, Link} from '@material-ui/core';
 import flower from './images/flower.jpg'
 import Sidebar from '../../components/sidebarcard'
+import { Switch, Route } from "react-router-dom";
+import TestComp from "../testComp"
+import testComp2 from "../testComp2"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,124 +19,22 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const  Pagetemplate = (props)=> {
-    const [menu, setMenu] = React.useState(null);
-
    const classes = useStyles();
-   const MainComp = props.main
-   const allMenus = [
-    {
-        title: "Im a Title",
-        submenus: [
-            {
-                 title: "Welcome to Hillcrest",
-                 id: "welcomeHillcrest",
-                 links: [
-                     {
-                         title: "About Us",
-                         href:"#"
-                     },
-                     {
-                         title: "What to Expect",
-                         href:"#"
-                     }
-                 ]
-            },
-            {
-             title: "Our beliefs",
-             id: "ourBeliefs",
-             links: [
-                 {
-                     title: "The Gospel",
-                     href:"#"
-                 },
-                 {
-                     title: "Statement",
-                     href:"#"
-                 }
-             ]
-        }
-        ]
-    },
-    {
-        title: "Im a Title",
-        submenus: [
-            {
-                 title: "Welcome to Hillcrest",
-                 id: "welcomeHillcrest",
-                 links: [
-                     {
-                         title: "About Us",
-                         href:"#"
-                     },
-                     {
-                         title: "What to Expect",
-                         href:"#"
-                     }
-                 ]
-            },
-            {
-             title: "Our beliefs",
-             id: "ourBeliefs",
-             links: [
-                 {
-                     title: "The Gospel",
-                     href:"#"
-                 },
-                 {
-                     title: "Statement",
-                     href:"#"
-                 }
-             ]
-        }
-        ]
-    }
-   ]
-
-
-   const testmenu = {
-        title: "Im a Title",
-        submenus: [
-            {
-                 title: "Welcome to Hillcrest",
-                 id: "welcomeHillcrest",
-                 links: [
-                     {
-                         title: "About Us",
-                         href:"#"
-                     },
-                     {
-                         title: "What to Expect",
-                         href:"#"
-                     }
-                 ]
-            },
-            {
-             title: "Our beliefs",
-             id: "ourBeliefs",
-             links: [
-                 {
-                     title: "The Gospel",
-                     href:"#"
-                 },
-                 {
-                     title: "Statement",
-                     href:"#"
-                 }
-             ]
-        }
-        ]
-    }
-
-
   return (
+
     <div className={classes.root}>
       <Grid container spacing={0}>
         <Grid item xs={4}>
-          <Sidebar menu={testmenu} />
+          <Sidebar {...props} />
         </Grid>
         <Grid item xs={8}>
           <img src ={flower} width="100%" alt = "plant"/>
-            {/* <MainComp/>  */}
+            <Switch>
+                {/* we are passing the handlepagechange function from the app.js file, but are unable to pass it to the 2nd child component  TestComp*/}
+                <Route exact path ="/pages/church" render={(props) => <TestComp {...props} pagechange={props.pagechange} />}/>
+                
+                <Route exact path ="/pages/biggerchurch" component={testComp2}/>
+            </Switch>
         </Grid>
 
       </Grid>

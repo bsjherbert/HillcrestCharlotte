@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 
-export default function MainNavnavTabs() {
+export default function MainNavnavTabs(props) {
   const classes = useStyles();
   const [anchor, setAnchor] = useState(null)
   const [showMenu, setShowMenu] = useState("")
@@ -39,7 +39,7 @@ export default function MainNavnavTabs() {
   }
 
   const handleClose = event => {
-    if (anchor === event.currentTarget.title || !mainNav.current.contains(event.target)) {
+    if (mainNav.current === null || anchor === event.currentTarget.title || !mainNav.current.contains(event.target)) {
       setAnchor(null)
       setShowMenu("")
 
@@ -105,17 +105,24 @@ export default function MainNavnavTabs() {
 
               <Typography variant="subtitle2">
                 <List dense disablePadding>
+                  <RouterLink to="/pages/church"
+                  >
                   <ListItem className="subNav">
                     <ListItemText>
                       About Us
                     </ListItemText>
                   </ListItem>
+                  </RouterLink>
 
+                  <RouterLink to = "/pages/biggerchurch"
+                  >
                   <ListItem className="subNav">
                     <ListItemText>
                       What to Expect
                     </ListItemText>
-                  </ListItem>
+                  </ListItem>                  
+                  </RouterLink>
+
 
                   <ListItem className="subNav">
                     <ListItemText>
