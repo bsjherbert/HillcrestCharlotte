@@ -16,7 +16,7 @@ sermonsController.get('/', (req, res) => {
 sermonsController.get('/seedSermons', (req, res) => {
 
     seedSermon.forEach(seed => {
-         console.log(seed);
+        // console.log(seed);
         db.Sermons.create(seed)
         .then(newSermon => console.log(newSermon))
         .catch(err => console.log(err))  
