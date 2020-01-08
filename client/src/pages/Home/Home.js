@@ -3,8 +3,10 @@ import "@brainhubeu/react-carousel/lib/style.css";
 import CarouselWithDots from "../../components/CarouselWithDots";
 import ImageSlide from "../../components/ImageSlide";
 import ImageSlideProps from "../../lib/ImageSlideProps.json";
-import SimpleCard from "../../components/SimpleCard";
+import BookCard from "../../components/BookCard";
+import SermonCard from "../../components/SermonCard";
 import ReadingCard from "../../components/ReadingCard";
+// import Grid from "@material-ui/core/grid"
 
 class HomePage extends Component {
   render() {
@@ -55,10 +57,19 @@ class HomePage extends Component {
           </CarouselWithDots>
         </div>
         <div style={classes.cardContainer}>
+          {/* <Grid
+          container 
+          spacing={10}
+          style={{padding: "50px"}}
+          ><Grid
+          item 
+          xs={12} sm={6} md={4} lg={4} xl={3}> */}
+         
           <ReadingCard title={infoCardTitle} />
-          <SimpleCard />
-          <SimpleCard />
-          <SimpleCard />
+          <SermonCard />
+          <BookCard />
+          {/* </Grid>
+          </Grid> */}
         </div>
       </div>
     );
