@@ -9,10 +9,11 @@ import { List, ListItem, ListItemText } from "@material-ui/core";
 import Api from "../../lib/API";
 import ReadingItems from "./ReadingItems";
 
+
 //style text content here
 const useStyles = makeStyles(theme => ({
   card: {
-    width: "23%",
+    width: "25%",
     backgroundColor: theme.palette.secondary.main
   },
   bullet: {
@@ -26,7 +27,7 @@ const useStyles = makeStyles(theme => ({
   pos: {
     marginBottom: 12
   }
-  //   p: {
+ //   p: {
   //       paddingBottom: "2%"
   //   }
 }));
@@ -63,6 +64,8 @@ const ReadingCard = props => {
   const bull = <span className={classes.bullet}>•</span>;
 
   return (
+    
+
     <Card className={classes.card}>
       <CardContent>
         <Typography variant="h6" color="primary">
@@ -83,9 +86,10 @@ const ReadingCard = props => {
         </List>
       </CardContent>
       <CardActions>
-        <Button color="primary">Learn More</Button>
+        <Button>Full Plan</Button>
       </CardActions>
     </Card>
+    
   );
 };
 

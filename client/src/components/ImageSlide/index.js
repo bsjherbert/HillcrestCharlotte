@@ -4,7 +4,7 @@ function ImageSlide(props) {
   return (
     // the height in the anchor tag determines the height of the image slide in the Carousel
     <a href={props.linkTo} style={{ height: "50vh", position: "static" }}>
-      <h3 style={{
+      {/* <h3 style={{
         position: props.position,
         backgroundColor: props.backgroundColor,
         height: props.height,
@@ -18,7 +18,7 @@ function ImageSlide(props) {
       }}
       >
         {props.imageText}
-      </h3>
+      </h3> */}
       <img style={{ height: "100%", width: "100%", objectFit: "cover" }}
         src={props.url} alt={props.alt} />
     </a>
