@@ -27,10 +27,9 @@ export default function TestComp2(props) {
   const classes = useStyles();
 //   const bull = <span className={classes.bullet}>•</span>;
 
-useEffect(() => {
-  console.log("test<=================")
-  this.props.onPageChange(1)
-})
+React.useEffect(() => {
+  props.pageEquals(0)
+ })
 
   return (
     <Card className={classes.card}>

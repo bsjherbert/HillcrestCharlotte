@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link as RouterLink } from "react-router-dom";
+
 import { makeStyles } from '@material-ui/core/styles';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import List from '@material-ui/core/List';
@@ -15,20 +17,20 @@ import {Link} from '@material-ui/core';
 const useStyles = makeStyles(theme => ({
     root: {
         width: '100%',
-        // maxWidth: 360,
         backgroundColor: theme.palette.background.paper,
     },
     nested: {
         paddingLeft: theme.spacing(4),
     },
 }));
-
 export default function NestedList(props) {
+    console.log(props)
     const classes = useStyles();
     
     const initOpen = {};
-    props.sideNav.submenus.forEach(submenu => {
-        initOpen[submenu.id] = false;
+    props.allMenus[props.page].submenus.forEach(all => {
+        console.log(all)
+        initOpen[all.id] = false;
     })
 
     const [open, setOpen] = React.useState(initOpen);
@@ -45,13 +47,12 @@ export default function NestedList(props) {
             aria-labelledby="sideNav"
             subheader={
                 <ListSubheader component="menu" id="sideNav">
-                    {props.sideNav.title}
+                    {props.allMenus[props.page].title}
                 </ListSubheader>
             }
-            className={classes.root}
-        >
+            className={classes.root}>
 
-            {props.sideNav.submenus.map(submenu => {
+            {props.allMenus[props.page].submenus.map(submenu => {
                 console.log(open)
                 return (
                     <div>
@@ -65,7 +66,7 @@ export default function NestedList(props) {
 
                         {submenu.links.map(link => {
                             return (                                
-                                <Link color="primary" href={link.href}>
+                                <RouterLink to={link.href}>
                                     <Collapse in={open[submenu.id]} timeout="auto" unmountOnExit>
                                         <List component="div" disablePadding>
                                             <ListItem button className={classes.nested}>
@@ -76,7 +77,7 @@ export default function NestedList(props) {
                                             </ListItem>
                                         </List>
                                     </Collapse>
-                                </Link>
+                                </RouterLink>
                             )
                         })}
 

@@ -22,7 +22,6 @@ import PageTemplate from "../../components/Pagetemplate"
 
 import HillcrestTheme from "./theme";
 import "./App.css";
-import { Pages } from "@material-ui/icons";
 
 class App extends Component {
   constructor(props) {
@@ -58,7 +57,6 @@ class App extends Component {
       menu: {
         isOpen: false
       },
-      sideNav: {},
       allMenus: [
         {
           title: "I'm New",
@@ -69,11 +67,11 @@ class App extends Component {
               links: [
                 {
                   title: "About Us",
-                  href: "#"
+                  href: "/pages/About-Us"
                 },
                 {
                   title: "What to Expect",
-                  href: "#"
+                  href: "/pages/What-to-Expect"
                 },
                 {
                   title: "Connection Card",
@@ -168,6 +166,47 @@ class App extends Component {
           ]
         },
         {
+          title: "Learn",
+          submenus: [
+            {
+              title:"Gather",
+              id: "gather",
+              links: [
+                {
+                  title: "Sunday School(All Ages)",
+                  href:"#"
+                },
+                {
+                  title: "Sunday Worship Service",
+                  href:"#"
+                }
+              ]
+            },
+            {
+              title:"Resources",
+              id:"resources",
+              links: [
+                {
+                  title:"Service Sermons",
+                  href:"#"
+                },
+                {
+                  title:"Book of the Month",
+                  href:"#"
+                },
+                {
+                  title: "365 Reading Plan",
+                  href:"#"
+                },
+                {
+                  title:"e-Library",
+                  href:"#"
+                }
+              ]
+            }
+          ]
+        },
+        {
           title: "Serve",
           submenus: [
             {
@@ -227,10 +266,6 @@ class App extends Component {
     };
   }
 
-  handlePageChange = (page) => {
-    this.setState({ sideNav: this.state.allMenus[page] })
-  }
-
   componentDidMount() {
     const { authToken } = this.state.auth;
     if (!authToken) return;
@@ -242,7 +277,6 @@ class App extends Component {
       )
       .catch(err => console.log(err));
   }
-
 
 
   render() {
@@ -259,8 +293,7 @@ class App extends Component {
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/connection" component={ConnectionCard} />
-                {/* <Route path="/pages" component={PageTemplate} /> */}
-                <Route path="/pages" render={(props) => <PageTemplate {...props} pagechange={this.handlePageChange} />} />
+                <Route path="/pages" render={(props) => <PageTemplate {...props} allMenus={this.state.allMenus} />} />
                 <PrivateRoute path="/dashboard" component={Dashboard} />
                 <Route component={NotFound} />
               </Switch>

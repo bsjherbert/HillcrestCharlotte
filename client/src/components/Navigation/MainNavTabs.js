@@ -105,8 +105,8 @@ export default function MainNavnavTabs(props) {
 
               <Typography variant="subtitle2">
                 <List dense disablePadding>
-                  <RouterLink to="/pages/church"
-                  >
+
+                  <RouterLink to="/pages/About-Us">
                   <ListItem className="subNav">
                     <ListItemText>
                       About Us
@@ -114,8 +114,7 @@ export default function MainNavnavTabs(props) {
                   </ListItem>
                   </RouterLink>
 
-                  <RouterLink to = "/pages/biggerchurch"
-                  >
+                  <RouterLink to = "/pages/What-to-Expect">
                   <ListItem className="subNav">
                     <ListItemText>
                       What to Expect
@@ -123,7 +122,7 @@ export default function MainNavnavTabs(props) {
                   </ListItem>                  
                   </RouterLink>
 
-
+                <RouterLink to = "/pages/Connection-Card">
                   <ListItem className="subNav">
                     <ListItemText>
                       <Link href="connection" color="inherit">
@@ -131,12 +130,15 @@ export default function MainNavnavTabs(props) {
                       </Link>
                     </ListItemText>
                   </ListItem>
+                  </RouterLink>
 
+                  <RouterLink to = "/pages/Contact-Us">
                   <ListItem className="subNav">
                     <ListItemText>
                       Contact Us
                     </ListItemText>
                   </ListItem>
+                  </RouterLink>
                 </List>
               </Typography>
             </Grid>
