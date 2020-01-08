@@ -27,7 +27,7 @@ export default function ImNew(props) {
   const classes = useStyles();
 
 React.useEffect(() => {
- props.pageEquals(1)
+ props.pageEquals(4)
 })
 
   return (
@@ -37,7 +37,7 @@ React.useEffect(() => {
           {props.title}
         </Typography>
         <Typography variant="h3" component="p">
-          Add connect title here
+          Add serve title here
         </Typography>
         <Typography variant="h4" component="p">
           Add subtitle here

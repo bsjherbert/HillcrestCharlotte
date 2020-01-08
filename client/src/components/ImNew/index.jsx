@@ -37,7 +37,7 @@ React.useEffect(() => {
           {props.title}
         </Typography>
         <Typography variant="h3" component="p">
-          Add bigger title here
+          Add Im New title here
         </Typography>
         <Typography variant="h4" component="p">
           Add  bigger subtitle here

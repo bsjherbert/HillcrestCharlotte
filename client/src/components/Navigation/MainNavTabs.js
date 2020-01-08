@@ -227,11 +227,16 @@ export default function MainNavnavTabs(props) {
 
               <Typography variant="subtitle2">
                 <List dense disablePadding>
+
+                  <RouterLink to = "/pages/Information">
+
                   <ListItem className="subNav">
                     <ListItemText>
                       Information
                     </ListItemText>
                   </ListItem>
+                  </RouterLink>
+                  
                 </List>
               </Typography>
             </Grid>

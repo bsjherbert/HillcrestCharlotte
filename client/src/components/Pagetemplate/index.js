@@ -66,6 +66,10 @@ const  Pagetemplate = (props)=> {
                  <Route exact path = "/pages/Hillcrest-Kids" render = {(props) => {
                      return <ImNew {...props} pageEquals = {setPage}/>
                  }}/>
+                 {/* This is the "Connect" => */}
+                 <Route exact path = "/pages/Information" render = {(props) => {
+                     return <ImNew {...props} pageEquals = {setPage}/>
+                 }}/>
 
             </Switch>
         </Grid>
