@@ -95,7 +95,7 @@ const ReadingCard = props => {
         </List>
       </CardContent>
       <CardActions>
-        <Button>Full Plan</Button>
+        <Button size="small" color="primary" href="#readingplan" to="#">Full Plan</Button>
       </CardActions>
       </CardActionArea>
  
