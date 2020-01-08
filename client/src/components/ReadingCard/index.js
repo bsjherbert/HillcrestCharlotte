@@ -5,31 +5,34 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { List, ListItem, ListItemText } from "@material-ui/core";
+import { List } from "@material-ui/core";
 import Api from "../../lib/API";
 import ReadingItems from "./ReadingItems";
+// import Grid from "@material-ui/core/Grid"
 
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardMedia from '@material-ui/core/CardMedia';
 
 //style text content here
 const useStyles = makeStyles(theme => ({
   card: {
-    width: "25%",
+    width: "31%",
     backgroundColor: theme.palette.secondary.main
   },
-  bullet: {
-    display: "inline-block",
-    margin: "0 2px",
-    transform: "scale(0.8)"
+  media: {
+    height: 140,
   },
+  // bullet: {
+  //   display: "inline-block",
+  //   margin: "0 2px",
+  //   transform: "scale(0.8)"
+  // },
   title: {
     fontSize: 14
   },
   pos: {
     marginBottom: 12
   }
- //   p: {
-  //       paddingBottom: "2%"
-  //   }
 }));
 
 const ReadingCard = props => {
@@ -61,12 +64,21 @@ const ReadingCard = props => {
   }, []);
 
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
+  // const bull = <span className={classes.bullet}>•</span>;
 
   return (
     
-
+      
+    
     <Card className={classes.card}>
+
+<CardActionArea>
+        <CardMedia
+          className={classes.media}
+          image="/images/ReadingPlanCard2.jpg"
+          title="Contemplative Reptile"
+        />
+       
       <CardContent>
         <Typography variant="h6" color="primary">
           Reading Plan
@@ -88,7 +100,12 @@ const ReadingCard = props => {
       <CardActions>
         <Button>Full Plan</Button>
       </CardActions>
+      </CardActionArea>
+ 
+
+      
     </Card>
+
     
   );
 };
