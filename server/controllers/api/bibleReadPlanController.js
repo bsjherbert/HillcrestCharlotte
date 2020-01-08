@@ -14,7 +14,7 @@ bibleReadPlanController.get('/', (req, res) => {
 
 bibleReadPlanController.get('/seed', (req, res) => {
     seedData.forEach(seed => {
-        // console.log(seed);
+         //console.log(seed);
         db.BibleReadingPlan.create(seed)
         .then(newPlan => console.log(newPlan))
         .catch(err => console.log(err))  
