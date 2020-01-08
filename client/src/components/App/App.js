@@ -17,7 +17,6 @@ import NotFound from "../../pages/NotFound/NotFound";
 import Footer from '../Footer';
 import PageContainer from "../../components/PageContainer";
 import PageTemplate from "../../components/Pagetemplate"
-// import test from '../../pages/testPage'
 
 
 import HillcrestTheme from "./theme";
@@ -75,7 +74,7 @@ class App extends Component {
                 },
                 {
                   title: "Connection Card",
-                  href: "#"
+                  href: "/pages/Connection-Card"
                 },
                 {
                   title: "Contact Us",
@@ -89,15 +88,15 @@ class App extends Component {
               links: [
                 {
                   title: "The Gospel",
-                  href: "#"
+                  href: "/pages/The-Gospel"
                 },
                 {
                   title: "Statement of Faith",
-                  href: "#"
+                  href: "/pages/Statement-of-Faith"
                 },
                 {
                   title: "Constitution",
-                  href: "#"
+                  href: "/pages/Constitution"
                 },
               ]
             },
@@ -107,15 +106,15 @@ class App extends Component {
               links: [
                 {
                   title: "Pastors",
-                  href: "#"
+                  href: "/pages/Pastors"
                 },
                 {
                   title: "Deacons",
-                  href: "#"
+                  href: "/pages/Deacons"
                 },
                 {
                   title: "Hillcrest Kids",
-                  href: "#"
+                  href: "/pages/Hillcrest Kids"
                 },
               ]
             }

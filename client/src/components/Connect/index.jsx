@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -23,13 +23,13 @@ const useStyles = makeStyles({
   },
 });
 
-export default function TestComp2(props) {
+export default function ImNew(props) {
   const classes = useStyles();
 //   const bull = <span className={classes.bullet}>•</span>;
 
 React.useEffect(() => {
-  props.pageEquals(0)
- })
+ props.pageEquals(1)
+})
 
   return (
     <Card className={classes.card}>
@@ -38,17 +38,17 @@ React.useEffect(() => {
           {props.title}
         </Typography>
         <Typography variant="h3" component="p">
-          Add bigger title here
+          Add title here
         </Typography>
         <Typography variant="h4" component="p">
-          Add  bigger subtitle here
+          Add subtitle here
         </Typography>
         <Typography variant="body1" component="p">
-          Add yellow text here
+          Add text here
           <br />
         </Typography>
         <Typography variant="h4" component="p">
-          Add blue subtitle here
+          Add subtitle here
         </Typography>
         <Typography variant="body1" component="p">
           Add text here

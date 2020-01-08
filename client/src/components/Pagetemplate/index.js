@@ -4,8 +4,8 @@ import {Grid, Link} from '@material-ui/core';
 import flower from './images/flower.jpg'
 import Sidebar from '../../components/sidebarcard'
 import { Switch, Route } from "react-router-dom";
-import TestComp from "../testComp"
-import TestComp2 from "../testComp2"
+import ImNew from "../ImNew"
+import Connect from "../Connect"
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -33,13 +33,40 @@ const  Pagetemplate = (props)=> {
         <Grid item xs={8}>
           <img src ={flower} width="100%" alt = "plant"/>
             <Switch>
-                {/* we are passing the handlepagechange function from the app.js file, but are unable to pass it to the 2nd child component  TestComp*/}
-                <Route exact path ="/pages/About-Us"  render={(props) =>{
-                    return <TestComp {...props} pageEquals={setPage} />
+                {/* This is the "IM NEW" => welcome to hillcrest*/}
+                <Route exact path = "/pages/About-Us"  render= {(props) =>{
+                    return <ImNew {...props} pageEquals = {setPage} />
                 }}/>
-                <Route exact path ="/pages/What-to-Expect" render={(props) => {
-                    return <TestComp2 {...props} pageEquals={setPage}/>
+                <Route exact path = "/pages/What-to-Expect" render= {(props) => {
+                    return <ImNew {...props} pageEquals = {setPage}/>
                 }}/>
+                <Route exact path = "/pages/Connection-Card" render= {(props) => {
+                    return <ImNew {...props} pageEquals = {setPage}/>
+                }}/>
+                <Route exact path = "/pages/Contact-Us" render = {(props) =>{
+                    return <ImNew {...props} pageEquals = {setPage}/>
+                }}/>
+                 {/* This is the "IM NEW" => Our Beliefs*/}
+                 <Route exact path = "/pages/The-Gospel" render = {(props) =>{
+                     return <ImNew {...props} pageEquals={setPage}/>
+                 }}/>
+                 <Route exact path = "/pages/Statement-of-Faith" render = {(props) =>{
+                     return <ImNew {...props} pageEquals = {setPage}/>
+                 }}/>
+                 <Route exact path = "/pages/Constitution" render = {(props) =>{
+                     return <ImNew {...props} pageEquals = {setPage}/>
+                 }}/>
+                 {/* This is the "IM NEW" => LeadershipTeam*/}
+                 <Route exact path = "/pages/Pastors" render = {(props) =>{
+                     return <ImNew {...props} pageEquals = {setPage}/>
+                 }}/>
+                 <Route exact path = "/pages/Deacons" render = {(props) => {
+                     return <ImNew {...props} pageEquals = {setPage}/>
+                 }}/>
+                 <Route exact path = "/pages/Hillcrest-Kids" render = {(props) => {
+                     return <ImNew {...props} pageEquals = {setPage}/>
+                 }}/>
+
             </Switch>
         </Grid>
 
