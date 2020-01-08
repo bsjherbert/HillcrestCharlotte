@@ -1,13 +1,11 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Modal from "@material-ui/core/Modal";
-import Backdrop from "@material-ui/core/Backdrop";
-import Fade from "@material-ui/core/Fade";
-import { Typography } from "@material-ui/core";
 import { Redirect } from "react-router-dom";
+import { Link as RouterLink} from"react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+import { Modal, Backdrop, Typography, Fade } from "@material-ui/core";
+import { HomeRounded } from "@material-ui/icons";
+
 import Background from "../../App/connected.png";
-import { Link } from "react-router-dom";
-import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -20,7 +18,9 @@ const useStyles = makeStyles(theme => ({
     backgroundImage: `url(${Background})`,
     border: "3px solid rgb(223, 202, 151)",
     boxShadow: theme.shadows[5],
-    padding: theme.spacing(2, 4, 3)
+    padding: theme.spacing(3),
+    minWidth: "50vw",
+    maxWidth: "50vw"
   },
   hr: {
     borderColor: theme.palette.primary.main,
@@ -30,9 +30,15 @@ const useStyles = makeStyles(theme => ({
   },
   days: {
     color: "#473d2e"
+  },
+  message: {
+    color: theme.palette.success.dark,
+    margin: "1.5rem 5vw",
+    textAlign: "center"
   }
-}));
-const TimeLocationModal = props => {
+}))
+
+const ConfirmationModal = props => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [opened, setOpened] = React.useState(false);
@@ -40,6 +46,7 @@ const TimeLocationModal = props => {
   const handleOpen = () => {
     setOpen(true);
   };
+  
   const handleClose = () => {
     setOpen(false);
     setRedirect(true);
@@ -49,7 +56,7 @@ const TimeLocationModal = props => {
     setOpened(true);
   }
   if (redirect) {
-    return <Redirect to={{ pathname: "/" }} />;
+    return <Redirect to="/" />;
   }
   return (
     <div>
@@ -69,22 +76,21 @@ const TimeLocationModal = props => {
           <div className={classes.paper}>
             <Typography
               id="modal-title"
+              component="h1"
               variant="h4"
               color="textSecondary"
               style={{ textAlign: "center" }}
             >
-              Success!!!
+              Thank You!
             </Typography>
             <hr className={classes.hr} />
-            <div id="modal-description" style={{ textAlign: "center" }}>
-              <Button component={Link} to="/" color="primary">
-                Go Home
-              </Button>
-            </div>
+            <Typography component="p" variant="h6" className={classes.message}>
+              Your connection card has been submitted! A member of the Hillcrest Staff will be in contact with you soon.
+            </Typography>
           </div>
         </Fade>
       </Modal>
     </div>
   );
 };
-export default TimeLocationModal;
+export default ConfirmationModal;
