@@ -27,7 +27,7 @@ import { Pages } from "@material-ui/icons";
 class App extends Component {
   constructor(props) {
     super(props);
-    
+
     this.handleLogin = (user, authToken) => {
       TokenStore.setToken(authToken);
       this.setState(prevState => ({
@@ -61,78 +61,175 @@ class App extends Component {
       sideNav: {},
       allMenus: [
         {
-            title: "I'm New",
-            submenus: [
+          title: "I'm New",
+          submenus: [
+            {
+              title: "Welcome to Hillcrest",
+              id: "welcomeHillcrest",
+              links: [
                 {
-                     title: "Welcome to Hillcrest",
-                     id: "welcomeHillcrest",
-                     links: [
-                         {
-                             title: "About Us",
-                             href:"#"
-                         },
-                         {
-                             title: "What to Expect",
-                             href:"#"
-                         }
-                     ]
+                  title: "About Us",
+                  href: "#"
                 },
                 {
-                 title: "Our beliefs",
-                 id: "ourBeliefs",
-                 links: [
-                     {
-                         title: "The Gospel",
-                         href:"#"
-                     },
-                     {
-                         title: "Statement",
-                         href:"#"
-                     }
-                 ]
+                  title: "What to Expect",
+                  href: "#"
+                },
+                {
+                  title: "Connection Card",
+                  href: "#"
+                },
+                {
+                  title: "Contact Us",
+                  href: "#"
+                },
+              ]
+            },
+            {
+              title: "Our beliefs",
+              id: "ourBeliefs",
+              links: [
+                {
+                  title: "The Gospel",
+                  href: "#"
+                },
+                {
+                  title: "Statement of Faith",
+                  href: "#"
+                },
+                {
+                  title: "Constitution",
+                  href: "#"
+                },
+              ]
+            },
+            {
+              title: "Leadership Team",
+              id: "leadershipTeam",
+              links: [
+                {
+                  title: "Pastors",
+                  href: "#"
+                },
+                {
+                  title: "Deacons",
+                  href: "#"
+                },
+                {
+                  title: "Hillcrest Kids",
+                  href: "#"
+                },
+              ]
             }
-            ]
+          ]
         },
         {
-            title: "Connect",
-            submenus: [
+          title: "Connect",
+          submenus: [
+            {
+              title: "Become member",
+              id: "becomeMember",
+              links: [
                 {
-                     title: "Become member",
-                     id: "becomeMember",
-                     links: [
-                         {
-                             title: "Information",
-                             href:"#"
-                         }
-                     ]
+                  title: "Information",
+                  href: "#"
+                }
+              ]
+            },
+            {
+              title: "Join a Group",
+              id: "joinGroup",
+              links: [
+                {
+                  title: "Bible Study",
+                  href: "#"
                 },
                 {
-                 title: "Join a Group",
-                 id: "joinGroup",
-                 links: [
-                     {
-                         title: "Bible Study",
-                         href:"#"
-                     },
-                     {
-                         title: "Hillcrest Kids",
-                         href:"#"
-                     },
-                     {
-                         title: "Discipleship Groups",
-                         href:"#"
-                     }
-                 ]
+                  title: "Hillcrest Kids",
+                  href: "#"
+                },
+                {
+                  title: "Discipleship Groups",
+                  href: "#"
+                }
+              ]
+            },
+            {
+              title: "Life Services",
+              id: "lifeServices",
+              links: [
+                {
+                  title: "Marriage Counseling",
+                  href: "#"
+                }
+              ]
             }
-            ]
+
+          ]
         },
-       ]
+        {
+          title: "Serve",
+          submenus: [
+            {
+              title: "Welcome to Hillcrest",
+              id: "welcomeHillcrest",
+              links: [
+                {
+                  title: "Connection Card",
+                  href: "#"
+                },
+                {
+                  title: "What to Expect",
+                  href:"#"
+                },
+                {
+                  title: "FAQs",
+                  href:"#"
+                }
+              ]
+            },
+            {
+              title: "Our Beliefs",
+              id: "ourbeliefs",
+              links: [
+                {
+                  title: "The Gospel",
+                  href: "#"
+                },
+                {
+                  title: "Statement of Faith",
+                  href: "#"
+                },
+                {
+                  title: "Constitution",
+                  href: "#"
+                }
+              ]
+            },
+            {
+              title: "LeaderShip Team",
+              id: "leadershipTeam",
+              links: [
+                {
+                  title: "Elders",
+                  href: "#"
+                },
+                {
+                  title:"deacons",
+                  href: "#"
+                }
+              ]
+            }
+
+          ]
+        }
+      ]
     };
   }
 
- handlePageChange = (page) => {
-  this.setState({sideNav: this.state.allMenus[page]})
-}
+  handlePageChange = (page) => {
+    this.setState({ sideNav: this.state.allMenus[page] })
+  }
 
   componentDidMount() {
     const { authToken } = this.state.auth;
@@ -146,7 +243,7 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-  
+
 
   render() {
     return (
@@ -156,7 +253,7 @@ class App extends Component {
             <TopNav />
             <PageContainer>
               <MainNav isOpen={this.state.isOpen}
-              onPageChange = {this.handlePageChange} />
+                onPageChange={this.handlePageChange} />
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/login" component={Login} />
