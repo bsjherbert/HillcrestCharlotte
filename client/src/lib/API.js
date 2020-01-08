@@ -2,15 +2,15 @@ import axios from "axios";
 
 export default {
   Users: {
-    login: function(email, password) {
+    login: function (email, password) {
       return axios.post("/api/users/login", { email, password });
     },
 
-    create: function(firstName, lastName, email, password) {
+    create: function (firstName, lastName, email, password) {
       return axios.post("/api/users", { firstName, lastName, email, password });
     },
 
-    getMe: function(authToken) {
+    getMe: function (authToken) {
       return axios.get("/api/users/me", {
         headers: {
           Authorization: `Bearer ${authToken}`
@@ -20,13 +20,13 @@ export default {
   },
 
   ConnectionCard: {
-    create: function(connCard) {
+    create: function (connCard) {
       return axios.post("/api/connection-card/", connCard);
     }
   },
 
   Secrets: {
-    getAll: function(authToken) {
+    getAll: function (authToken) {
       return axios.get("/api/secrets", {
         headers: {
           Authorization: `Bearer ${authToken}`
@@ -35,9 +35,11 @@ export default {
     }
   },
 
-  ReadingPlan:{ get: function(){
-    return axios.get("/api/bible-reading-plan/")
-  }}
+  ReadingPlan: {
+    get: function () {
+      return axios.get("/api/bible-reading-plan/")
+    }
+  }
 
 
 };
