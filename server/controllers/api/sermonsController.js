@@ -27,7 +27,7 @@ sermonsController.get('/seedSermons', (req, res) => {
 
 sermonsController.get('/:book', (req, res) => {
 
-    db.Sermons.find({ bookBible: req.params.book })
+    db.Sermons.find({ normalizedBook: req.params.book.toLowerCase() })
         .then(results => {
             res.json(results);
         })

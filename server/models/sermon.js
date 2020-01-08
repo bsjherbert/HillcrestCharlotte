@@ -5,6 +5,7 @@ const SermonSchema = new Schema({
 
     sermonDate: { type: Date, default: Date.now },
     bookBible: { type: String, trim: true, required: "Bible book is Required" },
+    normalizedBook: String,
     verses: { type: String, trim: true, required: "Bible verse is Required" },
     title: { type: String, trim: true, required: "Sermon Title is Required" },
     speaker: String,
