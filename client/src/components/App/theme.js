@@ -33,6 +33,11 @@ const HillcrestTheme = createMuiTheme({
       "dark":"rgba(149, 20, 0, 1)",
       "contrastText":"#fff"
     },
+    success: {
+      "light": "#56d242",
+      "main": "#00a000",
+      "dark": "#007000"
+    },
     "text":{
       "primary":"rgb(128,128,128)",
       "secondary":"rgba(8, 53, 108, 1)",
