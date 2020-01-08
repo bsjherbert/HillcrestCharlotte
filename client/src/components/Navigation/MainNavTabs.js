@@ -16,8 +16,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-
-export default function MainNavnavTabs() {
+export default function MainNavnavTabs(props) {
   const classes = useStyles();
   const [anchor, setAnchor] = useState(null)
   const [showMenu, setShowMenu] = useState("")
@@ -39,7 +38,7 @@ export default function MainNavnavTabs() {
   }
 
   const handleClose = event => {
-    if (anchor === event.currentTarget.title || !mainNav.current.contains(event.target)) {
+    if (mainNav.current === null || anchor === event.currentTarget.title || !mainNav.current.contains(event.target)) {
       setAnchor(null)
       setShowMenu("")
 
@@ -105,18 +104,24 @@ export default function MainNavnavTabs() {
 
               <Typography variant="subtitle2">
                 <List dense disablePadding>
+
+                  <RouterLink to="/pages/About-Us">
                   <ListItem className="subNav">
                     <ListItemText>
                       About Us
                     </ListItemText>
                   </ListItem>
+                  </RouterLink>
 
+                  <RouterLink to = "/pages/What-to-Expect">
                   <ListItem className="subNav">
                     <ListItemText>
                       What to Expect
                     </ListItemText>
-                  </ListItem>
+                  </ListItem>                  
+                  </RouterLink>
 
+                <RouterLink to = "/pages/Connection-Card">
                   <ListItem className="subNav">
                     <ListItemText>
                       <Link href="connection" color="inherit">
@@ -124,12 +129,15 @@ export default function MainNavnavTabs() {
                       </Link>
                     </ListItemText>
                   </ListItem>
+                  </RouterLink>
 
+                  <RouterLink to = "/pages/Contact-Us">
                   <ListItem className="subNav">
                     <ListItemText>
                       Contact Us
                     </ListItemText>
                   </ListItem>
+                  </RouterLink>
                 </List>
               </Typography>
             </Grid>
@@ -141,23 +149,31 @@ export default function MainNavnavTabs() {
 
               <Typography variant="subtitle2">
                 <List dense disablePadding>
+
+                  <RouterLink to = "/pages/The-Gospel">
                   <ListItem className="subNav">
                     <ListItemText>
                       The Gospel
                     </ListItemText>
                   </ListItem>
+                  </RouterLink>
 
+                  <RouterLink to = "/pages/Statement-of-Faith">
                   <ListItem className="subNav">
                     <ListItemText>
                       Statement of Faith
                     </ListItemText>
                   </ListItem>
+                  </RouterLink>
 
+                  <RouterLink to = "/pages/Constitution">
                   <ListItem className="subNav">
                     <ListItemText>
                       Constitution
                     </ListItemText>
                   </ListItem>
+                  </RouterLink>
+
                 </List>
               </Typography>
             </Grid>
@@ -169,23 +185,31 @@ export default function MainNavnavTabs() {
 
               <Typography variant="subtitle2">
                 <List dense disablePadding>
+                  
+                  <RouterLink to = "/pages/Pastors">  
                   <ListItem className="subNav">
                     <ListItemText>
                       Pastors
                     </ListItemText>
                   </ListItem>
+                  </RouterLink>
 
+                  <RouterLink to = "/pages/Deacons">
                   <ListItem className="subNav">
                     <ListItemText>
                       Deacons
                     </ListItemText>
                   </ListItem>
+                  </RouterLink>
 
+                  <RouterLink to = "/pages/Hillcrest-Kids">
                   <ListItem className="subNav">
                     <ListItemText>
                       Hillcrest Kids
                     </ListItemText>
                   </ListItem>
+                  </RouterLink>
+                  
                 </List>
               </Typography>
             </Grid>
