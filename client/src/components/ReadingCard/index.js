@@ -5,22 +5,21 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import { List } from "@material-ui/core";
+import { List, Grid } from "@material-ui/core";
 import Api from "../../lib/API";
 import ReadingItems from "./ReadingItems";
-// import Grid from "@material-ui/core/Grid"
-
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardMedia from '@material-ui/core/CardMedia';
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardMedia from "@material-ui/core/CardMedia";
 
 //style text content here
 const useStyles = makeStyles(theme => ({
   card: {
-    width: "31%",
+    height: "100%",
+    // width: "31%",
     backgroundColor: theme.palette.secondary.main
   },
   media: {
-    height: 140,
+    height: 140
   },
   // bullet: {
   //   display: "inline-block",
@@ -32,6 +31,13 @@ const useStyles = makeStyles(theme => ({
   },
   pos: {
     marginBottom: 12
+  },
+  gridList: {
+    width: 500,
+    height: 450
+  },
+  button: {
+    justifyContent: "center"
   }
 }));
 
@@ -67,46 +73,70 @@ const ReadingCard = props => {
   // const bull = <span className={classes.bullet}>•</span>;
 
   return (
-    
-      
-    
     <Card className={classes.card}>
-
-<CardActionArea>
+      <CardActionArea>
         <CardMedia
           className={classes.media}
           image="/images/ReadingPlanCard2.jpg"
           title="Contemplative Reptile"
         />
-       
-      <CardContent>
-        <Typography variant="h6" color="primary">
-          Reading Plan
-        </Typography>
-        <List dense="true">
-          {readingPlanArr.length && (
-            <ReadingItems verses={readingPlanArr[weekNumber].dailyVerses} />
-          )}
-        </List>
-        <Typography variant="h6" color="primary">
-          Memory Verse
-        </Typography>
-        <List dense="true" color="textPrimary" className={classes.p}>
-          {readingPlanArr.length && (
-            <ReadingItems verses={readingPlanArr[weekNumber].memoryVerses} />
-          )}
-        </List>
-      </CardContent>
-      <CardActions>
-        <Button>Full Plan</Button>
-      </CardActions>
+
+        <CardContent>
+          <Typography variant="h6" color="primary">
+            Weekly Reading Plan
+          </Typography>
+          <List dense="true">
+            {readingPlanArr.length && (
+              <ReadingItems verses={readingPlanArr[weekNumber].dailyVerses} />
+            )}
+          </List>
+
+          <Typography variant="h6" color="primary">
+            Weekly Memory Verse
+          </Typography>
+          <List dense="true" color="textPrimary" className={classes.p}>
+            {readingPlanArr.length && (
+              <ReadingItems verses={readingPlanArr[weekNumber].memoryVerses} />
+            )}
+          </List>
+
+          {/* <Grid container spacing={5}>
+            <Grid item xs={6}>
+              <Typography variant="h6" color="primary">
+                Reading Plan
+              </Typography>
+              <List dense="true">
+                {readingPlanArr.length && (
+                  <ReadingItems
+                    verses={readingPlanArr[weekNumber].dailyVerses}
+                  />
+                )}
+              </List>
+            </Grid>
+            <Grid item xs={6}>
+              <Typography variant="h6" color="primary">
+                Memory Verse
+              </Typography>
+              <List dense="true" color="textPrimary" className={classes.p}>
+                {readingPlanArr.length && (
+                  <ReadingItems
+                    verses={readingPlanArr[weekNumber].memoryVerses}
+                  />
+                )}
+              </List>
+            </Grid>
+          </Grid> */}
+        </CardContent>
+        <CardActions className={classes.button}>
+          <Button size="small" color="primary">
+            Share
+          </Button>
+          <Button size="small" color="primary">
+            Learn More
+          </Button>
+        </CardActions>
       </CardActionArea>
- 
-
-      
     </Card>
-
-    
   );
 };
 

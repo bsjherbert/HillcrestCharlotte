@@ -6,7 +6,7 @@ import ImageSlideProps from "../../lib/ImageSlideProps.json";
 import BookCard from "../../components/BookCard";
 import SermonCard from "../../components/SermonCard";
 import ReadingCard from "../../components/ReadingCard";
-// import Grid from "@material-ui/core/grid"
+import Grid from "@material-ui/core/grid";
 
 class HomePage extends Component {
   render() {
@@ -14,9 +14,6 @@ class HomePage extends Component {
 
     const classes = {
       cardContainer: {
-        display: "flex",
-        justifyContent: "space-between",
-        position: "relative",
         top: "2vh"
       }
     };
@@ -56,20 +53,17 @@ class HomePage extends Component {
             ))}
           </CarouselWithDots>
         </div>
-        <div style={classes.cardContainer}>
-          {/* <Grid
-          container 
-          spacing={10}
-          style={{padding: "50px"}}
-          ><Grid
-          item 
-          xs={12} sm={6} md={4} lg={4} xl={3}> */}
-         
-          <ReadingCard title={infoCardTitle} />
-          <SermonCard />
-          <BookCard />
-          {/* </Grid>
-          </Grid> */}
+        <div style={{ marginTop: "2vh" }}>
+          <Grid container spacing={5}>
+            <Grid item xs={12} md={6}>
+              <ReadingCard title={infoCardTitle} />
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <BookCard />
+              <SermonCard />
+            </Grid>
+            <Grid item xs={12} md={12}></Grid>
+          </Grid>
         </div>
       </div>
     );
