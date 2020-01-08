@@ -3,7 +3,7 @@ const db = require('../../models');
 const seedSermon = require('../../lib/seedSermons');
 
 sermonsController.get('/', (req, res) => {
-    db.Sermons.find({})
+    db.Sermons.find({}).sort( {sermonDate: -1, normalizedBook: 1})   
         .then(results => {
             res.json(results);
         })

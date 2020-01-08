@@ -1,12 +1,4 @@
 const seedSermons = [
-    {        
-        bookBible: "GENESIS",
-        normalizedBook:"genesis",
-        verses: "Genesis 1-2",
-        title: "Let There Be Light",
-        speaker: "Brad Herbert",
-        audioFileLink: "http://www.google.com"
-    },
     {
         sermonDate: "2019-12-22",
         bookBible: "GENESIS",
