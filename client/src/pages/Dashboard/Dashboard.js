@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-//import { Redirect } from 'react-router-dom';
+import { Typography, Link } from '@material-ui/core';
 
 import API from '../../lib/API';
 import AuthContext from '../../contexts/AuthContext';
 import HCBudgetPie from '../../components/Charts/Pie';
-import { labels, maxAmounts, sectionColors, hoverColors } from '../../components/Charts/testData';
+import { labels, maxAmounts, sectionColors, hoverColors } from '../../components/Charts/Pie/testData';
 
 class Dashboard extends Component {
   static contextType = AuthContext;
@@ -25,7 +25,11 @@ class Dashboard extends Component {
       .then(secrets => this.setState({ secrets }))
       .catch(err => {
         if (err.response.status === 401) {
-          return this.setState({ error: "Unauthorized. Please login." });
+          return this.setState({ error: 
+            <Typography component="h1" variant="h3" color="textSecondary">
+              "Unauthorized. Please <Link color="primary" href="login">login</Link>."
+            </Typography>
+         });
         }
 
         console.log(err);
@@ -45,8 +49,7 @@ class Dashboard extends Component {
             : (
               <div>
                 <header>
-                  <h1>Welcome!</h1>
-                  <h2>TESTING TESTING 123</h2>
+                  <h1>Welcome back!</h1>
                 </header>
                 <HCBudgetPie 
                   labels={labels}

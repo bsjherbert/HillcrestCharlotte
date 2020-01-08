@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Card from "@material-ui/core/Card";
-import CardActions from "@material-ui/core/CardActions";
-import CardContent from "@material-ui/core/CardContent";
-import Button from "@material-ui/core/Button";
-import Typography from "@material-ui/core/Typography";
-import { List } from "@material-ui/core";
+import { Card, CardActions, CardContent } from "@material-ui/core";
+import { Typography, List, Button } from "@material-ui/core";
+
 import Api from "../../lib/API";
 import ReadingItems from "./ReadingItems";
 // import Grid from "@material-ui/core/Grid"
@@ -83,7 +80,7 @@ const ReadingCard = props => {
         <Typography variant="h6" color="primary">
           Reading Plan
         </Typography>
-        <List dense="true">
+        <List dense={true}>
           {readingPlanArr.length && (
             <ReadingItems verses={readingPlanArr[weekNumber].dailyVerses} />
           )}
@@ -91,7 +88,7 @@ const ReadingCard = props => {
         <Typography variant="h6" color="primary">
           Memory Verse
         </Typography>
-        <List dense="true" color="textPrimary" className={classes.p}>
+        <List dense={true} color="textPrimary" className={classes.p}>
           {readingPlanArr.length && (
             <ReadingItems verses={readingPlanArr[weekNumber].memoryVerses} />
           )}

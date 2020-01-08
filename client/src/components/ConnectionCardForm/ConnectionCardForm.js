@@ -1,23 +1,17 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/styles";
-import API from "../../lib/API";
-import TextField from "@material-ui/core/TextField";
 import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
-import {
-  MuiPickersUtilsProvider,
-  KeyboardDatePicker
-} from "@material-ui/pickers";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import Checkbox from "@material-ui/core/Checkbox";
-import FormGroup from "@material-ui/core/FormGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormControl from "@material-ui/core/FormControl";
-import FormLabel from "@material-ui/core/FormLabel";
-import Button from "@material-ui/core/Button";
+import { MuiPickersUtilsProvider, KeyboardDatePicker } from "@material-ui/pickers";
+import { Checkbox, Button, Radio, RadioGroup, TextField } from "@material-ui/core";
+import { FormControl, FormControlLabel, FormGroup, FormLabel } from "@material-ui/core";
+import { SendRounded } from "@material-ui/icons";
+
+import API from "../../lib/API";
 import Modal from "../Modals/ConformationModal";
+
+
 const styles = (theme) => ({
   root: {
     display: "block",
@@ -38,6 +32,7 @@ const styles = (theme) => ({
     color: "black"
   }
 });
+
 class ConnectionCardForm extends Component {
   constructor(props) {
     super(props);
@@ -55,6 +50,7 @@ class ConnectionCardForm extends Component {
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
+
   handleInputChange(event) {
     if (event.target === undefined) {
       console.log(event);
@@ -69,6 +65,7 @@ class ConnectionCardForm extends Component {
     }
     console.log(this.state);
   }
+
   handleSubmit = e => {
     e.preventDefault();
     console.log(this.state);
@@ -79,6 +76,8 @@ class ConnectionCardForm extends Component {
       })
       .catch(err => console.log(err));
   };
+
+
   render() {
     const { classes } = this.props;
     return (
@@ -136,13 +135,13 @@ class ConnectionCardForm extends Component {
           />
 
           <FormControl component="fieldset" style={{ marginTop: "2rem", justifyContent: "center" }}>
-            <FormLabel component="legend" style={{paddingBottom: "1%"}}>Preferred Contact Method:</FormLabel>
+            <FormLabel component="legend" style={{ paddingBottom: "1%", fontWeight: "bolder" }}>Preferred Contact Method:</FormLabel>
             <RadioGroup
               aria-label="preferred contact method"
               name="contactMethod"
               value={this.state.contactMethod}
               onChange={this.handleInputChange}
-              row style={{justifyContent: "center", marginBottom: "1rem"}}
+              row style={{ justifyContent: "center", marginBottom: "1rem" }}
             >
               <FormControlLabel
                 value="email"
@@ -158,47 +157,47 @@ class ConnectionCardForm extends Component {
               />
             </RadioGroup>
 
-            <FormLabel component="legend" style={{paddingBottom: "2%"}}>What would you like to do?</FormLabel>
+            <FormLabel component="legend" style={{ paddingBottom: "2%", fontWeight: "bolder" }}>What would you like to do?</FormLabel>
             <FormGroup aria-label="options" className={classes.root}>
-                <FormControlLabel
-                  value="speakPastor"
-                  control={
-                    <Checkbox
-                      color="primary"
-                      checked={this.state.speakPastor}
-                      onChange={this.handleInputChange}
-                      name="speakPastor"
-                    />
-                  }
-                  label="I'd like to speak to a pastor"
-                  labelPlacement="end"
-                />
-                <FormControlLabel
-                  value="moreInfo"
-                  control={
-                    <Checkbox
-                      color="primary"
-                      checked={this.state.moreInfo}
-                      onChange={this.handleInputChange}
-                      name="moreInfo"
-                    />
-                  }
-                  label="I'd like more info about Hillcrest"
-                  labelPlacement="end"
-                />
-                <FormControlLabel
-                  value="questions"
-                  control={
-                    <Checkbox
-                      color="primary"
-                      checked={this.state.questions}
-                      onChange={this.handleInputChange}
-                      name="questions"
-                    />
-                  }
-                  label="I have questions about my relationship with God"
-                  labelPlacement="end"
-                />
+              <FormControlLabel
+                value="speakPastor"
+                control={
+                  <Checkbox
+                    color="primary"
+                    checked={this.state.speakPastor}
+                    onChange={this.handleInputChange}
+                    name="speakPastor"
+                  />
+                }
+                label="I would like to speak to a pastor."
+                labelPlacement="end"
+              />
+              <FormControlLabel
+                value="moreInfo"
+                control={
+                  <Checkbox
+                    color="primary"
+                    checked={this.state.moreInfo}
+                    onChange={this.handleInputChange}
+                    name="moreInfo"
+                  />
+                }
+                label="I would like more info about Hillcrest."
+                labelPlacement="end"
+              />
+              <FormControlLabel
+                value="questions"
+                control={
+                  <Checkbox
+                    color="primary"
+                    checked={this.state.questions}
+                    onChange={this.handleInputChange}
+                    name="questions"
+                  />
+                }
+                label="I have questions about my relationship with God."
+                labelPlacement="end"
+              />
             </FormGroup>
           </FormControl>
         </div>
@@ -210,10 +209,10 @@ class ConnectionCardForm extends Component {
           color="secondary"
           size="large"
           aria-label="submit connection card"
+          startIcon={<SendRounded style={{ fontSize: "inherit", position: "relative", bottom: "1px" }} />}
         >
           Submit
         </Button>
-        {/* <button onClick={e => this.handleSubmit(e)}>Submit</button> */}
         {/* Button, Button needs to call function that is coded at top. Console log the state */}
         <Modal opened={this.state.status} />
       </FormControl>
