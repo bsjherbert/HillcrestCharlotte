@@ -43,6 +43,7 @@ React.useEffect(() => {
         
           <br />
         </Typography>
+        {props.theObj.components ? props.theObj.components.map(component => component) : (null)}
       </CardContent>
       <CardActions>
         <Button size="small">Learn More</Button>

@@ -53,7 +53,6 @@ class HomePage extends Component {
             {/* <Grid item xs={12} md={12}></Grid> */}
           </Grid>
         </div>
-        <SermonTable />
       </div>
     );
   }
