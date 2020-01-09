@@ -4,13 +4,13 @@ import { withStyles } from "@material-ui/styles";
 import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from "@material-ui/pickers";
-import { Checkbox, Button, Radio, RadioGroup, TextField } from "@material-ui/core";
+import { Checkbox, Button, Radio, RadioGroup, TextField, isWidthDown } from "@material-ui/core";
 import { FormControl, FormControlLabel, FormGroup, FormLabel, FormHelperText } from "@material-ui/core";
 import { SendRounded } from "@material-ui/icons";
 
 import API from "../../lib/API";
 import Modal from "../Modals/ConformationModal";
-import usaStates from './usaStates';
+// import usaStates from './usaStates';
 
 
 const styles = theme => ({
@@ -30,13 +30,20 @@ const styles = theme => ({
     zIndex: 5
   },
   state: {
-    marginLeft: theme.spacing(2),
+    width: "10vw",
+    display: "inline-block",
+    [theme.breakpoints.up('lg')]: {
+      marginLeft: theme.spacing(3),
+    }
+  },
+  city: {
+    position: "relative"
   }
 });
 
-const error = {
-  name: null
-};
+// const error = {
+//   name: null
+// };
 
 class ConnectionCardForm extends Component {
   constructor(props) {
@@ -81,12 +88,12 @@ class ConnectionCardForm extends Component {
 
   handleSubmit = e => {
     console.log(this.state);
-    
+
     // if(this.state.address.other != "" && (this.state.address.street === "" || this.state.address.city === "" || this.state.address.zip === "") ) {
     //   e.preventDefault()
     //   this.setState({ error: true })
     // }
-    
+
     API.ConnectionCard.create(this.state)
       .then(connCard => {
         console.log(connCard);
@@ -140,8 +147,8 @@ class ConnectionCardForm extends Component {
             placeholder="Ex: John Doe"
             value={this.state.name}
             onChange={this.handleInputChange}
-            // error={this.handleError}
-            // helperText={this.state.message}
+          // error={this.handleError}
+          // helperText={this.state.message}
           />
           <TextField
             fullWidth
@@ -152,7 +159,7 @@ class ConnectionCardForm extends Component {
             placeholder="Ex: 8501 Bellhaven Blvd"
             value={this.state.address.street}
             onChange={this.handleInputChange}
-            // error={this.handleError}
+          // error={this.handleError}
           />
           <TextField
             fullWidth
@@ -165,7 +172,7 @@ class ConnectionCardForm extends Component {
             onChange={this.handleInputChange}
             helperText="Optional"
           />
-          <TextField
+          <TextField fullWidth
             name="city"
             id="field-city"
             label="City"
@@ -173,16 +180,26 @@ class ConnectionCardForm extends Component {
             placeholder="Ex: Charlotte"
             value={this.state.address.city}
             onChange={this.handleInputChange}
+            className={classes.city}
           />
-          <TextField
+          <TextField fullWidth
             name="state"
             id="field-state"
             label="State"
             type="address-level1"
             placeholder="NC"
-            value={this.state.address.state.toUpperCase()}
+            value={this.state.address.state}
             onChange={this.handleInputChange}
             className={classes.state}
+          />
+          <TextField fullWidth
+            name="zip"
+            id="field-zip"
+            label="Zip Code"
+            type="address-level1"
+            placeholder="28214"
+            value={this.state.address.zip}
+            onChange={this.handleInputChange}
           />
           <TextField
             fullWidth required
@@ -192,7 +209,7 @@ class ConnectionCardForm extends Component {
             label="Email"
             value={this.state.email}
             onChange={this.handleInputChange}
-            // error={this.handleError}
+          // error={this.handleError}
           />
           <TextField
             fullWidth required
@@ -202,11 +219,11 @@ class ConnectionCardForm extends Component {
             type="tel"
             value={this.state.telephone}
             onChange={this.handleInputChange}
-            // error={this.handleError}
+          // error={this.handleError}
           />
 
           <FormControl component="fieldset" style={{ marginTop: "2rem", justifyContent: "center" }} required>
-            <FormLabel component="legend" style={{ paddingBottom: "1%", fontWeight: "bolder" }}>Preferred Contact Method:</FormLabel>
+            <FormLabel component="legend" style={{ paddingBottom: "2%", fontWeight: "bolder" }}>Preferred Contact Method:</FormLabel>
             <RadioGroup
               aria-label="preferred contact method"
               name="contactMethod"
