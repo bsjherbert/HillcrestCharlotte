@@ -1250,7 +1250,10 @@ mkdirp@^0.5.0, mkdirp@^0.5.1:
   integrity sha1-MAV0OOrGz3+MR2fzhkjWaX11yQM=
   dependencies:
     minimist "0.0.8"
+<<<<<<< HEAD
+=======
 
+>>>>>>> 6ff628937662fe1530a24603cf556b005542d91e
 moment@^2.10.2:
   version "2.24.0"
   resolved "https://registry.yarnpkg.com/moment/-/moment-2.24.0.tgz#0d055d53f5052aa653c9f6eb68bb5d12bf5c2b5b"
@@ -1440,18 +1443,6 @@ object.pick@^1.3.0:
   integrity sha1-h6EKxMFpS9Lhy/U1kaZhQftd10c=
   dependencies:
     isobject "^3.0.1"
-
-octicons-modular@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/octicons-modular/-/octicons-modular-1.0.0.tgz#d12f962ca9b6222bec78978d2b21918586d3de1e"
-  integrity sha512-u/6d0Ohjfu/tLZWNBRKsFgPidIChduuM2eyQta5wt1IajjniqHS5C1RZH30yQry+mKrFfmalQE+SDPcT4dmiCA==
-
-octicons-react@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/octicons-react/-/octicons-react-1.0.0.tgz#d518caae1710acd3a79a3f88eb2dc49fd5c63c37"
-  integrity sha512-NfFG+Jzf8hkR3z60UNZY6FbOGNbx1StCkDMWuPTuEvXotSYDNrC5V/QUyXx0rM4MA+TtJ2lqH1lAVpz6/J7CEw==
-  dependencies:
-    octicons-modular "^1.0.0"
 
 once@^1.3.0, once@^1.3.1, once@^1.4.0:
   version "1.4.0"
