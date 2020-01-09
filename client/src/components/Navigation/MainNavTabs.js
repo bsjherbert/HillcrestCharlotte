@@ -346,6 +346,12 @@ export default function MainNavTabs(props) {
                         <Typography variant="caption" color="primary">2 Corinthians 9:6-8</Typography>
                       </ListItemText>
                     </ListItem>
+                    
+                    <ListItem className="subNav">
+                      <ListItemText>
+                        Give Today
+                      </ListItemText>
+                    </ListItem>
                   </List>
                 </Typography>
               </Grid>
@@ -371,7 +377,19 @@ export default function MainNavTabs(props) {
 
                     <ListItem className="subNav">
                       <ListItemText>
-                        Constitution
+                        King's Daughter's Ministry
+                      </ListItemText>
+                    </ListItem>
+
+                    <ListItem className="subNav">
+                      <ListItemText>
+                        Mt. Holly Community Relief Organization
+                      </ListItemText>
+                    </ListItem>
+
+                    <ListItem className="subNav">
+                      <ListItemText>
+                        Paw Creek Elementary
                       </ListItemText>
                     </ListItem>
                   </List>
@@ -397,9 +415,9 @@ export default function MainNavTabs(props) {
           )}
 
           {/* SHARE MENU */}
-          {anchor === "Learn" && (
+          {anchor === "Share" && (
             <Grid container direction="row" alignItems="flex-start" style={{ height: "inherit", width: "inherit", padding: "1rem 0" }}
-              justify="space-around" alignContent="center" aria-label="Visitor Resources">
+              justify="space-around" alignContent="center" aria-label="Share Resources">
               {/* SHARE: Sub Menu 1 */}
               <Grid item>
                 <Typography component="p" variant="subtitle1" align="left" color="primary">
@@ -413,7 +431,7 @@ export default function MainNavTabs(props) {
                         Sunday School (All ages) <br />
                         <Typography variant="caption" color="primary">
                           Weekly, 09:30am
-                      </Typography>
+                        </Typography>
                       </ListItemText>
                     </ListItem>
 
@@ -422,7 +440,7 @@ export default function MainNavTabs(props) {
                         Sunday Worship Service <br />
                         <Typography variant="caption" color="primary">
                           Weekly, 11:00am
-                      </Typography>
+                        </Typography>
                       </ListItemText>
                     </ListItem>
 
@@ -431,14 +449,14 @@ export default function MainNavTabs(props) {
                         MidWeek Bible Study <br />
                         <Typography variant="caption" color="primary">
                           Wednesdays, 06:30pm
-                      </Typography>
+                        </Typography>
                       </ListItemText>
                     </ListItem>
 
                     <ListItem className="subNav">
                       <ListItemText>
                         Discipleship Group (D-Groups)
-                    </ListItemText>
+                      </ListItemText>
                     </ListItem>
                   </List>
                 </Typography>
@@ -446,7 +464,7 @@ export default function MainNavTabs(props) {
               {/* SHARE: Sub Menu 2 */}
               <Grid item>
                 <Typography component="p" variant="subtitle1" color="primary" align="left">
-                  <strong>Resources</strong>
+                  <strong>Learning Resources</strong>
                 </Typography>
 
                 <Typography variant="subtitle2">
@@ -454,25 +472,25 @@ export default function MainNavTabs(props) {
                     <ListItem className="subNav">
                       <ListItemText>
                         Service Sermons
-                    </ListItemText>
+                      </ListItemText>
                     </ListItem>
 
                     <ListItem className="subNav">
                       <ListItemText>
                         Book of the Month
-                    </ListItemText>
+                      </ListItemText>
                     </ListItem>
 
                     <ListItem className="subNav">
                       <ListItemText>
                         365 Reading Plan
-                    </ListItemText>
+                      </ListItemText>
                     </ListItem>
 
                     <ListItem className="subNav">
                       <ListItemText>
                         e-Library
-                    </ListItemText>
+                      </ListItemText>
                     </ListItem>
                   </List>
                 </Typography>
