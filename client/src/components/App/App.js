@@ -55,29 +55,43 @@ class App extends Component {
       menu: {
         isOpen: false
       },
-      allMenus: [
-        {
+      allMenus: {
+        imnew:{
           title: "I'm New",
+          cat: "ImNew",
           submenus: [
             {
               title: "Welcome to Hillcrest",
               id: "welcomeHillcrest",
               links: [
                 {
+                  short:"about-us",
                   title: "About Us",
-                  href: "/pages/About-Us"
+                  href: "/pages/imnew/about-us",
+                  test: 'more stuff',
+                  content: `
+
+                  Hillcrest Baptist Church exists to love people genuinely, teach scripture faithfully and disciple believers fully in obedience to Christ our Lord.
+                  
+                  We are comprised of men, women and children from diverse backgrounds and experiences who share this common bond: we are imperfect individuals gathered to worship our perfect Heavenly Father. Whether Jesus Christ has been your Lord for many years or you are interested in learning more about what a relationship with Him might mean for your life, we invite you to visit and bring your honest questions and concerns.
+                  
+                  Hillcrest is a member of the Southern Baptist Convention, the Baptist State Convention of North Carolina, and the Metrolina Baptist Association.  In 2000, the Southern Baptist Convention published the Baptist Faith and Message which delineates the central tenets of our beliefs and supports them with scripture.  Please visit this link to explore these doctrinal statements that we affirm together as a body of believers.
+                  
+                  We invite you to explore our website to learn more about our church and we hope you’ll join us for one of our weekly services in the near future.  If you have questions about Hillcrest that aren’t addressed here, please feel free to contact us at churchoffice@hillcrestcharlotte.com.`
                 },
                 {
+                  short:"what-to-expect",
                   title: "What to Expect",
-                  href: "/pages/What-to-Expect"
+                  href: "/pages/imnew/what-to-expect",
+                  content: `test`
                 },
                 {
                   title: "Connection Card",
-                  href: "/pages/Connection-Card"
+                  href: "/pages/connection-card"
                 },
                 {
                   title: "Contact Us",
-                  href: "#"
+                  href: "/pages/contact-us"
                 },
               ]
             },
@@ -87,15 +101,15 @@ class App extends Component {
               links: [
                 {
                   title: "The Gospel",
-                  href: "/pages/The-Gospel"
+                  href: "/pages/the-gospel"
                 },
                 {
                   title: "Statement of Faith",
-                  href: "/pages/Statement-of-Faith"
+                  href: "/pages/statement-of-faith"
                 },
                 {
                   title: "Constitution",
-                  href: "/pages/Constitution"
+                  href: "/pages/constitution"
                 },
               ]
             },
@@ -105,22 +119,23 @@ class App extends Component {
               links: [
                 {
                   title: "Pastors",
-                  href: "/pages/Pastors"
+                  href: "/pages/pastors"
                 },
                 {
                   title: "Deacons",
-                  href: "/pages/Deacons"
+                  href: "/pages/deacons"
                 },
                 {
                   title: "Hillcrest Kids",
-                  href: "/pages/Hillcrest Kids"
+                  href: "/pages/hillcrest kids"
                 },
               ]
             }
           ]
         },
-        {
+        connect:{
           title: "Connect",
+          cat:"Connect",
           submenus: [
             {
               title: "Become member",
@@ -128,7 +143,7 @@ class App extends Component {
               links: [
                 {
                   title: "Information",
-                  href: "#"
+                  href: "/pages/information"
                 }
               ]
             },
@@ -138,15 +153,15 @@ class App extends Component {
               links: [
                 {
                   title: "Bible Study",
-                  href: "#"
+                  href: "/pages/bible-study"
                 },
                 {
                   title: "Hillcrest Kids",
-                  href: "#"
+                  href: "/pages/hillcrest-kids"
                 },
                 {
                   title: "Discipleship Groups",
-                  href: "#"
+                  href: "/pages/discipleship-groups"
                 }
               ]
             },
@@ -156,15 +171,16 @@ class App extends Component {
               links: [
                 {
                   title: "Marriage Counseling",
-                  href: "#"
+                  href: "/pages/marriage-counseling"
                 }
               ]
             }
 
           ]
         },
-        {
+        learn:{
           title: "Learn",
+          cat: "Learn",
           submenus: [
             {
               title:"Gather",
@@ -204,8 +220,9 @@ class App extends Component {
             }
           ]
         },
-        {
+        serve:{
           title: "Serve",
+          cat: "Serve",
           submenus: [
             {
               title: "Welcome to Hillcrest",
@@ -245,6 +262,7 @@ class App extends Component {
             },
             {
               title: "LeaderShip Team",
+
               id: "leadershipTeam",
               links: [
                 {
@@ -260,7 +278,7 @@ class App extends Component {
 
           ]
         }
-      ]
+      }
     };
   }
 

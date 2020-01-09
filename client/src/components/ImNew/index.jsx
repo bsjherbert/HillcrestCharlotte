@@ -25,19 +25,20 @@ const useStyles = makeStyles({
 
 export default function Connect(props) {
   const classes = useStyles();
+  console.log(props)
 
 React.useEffect(() => {
-  props.pageEquals(0)
+  props.theObj.content.replace(/\.(?=[A-Z])/g, '</p><p>')
+  console.log(props.theObj.content)
  })
-
   return (
     <Card className={classes.card}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          {props.title}
+          {props.theObj.title}
         </Typography>
-        <Typography variant="h3" component="p">
-          Add bigger title here
+        {/* <Typography variant="h3" component="p">
+          {props.theObj.title}
         </Typography>
         <Typography variant="h4" component="p">
           Add  bigger subtitle here
@@ -45,12 +46,14 @@ React.useEffect(() => {
         <Typography variant="body1" component="p">
           Add yellow text here
           <br />
-        </Typography>
+        </Typography>*/}
         <Typography variant="h4" component="p">
-          Add blue subtitle here
-        </Typography>
+          {props.theObj.test}
+        </Typography> 
         <Typography variant="body1" component="p">
-          Add text here
+        
+        {props.theObj.content}
+        
           <br />
         </Typography>
       </CardContent>
