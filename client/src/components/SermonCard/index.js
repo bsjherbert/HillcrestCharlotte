@@ -55,7 +55,7 @@ export default function MediaControlCard() {
               <Typography variant="h6" color="primary">
                 Sermon
           </Typography>
-              <Typography variant="subtitle1" color="white">
+              {/* <Typography variant="subtitle1" color="white">
                 Speaker: Brad Herbert
           </Typography>
               <Typography variant="subtitle1" color="white">
@@ -63,16 +63,16 @@ export default function MediaControlCard() {
           </Typography>
               <Typography variant="subtitle1" color="white">
                 Verse: "Hebrews 10:1-25"
-          </Typography>
+          </Typography> */}
             </CardContent>
               <ReactPlayer url= "https://soundcloud.com/hillcrestclt/confidence-to-enter" width="100%" height="100%" />
           </CardActionArea>
         </div>
-        <CardMedia
+        {/* <CardMedia
           className={classes.cover}
           image="/images/SermonCardMic5.jpg"
           title="Live from space album cover"
-        />
+        /> */}
       </Card>
     </Box>
   );
