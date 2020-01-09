@@ -10,22 +10,17 @@ import Api from "../../lib/API";
 import ReadingItems from "./ReadingItems";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
+import { shadows } from '@material-ui/system';
 
 //style text content here
 const useStyles = makeStyles(theme => ({
   card: {
     height: "100%",
-    // width: "31%",
-    backgroundColor: theme.palette.secondary.main
+    backgroundColor: theme.palette.secondary.main,
   },
   media: {
-    height: 140
+    height: 140,
   },
-  // bullet: {
-  //   display: "inline-block",
-  //   margin: "0 2px",
-  //   transform: "scale(0.8)"
-  // },
   title: {
     fontSize: 14
   },
@@ -37,7 +32,8 @@ const useStyles = makeStyles(theme => ({
     height: 450
   },
   button: {
-    justifyContent: "center"
+    justifyContent: "center",
+    paddingTop: "25px"
   }
 }));
 
@@ -70,13 +66,12 @@ const ReadingCard = props => {
   }, []);
 
   const classes = useStyles();
-  // const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <Card className={classes.card}>
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
+        <CardMedia 
+          className={classes.media} 
           image="/images/ReadingPlanCard2.jpg"
           title="Contemplative Reptile"
         />
@@ -99,35 +94,9 @@ const ReadingCard = props => {
               <ReadingItems verses={readingPlanArr[weekNumber].memoryVerses} />
             )}
           </List>
-
-          {/* <Grid container spacing={5}>
-            <Grid item xs={6}>
-              <Typography variant="h6" color="primary">
-                Reading Plan
-              </Typography>
-              <List dense="true">
-                {readingPlanArr.length && (
-                  <ReadingItems
-                    verses={readingPlanArr[weekNumber].dailyVerses}
-                  />
-                )}
-              </List>
-            </Grid>
-            <Grid item xs={6}>
-              <Typography variant="h6" color="primary">
-                Memory Verse
-              </Typography>
-              <List dense="true" color="textPrimary" className={classes.p}>
-                {readingPlanArr.length && (
-                  <ReadingItems
-                    verses={readingPlanArr[weekNumber].memoryVerses}
-                  />
-                )}
-              </List>
-            </Grid>
-          </Grid> */}
         </CardContent>
-        <CardActions className={classes.button}>
+      </CardActionArea>
+      <CardActions className={classes.button}>
           <Button size="small" color="primary">
             Share
           </Button>
@@ -135,7 +104,6 @@ const ReadingCard = props => {
             Learn More
           </Button>
         </CardActions>
-      </CardActionArea>
     </Card>
   );
 };

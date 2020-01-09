@@ -11,7 +11,6 @@ import CardMedia from "@material-ui/core/CardMedia";
 //style text content here
 const useStyles = makeStyles(theme => ({
   card: {
-    // width: "31%",
     backgroundColor: theme.palette.secondary.main,
     minHeight: "350px",
     maxHeight: "350px"
@@ -19,11 +18,6 @@ const useStyles = makeStyles(theme => ({
   media: {
     height: 140
   },
-  //   bullet: {
-  //     display: "inline-block",
-  //     margin: "0 2px",
-  //     transform: "scale(0.8)"
-  //   },
   title: {
     fontSize: 14
   },
@@ -31,13 +25,13 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 12
   },
   button: {
-    justifyContent: "center"
+    justifyContent: "center",
+    paddingTop: "25px"
   }
 }));
 
 export default function BookCard() {
   const classes = useStyles();
-  //   const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <Card className={classes.card}>
