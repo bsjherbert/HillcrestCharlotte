@@ -68,20 +68,20 @@ export default function MainNavTabs(props) {
           </Grid>
           <Grid item component="span">
             <Link underline="hover" className="navTab" color="textSecondary" variant="h6"
-              title="Connect" style={{ cursor: "pointer" }} aria-label="Connection Resources" aria-controls="connect-menu" aria-haspopup="false" onClick={handleOpen}>
-              Connect
+              title="Serve" style={{ cursor: "pointer" }} aria-label="Serve Menu" aria-controls="serve-menu" aria-haspopup="false" onClick={handleOpen}>
+              Serve
           </Link>
           </Grid>
           <Grid item component="span">
             <Link underline="hover" className="navTab" color="textSecondary" variant="h6"
-              title="Learn" style={{ cursor: "pointer" }} aria-label="Learning Resources" aria-controls="learn-menu" aria-haspopup="false" onClick={handleOpen}>
-              Learn
+              title="Support" style={{ cursor: "pointer" }} aria-label="Support Menu" aria-controls="support-menu" aria-haspopup="false" onClick={handleOpen}>
+              Support
           </Link>
           </Grid>
           <Grid item component="span">
             <Link underline="hover" className="navTab" color="textSecondary" variant="h6"
-              title="Assist" style={{ cursor: "pointer" }} aria-label="Assist Resources" aria-controls="Assist-menu" aria-haspopup="false" onClick={handleOpen}>
-              Assist
+              title="Share" style={{ cursor: "pointer" }} aria-label="Share Menu" aria-controls="share-menu" aria-haspopup="false" onClick={handleOpen}>
+              Share
           </Link>
           </Grid>
         </Grid>
@@ -89,319 +89,357 @@ export default function MainNavTabs(props) {
         <Box className={`dropNav ${showMenu && 'show'}`}>
           {/* NEW MENU */}
           {anchor === "I'm New" && (
-          <ClickAwayListener onClickAway={handleClose}>
+            <ClickAwayListener onClickAway={handleClose}>
 
-            <Grid container direction="row" alignItems="flex-start" style={{ height: "inherit", width: "inherit" }}
-              justify="space-around" alignContent="center" aria-label="Visitor Resources">
-              {/* NEW: Sub Menu 1 */}
-              <Grid item>
-                <Typography component="p" variant="subtitle1" color="primary">
-                  <strong>Welcome to Hillcrest</strong>
-                </Typography>
+              <Grid container direction="row" alignItems="flex-start" style={{ height: "inherit", width: "inherit" }}
+                justify="space-around" alignContent="center" aria-label="Visitor Resources">
+                {/* NEW: Sub Menu 1 */}
+                <Grid item>
+                  <Typography component="p" variant="subtitle1" color="primary">
+                    <strong>Welcome to Hillcrest</strong>
+                  </Typography>
 
-                <Typography variant="subtitle2">
-                  <List dense disablePadding>
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        About Us
-                    </ListItemText>
-                    </ListItem>
+                  <Typography variant="subtitle2">
+                    <List dense disablePadding>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        What to Expect
-                    </ListItemText>
-                    </ListItem>
+                      <RouterLink to="/pages/imnew/about-us">
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            About Us
+                          </ListItemText>
+                        </ListItem>
+                      </RouterLink>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        <Link href="connection" color="inherit">
-                          Connection Card
-                      </Link>
-                      </ListItemText>
-                    </ListItem>
+                      <RouterLink to="/pages/imnew/what-to-expect">
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            What to Expect
+                          </ListItemText>
+                        </ListItem>
+                      </RouterLink>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Contact Us
-                    </ListItemText>
-                    </ListItem>
-                  </List>
-                </Typography>
+                      <RouterLink to="/pages/imnew/connection-card">
+                      <ListItem className="subNav">
+                        <ListItemText>
+                          <Link href="connection" color="inherit">
+                            Connection Card
+                          </Link>
+                        </ListItemText>
+                      </ListItem>
+                      </RouterLink>
+
+                      <RouterLink to="/pages/imnew/contact-us">
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            Contact Us
+                          </ListItemText>
+                        </ListItem>
+                      </RouterLink>
+                    </List>
+                  </Typography>
+                </Grid>
+                {/* NEW: Sub Menu 2 */}
+                <Grid item>
+                  <Typography component="p" variant="subtitle1" color="primary" align="left">
+                    <strong>Our Beliefs</strong>
+                  </Typography>
+
+                  <Typography variant="subtitle2">
+                    <List dense disablePadding>
+
+                      <RouterLink to="/pages/the-gospel">
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            The Gospel
+                          </ListItemText>
+                        </ListItem>
+                      </RouterLink>
+
+                      <RouterLink to="/pages/statement-of-faith">
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            Statement of Faith
+                          </ListItemText>
+                        </ListItem>
+                      </RouterLink>
+
+                      <RouterLink to="/pages/constitution">
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            Constitution
+                          </ListItemText>
+                        </ListItem>
+                      </RouterLink>
+                    </List>
+                  </Typography>
+                </Grid>
+                {/* NEW: Sub Menu 3 */}
+                <Grid item>
+                  <Typography component="p" variant="subtitle1" color="primary">
+                    <strong>Leadership Team</strong>
+                  </Typography>
+
+                  <Typography variant="subtitle2">
+                    <List dense disablePadding>
+
+                      <RouterLink to="/pages/pastors">
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            Pastors
+                           </ListItemText>
+                        </ListItem>
+                      </RouterLink>
+
+                      <RouterLink to="/pages/deacons">
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            Deacons
+                          </ListItemText>
+                        </ListItem>
+                      </RouterLink>
+
+                      <RouterLink to="/pages/hillcrest-kids">
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            Hillcrest Kids
+                            </ListItemText>
+                        </ListItem>
+                      </RouterLink>
+                    </List>
+                  </Typography>
+                </Grid>
               </Grid>
-              {/* NEW: Sub Menu 2 */}
-              <Grid item>
-                <Typography component="p" variant="subtitle1" color="primary" align="left">
-                  <strong>Our Beliefs</strong>
-                </Typography>
+              </ClickAwayListener>
+              )}
+        {/* CONNECT MENU */}
+              {anchor === "Connect" && (
+                <Grid container direction="row" alignItems="flex-start" style={{ height: "inherit", width: "inherit" }}
+                  justify="space-around" alignContent="center" aria-label="Visitor Resources">
+                  {/* CONNECT: Sub Menu 1 */}
+                  <Grid item>
+                    <Typography component="p" variant="subtitle1" color="primary">
+                      <strong>Become a Member</strong>
+                    </Typography>
 
-                <Typography variant="subtitle2">
-                  <List dense disablePadding>
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        The Gospel
-                    </ListItemText>
-                    </ListItem>
+                    <Typography variant="subtitle2">
+                      <List dense disablePadding>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Statement of Faith
-                    </ListItemText>
-                    </ListItem>
+                        <RouterLink to="/pages/information">
+                          <ListItem className="subNav">
+                            <ListItemText>
+                              Information
+                            </ListItemText>
+                          </ListItem>
+                        </RouterLink>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Constitution
-                    </ListItemText>
-                    </ListItem>
-                  </List>
-                </Typography>
-              </Grid>
-              {/* NEW: Sub Menu 3 */}
-              <Grid item>
-                <Typography component="p" variant="subtitle1" color="primary">
-                  <strong>Leadership Team</strong>
-                </Typography>
+                      </List>
+                    </Typography>
+                  </Grid>
+                  {/* CONNECT: Sub Menu 2 */}
+                  <Grid item>
+                    <Typography component="p" variant="subtitle1" color="primary" align="left">
+                      <strong>Join a Group</strong>
+                    </Typography>
 
-                <Typography variant="subtitle2">
-                  <List dense disablePadding>
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Pastors
-                    </ListItemText>
-                    </ListItem>
+                    <Typography variant="subtitle2">
+                      <List dense disablePadding>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Deacons
-                    </ListItemText>
-                    </ListItem>
+                        <RouterLink to="/pages/bible-study">
+                          <ListItem className="subNav">
+                            <ListItemText>
+                              Bible Study
+                            </ListItemText>
+                          </ListItem>
+                        </RouterLink>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Hillcrest Kids
-                    </ListItemText>
-                    </ListItem>
-                  </List>
-                </Typography>
-              </Grid>
-            </Grid>
-          </ClickAwayListener>
-          )}
-          {/* CONNECT MENU */}
-          {anchor === "Connect" && (
-            <Grid container direction="row" alignItems="flex-start" style={{ height: "inherit", width: "inherit" }}
-              justify="space-around" alignContent="center" aria-label="Visitor Resources">
-              {/* CONNECT: Sub Menu 1 */}
-              <Grid item>
-                <Typography component="p" variant="subtitle1" color="primary">
-                  <strong>Become a Member</strong>
-                </Typography>
+                        <RouterLink to="/pages/hillcrest-kids">
+                          <ListItem className="subNav">
+                            <ListItemText>
+                              Hillcrest Kids
+                             </ListItemText>
+                          </ListItem>
+                        </RouterLink>
 
-                <Typography variant="subtitle2">
-                  <List dense disablePadding>
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Information
-                    </ListItemText>
-                    </ListItem>
-                  </List>
-                </Typography>
-              </Grid>
-              {/* CONNECT: Sub Menu 2 */}
-              <Grid item>
-                <Typography component="p" variant="subtitle1" color="primary" align="left">
-                  <strong>Join a Group</strong>
-                </Typography>
+                        <RouterLink to="/pages/discipleship-groups">
+                          <ListItem className="subNav">
+                            <ListItemText>
+                              Discipleship Groups
+                            </ListItemText>
+                          </ListItem>
+                        </RouterLink>
+                      </List>
+                    </Typography>
+                  </Grid>
+                  {/* CONNECT: Sub Menu 3 */}
+                  <Grid item>
+                    <Typography component="p" variant="subtitle1" color="primary" align="left">
+                      <strong>Life Services</strong>
+                    </Typography>
 
-                <Typography variant="subtitle2">
-                  <List dense disablePadding>
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Bible Study
-                    </ListItemText>
-                    </ListItem>
+                    <Typography variant="subtitle2">
+                      <List dense disablePadding>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Hillcrest Kids
-                    </ListItemText>
-                    </ListItem>
+                        <RouterLink to="/pages/marriage-counseling">
+                          <ListItem className="subNav">
+                            <ListItemText>
+                              Marriage Counseling
+                            </ListItemText>
+                          </ListItem>
+                        </RouterLink>
+                      </List>
+                    </Typography>
+                  </Grid>
+                </Grid>
+              )}
+              {/* LEARN MENU */}
+              {anchor === "Learn" && (
+                <Grid container direction="row" alignItems="flex-start" style={{ height: "inherit", width: "inherit", padding: "1rem 0" }}
+                  justify="space-around" alignContent="center" aria-label="Visitor Resources">
+                  {/* LEARN: Sub Menu 1 */}
+                  <Grid item>
+                    <Typography component="p" variant="subtitle1" align="left" color="primary">
+                      <strong>Gather</strong>
+                    </Typography>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Discipleship Groups
-                    </ListItemText>
-                    </ListItem>
-                  </List>
-                </Typography>
-              </Grid>
-              {/* CONNECT: Sub Menu 3 */}
-              <Grid item>
-                <Typography component="p" variant="subtitle1" color="primary" align="left">
-                  <strong>Life Services</strong>
-                </Typography>
+                    <Typography variant="subtitle2">
+                      <List dense disablePadding>
 
-                <Typography variant="subtitle2">
-                  <List dense disablePadding>
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Marriage Counseling
-                    </ListItemText>
-                    </ListItem>
-                  </List>
-                </Typography>
-              </Grid>
-            </Grid>
-          )}
-          {/* LEARN MENU */}
-          {anchor === "Learn" && (
-            <Grid container direction="row" alignItems="flex-start" style={{ height: "inherit", width: "inherit", padding: "1rem 0" }}
-              justify="space-around" alignContent="center" aria-label="Visitor Resources">
-              {/* LEARN: Sub Menu 1 */}
-              <Grid item>
-                <Typography component="p" variant="subtitle1" align="left" color="primary">
-                  <strong>Gather</strong>
-                </Typography>
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            Sunday School (All ages) <br />
+                            <Typography variant="caption" color="primary">
+                              Weekly, 09:30am
+                            </Typography>
+                          </ListItemText>
+                        </ListItem>
 
-                <Typography variant="subtitle2">
-                  <List dense disablePadding>
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Sunday School (All ages) <br />
-                        <Typography variant="caption" color="primary">
-                          Weekly, 09:30am
-                      </Typography>
-                      </ListItemText>
-                    </ListItem>
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            Sunday Worship Service <br />
+                            <Typography variant="caption" color="primary">
+                              Weekly, 11:00am
+                            </Typography>
+                          </ListItemText>
+                        </ListItem>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Sunday Worship Service <br />
-                        <Typography variant="caption" color="primary">
-                          Weekly, 11:00am
-                      </Typography>
-                      </ListItemText>
-                    </ListItem>
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            MidWeek Bible Study <br />
+                            <Typography variant="caption" color="primary">
+                              Wednesdays, 06:30pm
+                            </Typography>
+                          </ListItemText>
+                        </ListItem>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        MidWeek Bible Study <br />
-                        <Typography variant="caption" color="primary">
-                          Wednesdays, 06:30pm
-                      </Typography>
-                      </ListItemText>
-                    </ListItem>
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            Discipleship Group (D-Groups)
+                          </ListItemText>
+                        </ListItem>
+                      </List>
+                    </Typography>
+                  </Grid>
+                  {/* LEARN: Sub Menu 2 */}
+                  <Grid item>
+                    <Typography component="p" variant="subtitle1" color="primary" align="left">
+                      <strong>Resources</strong>
+                    </Typography>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Discipleship Group (D-Groups)
-                    </ListItemText>
-                    </ListItem>
-                  </List>
-                </Typography>
-              </Grid>
-              {/* LEARN: Sub Menu 2 */}
-              <Grid item>
-                <Typography component="p" variant="subtitle1" color="primary" align="left">
-                  <strong>Resources</strong>
-                </Typography>
+                    <Typography variant="subtitle2">
+                      <List dense disablePadding>
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            Service Sermons
+                          </ListItemText>
+                        </ListItem>
 
-                <Typography variant="subtitle2">
-                  <List dense disablePadding>
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Service Sermons
-                    </ListItemText>
-                    </ListItem>
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            Book of the Month
+                          </ListItemText>
+                        </ListItem>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Book of the Month
-                    </ListItemText>
-                    </ListItem>
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            365 Reading Plan
+                          </ListItemText>
+                        </ListItem>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        365 Reading Plan
-                    </ListItemText>
-                    </ListItem>
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            e-Library
+                          </ListItemText>
+                        </ListItem>
+                      </List>
+                    </Typography>
+                  </Grid>
+                </Grid>
+              )}
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        e-Library
-                    </ListItemText>
-                    </ListItem>
-                  </List>
-                </Typography>
-              </Grid>
-            </Grid>
-          )}
+              {anchor === "Assist" && (
+                <Grid container direction="row" alignItems="flex-start" style={{ height: "inherit", width: "inherit" }}
+                  justify="space-around" alignContent="center" aria-label="Visitor Resources">
+                  {/* Assist: Sub Menu 1 */}
+                  <Grid item>
+                    <Typography component="p" variant="subtitle1" color="primary">
+                      <strong>Welcome to Hillcrest</strong>
+                    </Typography>
 
-          {anchor === "Assist" && (
-            <Grid container direction="row" alignItems="flex-start" style={{ height: "inherit", width: "inherit" }}
-              justify="space-around" alignContent="center" aria-label="Visitor Resources">
-              {/* Assist: Sub Menu 1 */}
-              <Grid item>
-                <Typography component="p" variant="subtitle1" color="primary">
-                  <strong>Welcome to Hillcrest</strong>
-                </Typography>
+                    <Typography variant="subtitle2">
+                      <List dense disablePadding>
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            Connection Card
+                          </ListItemText>
+                        </ListItem>
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            What to Expect
+                          </ListItemText>
+                        </ListItem>
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            FAQs
+                          </ListItemText>
+                        </ListItem>
+                      </List>
+                    </Typography>
+                  </Grid>
+                  {/* Assist: Sub Menu 2 */}
+                  <Grid item>
+                    <Typography component="p" variant="subtitle1" color="primary" align="left">
+                      <strong>Our Beliefs</strong>
+                    </Typography>
 
-                <Typography variant="subtitle2">
-                  <List dense disablePadding>
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Connection Card
-                  </ListItemText>
-                    </ListItem>
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        What to Expect
-                  </ListItemText>
-                    </ListItem>
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        FAQs
-                  </ListItemText>
-                    </ListItem>
-                  </List>
-                </Typography>
-              </Grid>
-              {/* Assist: Sub Menu 2 */}
-              <Grid item>
-                <Typography component="p" variant="subtitle1" color="primary" align="left">
-                  <strong>Our Beliefs</strong>
-                </Typography>
+                    <Typography variant="subtitle2">
+                      <List dense disablePadding>
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            The Gospel
+                          </ListItemText>
+                        </ListItem>
 
-                <Typography variant="subtitle2">
-                  <List dense disablePadding>
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        The Gospel
-                  </ListItemText>
-                    </ListItem>
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            Statement of Faith
+                          </ListItemText>
+                        </ListItem>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Statement of Faith
-                  </ListItemText>
-                    </ListItem>
+                        <ListItem className="subNav">
+                          <ListItemText>
+                            Constitution
+                          </ListItemText>
+                        </ListItem>
+                      </List>
+                    </Typography>
+                  </Grid>
+                  {/* Assist: Sub Menu 3 */}
+                  <Grid item>
+                    <Typography component="p" variant="subtitle1" color="primary">
+                      <strong>Leadership Team</strong>
+                    </Typography>
 
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Constitution
-                  </ListItemText>
-                    </ListItem>
-                  </List>
-                </Typography>
-              </Grid>
-              {/* Assist: Sub Menu 3 */}
-              <Grid item>
-                <Typography component="p" variant="subtitle1" color="primary">
-                  <strong>Leadership Team</strong>
-                </Typography>
-
-                <Typography variant="subtitle2">
+                    <Typography variant="subtitle2">
                   <List dense disablePadding>
                     <ListItem className="subNav">
                       <ListItemText>
@@ -411,14 +449,13 @@ export default function MainNavTabs(props) {
                     <ListItem className="subNav">
                       <ListItemText>
                         Deacons
-                  </ListItemText>
+                      </ListItemText>
                     </ListItem>
                   </List>
                 </Typography>
               </Grid>
             </Grid>
           )}
-
         </Box>
       </span>
     </ClickAwayListener>
