@@ -64,46 +64,38 @@ const ReadingCard = props => {
   // const bull = <span className={classes.bullet}>•</span>;
 
   return (
-    
-      
-    
     <Card className={classes.card}>
 
-<CardActionArea>
+      <CardActionArea>
         <CardMedia
           className={classes.media}
           image="/images/ReadingPlanCard2.jpg"
           title="Contemplative Reptile"
         />
-       
-      <CardContent>
-        <Typography variant="h6" color="primary">
-          Reading Plan
+
+        <CardContent>
+          <Typography variant="h6" color="primary">
+            Reading Plan
         </Typography>
-        <List dense={true}>
-          {readingPlanArr.length && (
-            <ReadingItems verses={readingPlanArr[weekNumber].dailyVerses} />
-          )}
-        </List>
-        <Typography variant="h6" color="primary">
-          Memory Verse
+          <List dense={true}>
+            {readingPlanArr.length && (
+              <ReadingItems verses={readingPlanArr[weekNumber].dailyVerses} />
+            )}
+          </List>
+          <Typography variant="h6" color="primary">
+            Memory Verse
         </Typography>
-        <List dense={true} color="textPrimary" className={classes.p}>
-          {readingPlanArr.length && (
-            <ReadingItems verses={readingPlanArr[weekNumber].memoryVerses} />
-          )}
-        </List>
-      </CardContent>
-      <CardActions>
-        <Button size="small" color="primary" href="#readingplan" to="#">Full Plan</Button>
-      </CardActions>
+          <List dense={true} color="textPrimary" className={classes.p}>
+            {readingPlanArr.length && (
+              <ReadingItems verses={readingPlanArr[weekNumber].memoryVerses} />
+            )}
+          </List>
+        </CardContent>
+        <CardActions>
+          <Button size="small" color="primary" href="#readingplan" to="#">Full Plan</Button>
+        </CardActions>
       </CardActionArea>
- 
-
-      
     </Card>
-
-    
   );
 };
 
