@@ -56,7 +56,7 @@ export default function MainNavTabs(props) {
           </span>
           {/* HOME Tab */}
           <Grid item component="span">
-            <RouterLink to="/" style={{textDecoration: "none"}}>
+            <RouterLink to="/" style={{ textDecoration: "none" }}>
               <Link underline="hover" className="navTab" color="textSecondary" variant="h6" href="/"
                 title="Home" style={{ cursor: "pointer" }} aria-label="Home" aria-controls="home" aria-haspopup="false">
                 Home
@@ -130,11 +130,12 @@ export default function MainNavTabs(props) {
                         <ListItem className="subNav">
                           <ListItemText>
                             <Link href="connection" color="inherit">
-                              Connection Card
+                              Connection
                             </Link>
                           </ListItemText>
                         </ListItem>
                       </RouterLink>
+
                     </List>
                   </Typography>
                 </Grid>
@@ -147,7 +148,7 @@ export default function MainNavTabs(props) {
                   <Typography variant="subtitle2">
                     <List dense disablePadding>
 
-                      <RouterLink to="/pages/the-gospel">
+                      <RouterLink to="/pages/imnew/the-gospel">
                         <ListItem className="subNav">
                           <ListItemText>
                             The Gospel
@@ -155,7 +156,7 @@ export default function MainNavTabs(props) {
                         </ListItem>
                       </RouterLink>
 
-                      <RouterLink to="/pages/statement-of-faith">
+                      <RouterLink to="/pages/imnew/statement-of-faith">
                         <ListItem className="subNav">
                           <ListItemText>
                             Statement of Faith
@@ -163,7 +164,7 @@ export default function MainNavTabs(props) {
                         </ListItem>
                       </RouterLink>
 
-                      <RouterLink to="/pages/constitution">
+                      <RouterLink to="/pages/imnew/constitution">
                         <ListItem className="subNav">
                           <ListItemText>
                             Constitution
@@ -182,7 +183,7 @@ export default function MainNavTabs(props) {
                   <Typography variant="subtitle2">
                     <List dense disablePadding>
 
-                      <RouterLink to="/pages/pastors">
+                      <RouterLink to="/pages/imnew/pastors">
                         <ListItem className="subNav">
                           <ListItemText>
                             Pastors
@@ -190,7 +191,7 @@ export default function MainNavTabs(props) {
                         </ListItem>
                       </RouterLink>
 
-                      <RouterLink to="/pages/deacons">
+                      <RouterLink to="/pages/imnew/deacons">
                         <ListItem className="subNav">
                           <ListItemText>
                             Deacons
@@ -198,7 +199,7 @@ export default function MainNavTabs(props) {
                         </ListItem>
                       </RouterLink>
 
-                      <RouterLink to="/pages/hillcrest-kids">
+                      <RouterLink to="/pages/imnew/hillcrest-kids">
                         <ListItem className="subNav">
                           <ListItemText>
                             Hillcrest Kids
@@ -463,11 +464,14 @@ export default function MainNavTabs(props) {
 
                 <Typography variant="subtitle2">
                   <List dense disablePadding>
+
+                    <RouterLink to = "/pages/share/service-sermons">
                     <ListItem className="subNav">
                       <ListItemText>
                         Service Sermons
                       </ListItemText>
                     </ListItem>
+                    </RouterLink>
 
                     <ListItem className="subNav">
                       <ListItemText>

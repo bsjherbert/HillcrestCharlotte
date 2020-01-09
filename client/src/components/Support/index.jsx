@@ -28,7 +28,6 @@ export default function Connect(props) {
   console.log(props)
 
 React.useEffect(() => {
-  props.theObj.content.replace(/\.(?=[A-Z])/g, '</p><p>')
   console.log(props.theObj.content)
  })
   return (
@@ -38,12 +37,9 @@ React.useEffect(() => {
           {props.theObj.title}
         </Typography>
 
-        <Typography variant="h4" component="p">
-          {props.theObj.test}
-        </Typography> 
         <Typography variant="body1" component="p">
         
-        {props.theObj.content}
+        {props.theObj.text}
         
           <br />
         </Typography>
