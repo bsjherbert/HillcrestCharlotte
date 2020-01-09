@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function MainNavnavTabs() {
+export default function MainNavTabs(props) {
   const classes = useStyles();
   const [anchor, setAnchor] = useState(null)
   const [showMenu, setShowMenu] = useState("")
@@ -32,17 +32,13 @@ export default function MainNavnavTabs() {
       if (!showMenu) {
         setShowMenu(true)
       }
-
-      // document.addEventListener("click", handleClose)
     }
   }
 
   const handleClose = event => {
-    if (anchor === event.currentTarget.title || !mainNav.current.contains(event.target)) {
+    if (mainNav.current === null || anchor === event.currentTarget.title || !mainNav.current.contains(event.target)) {
       setAnchor(null)
       setShowMenu("")
-
-      // document.removeEventListener("click", handleClose)
     }
   }
 

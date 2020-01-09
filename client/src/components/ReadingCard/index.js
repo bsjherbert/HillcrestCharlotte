@@ -5,30 +5,30 @@ import { Typography, List, Button } from "@material-ui/core";
 
 import Api from "../../lib/API";
 import ReadingItems from "./ReadingItems";
-// import Grid from "@material-ui/core/Grid"
-
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardMedia from '@material-ui/core/CardMedia';
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardMedia from "@material-ui/core/CardMedia";
 
 //style text content here
 const useStyles = makeStyles(theme => ({
   card: {
-    width: "31%",
+    height: "100%",
     backgroundColor: theme.palette.secondary.main
   },
   media: {
-    height: 140,
+    height: 140
   },
-  // bullet: {
-  //   display: "inline-block",
-  //   margin: "0 2px",
-  //   transform: "scale(0.8)"
-  // },
   title: {
     fontSize: 14
   },
   pos: {
     marginBottom: 12
+  },
+  gridList: {
+    width: 500,
+    height: 450
+  },
+  button: {
+    justifyContent: "center"
   }
 }));
 
@@ -61,11 +61,9 @@ const ReadingCard = props => {
   }, []);
 
   const classes = useStyles();
-  // const bull = <span className={classes.bullet}>•</span>;
 
   return (
     <Card className={classes.card}>
-
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -75,24 +73,31 @@ const ReadingCard = props => {
 
         <CardContent>
           <Typography variant="h6" color="primary">
-            Reading Plan
-        </Typography>
-          <List dense={true}>
+            Weekly Reading Plan
+          </Typography>
+          <List dense="true">
             {readingPlanArr.length && (
               <ReadingItems verses={readingPlanArr[weekNumber].dailyVerses} />
             )}
           </List>
+
           <Typography variant="h6" color="primary">
-            Memory Verse
-        </Typography>
-          <List dense={true} color="textPrimary" className={classes.p}>
+            Weekly Memory Verse
+          </Typography>
+          <List dense="true" color="textPrimary" className={classes.p}>
             {readingPlanArr.length && (
               <ReadingItems verses={readingPlanArr[weekNumber].memoryVerses} />
             )}
           </List>
         </CardContent>
-        <CardActions>
-          <Button size="small" color="primary" href="#readingplan" to="#">Full Plan</Button>
+        
+        <CardActions className={classes.button}>
+          <Button size="small" color="primary">
+            Share
+          </Button>
+          <Button size="small" color="primary">
+            Learn More
+          </Button>
         </CardActions>
       </CardActionArea>
     </Card>
