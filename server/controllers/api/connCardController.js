@@ -15,9 +15,12 @@ connCardController.post("/", (req, res) => {
                name: ${req.body.name}\n
                address: ${req.body.address.street}\n
                         ${req.body.address.other}\n
-                        ${req.body.address.city}, ${req.body.address.state} ${req.body.address.zip}\n
+                        ${req.body.address.city}\n 
+                        ${req.body.address.state}\n 
+                        ${req.body.address.zip}\n
                email: ${req.body.email}\n
                phone: ${req.body.telephone}\n
+               either: ${req.body.either}\n
                contactMethod: ${req.body.telephone}\n
                speakPastor: ${req.body.speakPastor}\n
                moreInfo: ${req.body.moreInfo}\n
