@@ -1,6 +1,6 @@
 import React from 'react';
 // import { Link as ReactLink} from "react-router-dom";
-import { makeStyles } from '@material-ui/core';
+import { makeStyles, Link } from '@material-ui/core';
 import { Grid, IconButton } from '@material-ui/core';
 import { AppBar, Box, Typography } from '@material-ui/core';
 import { Facebook, Twitter } from '@material-ui/icons';
@@ -73,8 +73,10 @@ function Footer() {
           </Grid>
         </Grid>
         <Box className={classes.copyright}>
-          <Typography component="p" variant="subtitle1" color="textSecondary" style={{marginBottom: "0.5em"}}>
-              8501 Bellhaven Boulevard, Charlotte, NC 28214 <br /> 704.392.1406 | churchoffice@hillcrestcharlotte.com
+          <Typography component="address" variant="subtitle1" color="textSecondary" style={{marginBottom: "0.5em"}}>
+              <Link href="https://goo.gl/maps/kKdwxTSpeuYeNhbQ9" color="inherit" variant="inherit" underline="hover" style={{cursor: "pointer"}} target="_blank" rel="noopener">8501 Bellhaven Boulevard, Charlotte, NC 28214</Link> <br /> 
+              <Link href="tel:17043921406" color="inherit" variant="inherit" underline="hover" style={{cursor: "pointer"}}>704.392.1406</Link> | 
+              <Link href="mailto:churchoffice@hillcrestcharlotte.com?subject=New%20Mail%20from%20Hillcrest%20CLT%20Website" color="inherit" variant="inherit" underline="hover" style={{cursor: "pointer"}}> churchoffice@hillcrestcharlotte.com</Link>
           </Typography>
           <Typography component="p" variant="subtitle2" color="textSecondary">
               &copy; {new Date().getFullYear()} Hillcrest Baptist Church. All rights reserved.
