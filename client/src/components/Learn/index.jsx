@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -23,34 +23,28 @@ const useStyles = makeStyles({
   },
 });
 
-export default function ImNew(props) {
+export default function Connect(props) {
   const classes = useStyles();
+  console.log(props)
 
 React.useEffect(() => {
- props.pageEquals(3)
-})
-
+  props.theObj.content.replace(/\.(?=[A-Z])/g, '</p><p>')
+  console.log(props.theObj.content)
+ })
   return (
     <Card className={classes.card}>
       <CardContent>
         <Typography className={classes.title} color="textSecondary" gutterBottom>
-          {props.title}
+          {props.theObj.title}
         </Typography>
-        <Typography variant="h3" component="p">
-          Add Learn title here
-        </Typography>
+
         <Typography variant="h4" component="p">
-          Add subtitle here
-        </Typography>
+          {props.theObj.test}
+        </Typography> 
         <Typography variant="body1" component="p">
-          Add text here
-          <br />
-        </Typography>
-        <Typography variant="h4" component="p">
-          Add subtitle here
-        </Typography>
-        <Typography variant="body1" component="p">
-          Add text here
+        
+        {props.theObj.content}
+        
           <br />
         </Typography>
       </CardContent>

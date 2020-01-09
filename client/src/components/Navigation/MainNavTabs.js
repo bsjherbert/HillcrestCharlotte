@@ -124,12 +124,10 @@ export default function MainNavTabs(props) {
                         </ListItem>
                       </RouterLink>
 
-                      <RouterLink to="/pages/imnew/connection-card">
+                      <RouterLink to="/connection">
                       <ListItem className="subNav">
                         <ListItemText>
-                          <Link href="connection" color="inherit">
                             Connection Card
-                          </Link>
                         </ListItemText>
                       </ListItem>
                       </RouterLink>
