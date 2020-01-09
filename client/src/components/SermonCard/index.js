@@ -9,7 +9,8 @@ import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
 import { CardActionArea } from "@material-ui/core";
-import Box from "@material-ui/core/Box";
+import Box from '@material-ui/core/Box';
+import ReactPlayer from "react-player";
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -52,43 +53,25 @@ export default function MediaControlCard() {
             <CardContent className={classes.content}>
               <Typography variant="h6" color="primary">
                 Sermon
-              </Typography>
-              <Typography variant="subtitle1" color="white">
+          </Typography>
+              {/* <Typography variant="subtitle1" color="white">
                 Speaker: Brad Herbert
-              </Typography>
+          </Typography>
               <Typography variant="subtitle1" color="white">
                 Title: "Confidence to Enter"
-              </Typography>
+          </Typography>
               <Typography variant="subtitle1" color="white">
                 Verse: "Hebrews 10:1-25"
-              </Typography>
+          </Typography> */}
             </CardContent>
+              <ReactPlayer url= "https://soundcloud.com/hillcrestclt/confidence-to-enter" width="100%" height="100%" />
           </CardActionArea>
-          <div className={classes.controls}>
-            <IconButton aria-label="previous">
-              {theme.direction === "rtl" ? (
-                <SkipNextIcon />
-              ) : (
-                <SkipPreviousIcon />
-              )}
-            </IconButton>
-            <IconButton aria-label="play/pause">
-              <PlayArrowIcon className={classes.playIcon} />
-            </IconButton>
-            <IconButton aria-label="next">
-              {theme.direction === "rtl" ? (
-                <SkipPreviousIcon />
-              ) : (
-                <SkipNextIcon />
-              )}
-            </IconButton>
-          </div>
         </div>
-        <CardMedia
+        {/* <CardMedia
           className={classes.cover}
           image="/images/SermonCardMic5.jpg"
           title="Live from space album cover"
-        />
+        /> */}
       </Card>
     </Box>
   );

@@ -18,6 +18,9 @@ import Footer from "../Footer";
 import PageContainer from "../../components/PageContainer";
 import PageTemplate from "../../components/Pagetemplate";
 
+import ReactPlayer from "react-player";
+import SermonTable from "../../components/SermonTable";
+
 import HillcrestTheme from "./theme";
 import "./App.css";
 
@@ -344,7 +347,11 @@ class App extends Component {
                   short: "service-sermons",
                   title: "Service Sermons",
                   href: "/pages/share/service-sermons",
-                  text: `dfas`
+                  text: `dfas`,
+                  components: [
+                    // (<ReactPlayer url= "https://soundcloud.com/hillcrestclt/confidence-to-enter" width="100%" height="100%" />),
+                    ( <SermonTable />)
+                  ]
                 },
                 {
                   title: "Statement of Faith",

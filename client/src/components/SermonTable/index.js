@@ -1,6 +1,7 @@
 import React from 'react';
 import MaterialTable from 'material-table';
 import API from '../../lib/API';
+import SermonTable from "../../components/SermonTable";
 
 export default function SermonTable() {
     
