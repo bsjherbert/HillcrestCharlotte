@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "@brainhubeu/react-carousel/lib/style.css";
+import Grid from "@material-ui/core/Grid";
+
 import CarouselWithDots from "../../components/CarouselWithDots";
 import ImageSlide from "../../components/ImageSlide";
 import ImageSlideProps from "../../lib/ImageSlideProps.json";
 import BookCard from "../../components/BookCard";
 import SermonCard from "../../components/SermonCard";
 import ReadingCard from "../../components/ReadingCard";
-import Grid from "@material-ui/core/Grid";
 
 class HomePage extends Component {
   render() {
