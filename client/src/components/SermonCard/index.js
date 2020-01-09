@@ -9,7 +9,7 @@ import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
 import { CardActionArea } from "@material-ui/core";
-import Box from '@material-ui/core/Box';
+import Box from "@material-ui/core/Box";
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -26,8 +26,7 @@ const useStyles = makeStyles(theme => ({
     flex: "1 0 auto"
   },
   cover: {
-    width: 250,
-    height: 245
+    width: "100%"
   },
   controls: {
     display: "flex",
@@ -47,50 +46,50 @@ export default function MediaControlCard() {
 
   return (
     <Box boxShadow={3}>
-    <Card className={classes.card}>
-      <div className={classes.details}>
+      <Card className={classes.card}>
+        <div className={classes.details}>
           <CardActionArea>
-        <CardContent className={classes.content}>
-          <Typography variant="h6" color="primary">
-            Sermon
-          </Typography>
-          <Typography variant="subtitle1" color="white">
-            Speaker: Brad Herbert
-          </Typography>
-          <Typography variant="subtitle1" color="white">
-            Title: "Confidence to Enter"
-          </Typography>
-          <Typography variant="subtitle1" color="white">
-            Verse: "Hebrews 10:1-25"
-          </Typography>
-        </CardContent>
+            <CardContent className={classes.content}>
+              <Typography variant="h6" color="primary">
+                Sermon
+              </Typography>
+              <Typography variant="subtitle1" color="white">
+                Speaker: Brad Herbert
+              </Typography>
+              <Typography variant="subtitle1" color="white">
+                Title: "Confidence to Enter"
+              </Typography>
+              <Typography variant="subtitle1" color="white">
+                Verse: "Hebrews 10:1-25"
+              </Typography>
+            </CardContent>
           </CardActionArea>
-        <div className={classes.controls}>
-          <IconButton aria-label="previous">
-            {theme.direction === "rtl" ? (
-              <SkipNextIcon />
-            ) : (
-              <SkipPreviousIcon />
-            )}
-          </IconButton>
-          <IconButton aria-label="play/pause">
-            <PlayArrowIcon className={classes.playIcon} />
-          </IconButton>
-          <IconButton aria-label="next">
-            {theme.direction === "rtl" ? (
-              <SkipPreviousIcon />
-            ) : (
-              <SkipNextIcon />
-            )}
-          </IconButton>
+          <div className={classes.controls}>
+            <IconButton aria-label="previous">
+              {theme.direction === "rtl" ? (
+                <SkipNextIcon />
+              ) : (
+                <SkipPreviousIcon />
+              )}
+            </IconButton>
+            <IconButton aria-label="play/pause">
+              <PlayArrowIcon className={classes.playIcon} />
+            </IconButton>
+            <IconButton aria-label="next">
+              {theme.direction === "rtl" ? (
+                <SkipPreviousIcon />
+              ) : (
+                <SkipNextIcon />
+              )}
+            </IconButton>
+          </div>
         </div>
-      </div>
-      <CardMedia
-        className={classes.cover}
-        image="/images/SermonCardMic5.jpg"
-        title="Live from space album cover"
-      />
-    </Card>
+        <CardMedia
+          className={classes.cover}
+          image="/images/SermonCardMic5.jpg"
+          title="Live from space album cover"
+        />
+      </Card>
     </Box>
   );
 }
