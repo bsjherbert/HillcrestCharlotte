@@ -8,15 +8,20 @@ import ReadingItems from "./ReadingItems";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
 import { shadows } from '@material-ui/system';
+import Box from '@material-ui/core/Box';
 
 //style text content here
 const useStyles = makeStyles(theme => ({
+  box: {
+    height: "100%"
+  },
   card: {
     height: "100%",
-    backgroundColor: theme.palette.secondary.main
+    // backgroundColor: theme.palette.secondary.main
   },
   media: {
-    height: 140,
+    height: 165,
+    
   },
   title: {
     fontSize: 14
@@ -30,7 +35,7 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     justifyContent: "center",
-    paddingTop: "25px"
+    paddingTop: "15px"
   }
 }));
 
@@ -65,6 +70,8 @@ const ReadingCard = props => {
   const classes = useStyles();
 
   return (
+    
+<Box className={classes.box} boxShadow={3}>   
     <Card className={classes.card}>
       <CardActionArea>
         <CardMedia 
@@ -102,6 +109,7 @@ const ReadingCard = props => {
           </Button>
         </CardActions>
     </Card>
+    </Box>  
   );
 };
 

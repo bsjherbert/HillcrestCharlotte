@@ -9,6 +9,7 @@ import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
 import { CardActionArea } from "@material-ui/core";
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -45,6 +46,7 @@ export default function MediaControlCard() {
   const theme = useTheme();
 
   return (
+    <Box boxShadow={3}>
     <Card className={classes.card}>
       <div className={classes.details}>
           <CardActionArea>
@@ -85,9 +87,10 @@ export default function MediaControlCard() {
       </div>
       <CardMedia
         className={classes.cover}
-        image="/images/SermonCardMic4.jpg"
+        image="/images/SermonCardMic5.jpg"
         title="Live from space album cover"
       />
     </Card>
+    </Box>
   );
 }
