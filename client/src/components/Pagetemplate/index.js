@@ -36,7 +36,8 @@ const Pagetemplate = (props) => {
           <Switch>
 
             <Route path="/pages/:cat/:page" render={(props) => {
-              if(propsToPass[props.match.params.page] === undefined){
+              console.log(propsToPass[props.match.params.cat])
+              if(propsToPass[props.match.params.cat] === undefined){
                 return <Fourofour/>
               } 
               let holder={id: -1, subId: -1}

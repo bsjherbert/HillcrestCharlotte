@@ -87,7 +87,7 @@ class App extends Component {
                 {
                   short:"connection-card",
                   title: "Connection Card",
-                  href: "/pages/imnew/connection-card",
+                  href: "/connection",
                   content: "connection card fam"
                 },
                 {
