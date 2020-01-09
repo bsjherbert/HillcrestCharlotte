@@ -2,8 +2,9 @@
   text-align: center;
   position: relative;
   min-height: 100vh;
-  background-color: #f9f7f1;
+  background-color: #efebdc;
   background-image: url("./connected.png");
+  cursor: default;
 }
 
 .page-container {
@@ -11,29 +12,22 @@
   padding-top: 2rem;
 }
 
-/* .form-group {
-  font-family: sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 .MuiFormControl-root {
-  color: black;
   text-align: center;
 }
 
-.MuiListItem-root {
+.verses {
   text-align: center !important;
+  color: #efebdc;
+}
+
+.verses>p {
+  line-height: 1rem !important;
 }
 
 .MuiFormControl-fullWidth {
   width: 80% !important;
 }
-
-/* .MuiCardActions-root {
-  display: inline !important;
-} */
 
 .dropNav {
   background-color: rgba(71, 61, 46, 0.7);
@@ -45,7 +39,7 @@
 .show {
   height: inherit;
   width: inherit;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
   padding: 3% 0;
 }
 
