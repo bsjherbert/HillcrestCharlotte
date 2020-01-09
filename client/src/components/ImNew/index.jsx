@@ -28,7 +28,6 @@ export default function Connect(props) {
   console.log(props)
 
 React.useEffect(() => {
-  props.theObj.content.replace(/\.(?=[A-Z])/g, '</p><p>')
   console.log(props.theObj.content)
  })
   return (
@@ -37,25 +36,14 @@ React.useEffect(() => {
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           {props.theObj.title}
         </Typography>
-        {/* <Typography variant="h3" component="p">
-          {props.theObj.title}
-        </Typography>
-        <Typography variant="h4" component="p">
-          Add  bigger subtitle here
-        </Typography>
-        <Typography variant="body1" component="p">
-          Add yellow text here
-          <br />
-        </Typography>*/}
-        <Typography variant="h4" component="p">
-          {props.theObj.test}
-        </Typography> 
+
         <Typography variant="body1" component="p">
         
-        {props.theObj.content}
+        {props.theObj.text}
         
           <br />
         </Typography>
+        {props.theObj.components ? props.theObj.components.map(component => component) : (null)}
       </CardContent>
       <CardActions>
         <Button size="small">Learn More</Button>

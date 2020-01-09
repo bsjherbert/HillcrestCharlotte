@@ -1,36 +1,24 @@
 import React, { Component } from "react";
 import "@brainhubeu/react-carousel/lib/style.css";
+import Grid from "@material-ui/core/Grid";
+
 import CarouselWithDots from "../../components/CarouselWithDots";
 import ImageSlide from "../../components/ImageSlide";
 import ImageSlideProps from "../../lib/ImageSlideProps.json";
 import BookCard from "../../components/BookCard";
 import SermonCard from "../../components/SermonCard";
+import SermonTable from "../../components/SermonTable";
 import ReadingCard from "../../components/ReadingCard";
-import Grid from "@material-ui/core/grid";
 
 class HomePage extends Component {
   render() {
     const infoCardTitle = "This is a test title for Info Card";
 
-    const classes = {
-      cardContainer: {
-        top: "2vh"
-      }
-    };
-
     return (
       // {/* Map over the ImageSlideProps array to populate the Carousel slides */}
       <div>
         <div style={{ zIndex: 5, marginTop: "6vh" }}>
-          <CarouselWithDots
-            autoPlay={3500}
-            animationSpeed={1500}
-            infinite
-            centered="true"
-            stopAutoPlayOnHover="true"
-            dots
-            addArrowClickHandler
-          >
+          <CarouselWithDots>
             {ImageSlideProps.map(slide => (
               <ImageSlide
                 id={slide.id}
@@ -62,7 +50,7 @@ class HomePage extends Component {
               <BookCard />
               <SermonCard />
             </Grid>
-            <Grid item xs={12} md={12}></Grid>
+            {/* <Grid item xs={12} md={12}></Grid> */}
           </Grid>
         </div>
       </div>

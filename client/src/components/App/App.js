@@ -14,10 +14,12 @@ import Register from "../../pages/Register/Register";
 import ConnectionCard from "../../pages/ConnectionCard/ConnectionCard";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import NotFound from "../../pages/NotFound/NotFound";
-import Footer from '../Footer';
+import Footer from "../Footer";
 import PageContainer from "../../components/PageContainer";
-import PageTemplate from "../../components/Pagetemplate"
+import PageTemplate from "../../components/Pagetemplate";
 
+import ReactPlayer from "react-player";
+import SermonTable from "../../components/SermonTable";
 
 import HillcrestTheme from "./theme";
 import "./App.css";
@@ -43,8 +45,8 @@ class App extends Component {
     this.handleMenu = () => {
       this.setState(state => ({
         isOpen: !state.isOpen
-      }))
-    }
+      }));
+    };
 
     this.state = {
       auth: {
@@ -57,7 +59,7 @@ class App extends Component {
         isOpen: false
       },
       allMenus: {
-        imnew:{
+        imnew: {
           title: "I'm New",
           cat: "ImNew",
           submenus: [
@@ -66,11 +68,10 @@ class App extends Component {
               id: "welcomeHillcrest",
               links: [
                 {
-                  short:"about-us",
+                  short: "about-us",
                   title: "About Us",
                   href: "/pages/imnew/about-us",
-                  test: 'more stuff',
-                  content: `
+                  text: `
 
                   Hillcrest Baptist Church exists to love people genuinely, teach scripture faithfully and disciple believers fully in obedience to Christ our Lord.
                   
@@ -81,37 +82,91 @@ class App extends Component {
                   We invite you to explore our website to learn more about our church and we hope you’ll join us for one of our weekly services in the near future.  If you have questions about Hillcrest that aren’t addressed here, please feel free to contact us at churchoffice@hillcrestcharlotte.com.`
                 },
                 {
-                  short:"what-to-expect",
+                  short: "what-to-expect",
                   title: "What to Expect",
                   href: "/pages/imnew/what-to-expect",
-                  content: `test`
+                  text: `
+                  Sunday School
+                  
+                  Our Sunday School classes meet at 9:30am to study and discuss the Bible using a curriculum called The Gospel Project. 
+                  We offer classes for Men, Women, Children and a nursery for children from birth through preschool.  
+                  Middle and High School students study along with our adults to allow multiple generations to learn together.
+                   All family members will be studying the same doctrine and portion of scripture each Sunday to facilitate family discussion
+                   throughout the week.
+                  Worship Service
+                  Our Sunday morning worship is held in our sanctuary at 11am.  The main entrance faces Bellhaven Boulevard, but an additional 
+                  entrance is available in the breezeway adjacent to the parking lot.  We recommend using this entrance during 
+                  inclement weather.  An elevator is adjacent to this entrance for those who need it and a member of our Guest Experience 
+                  Team will be happy to assist you in its operation.  
+                  
+                  Children aged birth through Preschool are welcome in Hillcrest Kids during the Worship Service.
+                  
+                  Midweek Bible Study
+                  
+                  We invite you to attend our Midweek Prayer & Bible Study each Wednesday Night at 6:30 pm.  After a meal and a time of 
+                  prayer, we offer several classes on a rotating 12 week cycle.  Additionally, one of our pastors teaches an in depth, 
+                  verse by verse exposition of Scripture for anyone not enrolled in a class or discipleship group.  Together we explore
+                   ancient Biblical texts and consider the practical application of Scripture and how our lives as Christ followers are 
+                   to be guided by God’s Word.  
+                  
+                  We offer a nursery and activities for elementary aged children each Wednesday Night.
+                  
+                  
+                  
+                  HOW SHOULD I DRESS
+                  
+                  When you visit Hillcrest you will see variations in attire. Some attenders will be casually dressed and others may
+                   wear suits and ties. Our community of faith is comprised of multiple generations and as a result, attire choices 
+                   reflect this. Dress comfortably!   
+                  
+                  
+                  
+                  WHERE DO I GO
+                  
+                  When you arrive, members of our Guest Experience Team will be happy to direct you to a classroom, Hillcrest Kids or 
+                  the sanctuary worship center. It can be intimidating to visit a new church so we promise we'll be there to help you 
+                  navigate our campus.
+                  
+                  
+                  
+                  WHERE DO I PARK
+                  
+                  Parking is located behind the classroom and office space buildings and to the right of the Bradshaw Center. Because 
+                  space is limited, we respectfully ask those who are able to leave spaces closest to the breezeway and classrooms open 
+                  for senior adult attenders and visiting guests.`
                 },
                 {
+                  short: "connection-card",
                   title: "Connection Card",
-                  href: "/pages/connection-card"
-                },
-                {
-                  title: "Contact Us",
-                  href: "/pages/contact-us"
-                },
+                  href: "/connection"
+                }
               ]
             },
             {
+              short: "our-belief",
               title: "Our beliefs",
               id: "ourBeliefs",
               links: [
                 {
+                  short: "the-gospel",
                   title: "The Gospel",
-                  href: "/pages/the-gospel"
+                  href: "/pages/imnew/the-gospel",
+                  text: `The Gospel is this. That Jesus Christ came to save sinners. He lived a perfect life.
+                  He died on the cross and rose from the grave on the third day. He is alive in currently seated in the
+                  right hand of God.`
                 },
                 {
+                  short: "statement-of-faith",
                   title: "Statement of Faith",
-                  href: "/pages/statement-of-faith"
+                  href: "/pages/imnew/statement-of-faith",
+                  text: `Statement of faith`
                 },
                 {
+                  short: "constitution",
                   title: "Constitution",
-                  href: "/pages/constitution"
-                },
+                  href: "/pages/imnew/constitution",
+                  text: `constitution`
+                }
               ]
             },
             {
@@ -119,115 +174,156 @@ class App extends Component {
               id: "leadershipTeam",
               links: [
                 {
+                  short: "pastors",
                   title: "Pastors",
-                  href: "/pages/pastors"
+                  href: "/pages/imnew/pastors",
+                  text: `pastors`
                 },
                 {
+                  short: "deacons",
                   title: "Deacons",
-                  href: "/pages/deacons"
+                  href: "/pages/imnew/deacons",
+                  text: ``
                 },
                 {
+                  short: "hillcrest-kids",
                   title: "Hillcrest Kids",
-                  href: "/pages/hillcrest kids"
-                },
+                  href: "/pages/imnew/hillcrest-kids",
+                  text: ``
+                }
               ]
             }
           ]
         },
-        connect:{
-          title: "Connect",
-          cat:"Connect",
+        serve: {
+          title: "Serve",
+          cat: "serve",
           submenus: [
             {
               title: "Become member",
               id: "becomeMember",
               links: [
                 {
+                  short: "information",
                   title: "Information",
-                  href: "/pages/information"
+                  href: "/pages/imnew/information",
+                  text: `info`
+                },
+                {
+                  short: "my-hillcrest",
+                  title: "My Hillcrest",
+                  href: "/pages/imnew/my-hillcrest",
+                  text: ``
                 }
               ]
             },
             {
-              title: "Join a Group",
-              id: "joinGroup",
+              title: "Join a team",
+              id: "joinTeam",
               links: [
                 {
-                  title: "Bible Study",
-                  href: "/pages/bible-study"
+                  short: "guest-experience",
+                  title: "Guest Experience",
+                  href: "/pages/imnew/guest-experience",
+                  text: ``
                 },
                 {
+                  short: "safety",
+                  title: "Safety",
+                  href: "/pages/imnew/safety",
+                  text: ``
+                },
+                {
+                  short: "worship",
+                  title: "Worship",
+                  href: "/pages/imnew/worship",
+                  text: ``
+                },
+                {
+                  short: "hillcrest-Kids",
                   title: "Hillcrest Kids",
-                  href: "/pages/hillcrest-kids"
+                  href: "/pages/imnew/hillcrest-kids",
+                  text: ``
                 },
                 {
-                  title: "Discipleship Groups",
-                  href: "/pages/discipleship-groups"
-                }
-              ]
-            },
-            {
-              title: "Life Services",
-              id: "lifeServices",
-              links: [
+                  short: "prayer",
+                  title: "Prayer",
+                  href: "/pages/imnew/prayer",
+                  text: ``
+                },
                 {
-                  title: "Marriage Counseling",
-                  href: "/pages/marriage-counseling"
+                  short: "care",
+                  title: "Care",
+                  href: "/pages/imnew/care",
+                  text: ``
+                },
+                {
+                  short: "library",
+                  title: "Library",
+                  href: "/pages/imnew/library",
+                  text: ``
+                },
+                {
+                  short: "special-events",
+                  title: "Special Events",
+                  href: "/pages/imnew/special-events",
+                  text: ``
                 }
               ]
             }
-
           ]
         },
-        learn:{
-          title: "Learn",
-          cat: "Learn",
+        support: {
+          title: "Support",
+          cat: "Support",
           submenus: [
             {
-              title:"Gather",
-              id: "gather",
+              title: "Give",
+              id: "give",
               links: [
                 {
-                  title: "Sunday School(All Ages)",
-                  href:"#"
+                  short: "give",
+                  title: "Give Today",
+                  href:
+                    "https://hillcrestcharlotte.churchcenter.com/giving?open-in-church-center-modal=true"
                 },
                 {
                   title: "Sunday Worship Service",
-                  href:"#"
+                  href: "#"
                 }
               ]
             },
             {
-              title:"Resources",
-              id:"resources",
+              title: "Community Involvement",
+              id: "resources",
               links: [
                 {
-                  title:"Service Sermons",
-                  href:"#"
+                  title: "Service Sermons",
+                  href: "#"
                 },
                 {
-                  title:"Book of the Month",
-                  href:"#"
+                  title: "Book of the Month",
+                  href: "#"
                 },
                 {
                   title: "365 Reading Plan",
-                  href:"#"
+                  href: "#"
                 },
                 {
-                  title:"e-Library",
-                  href:"#"
+                  title: "e-Library",
+                  href: "#"
                 }
               ]
             }
           ]
         },
-        serve:{
-          title: "Serve",
-          cat: "Serve",
+        share: {
+          title: "Share",
+          cat: "share",
           submenus: [
             {
-              title: "Welcome to Hillcrest",
-              id: "welcomeHillcrest",
+              title: "Gather",
+              id: "gather",
               links: [
                 {
                   title: "Connection Card",
@@ -235,21 +331,27 @@ class App extends Component {
                 },
                 {
                   title: "What to Expect",
-                  href:"#"
+                  href: "#"
                 },
                 {
                   title: "FAQs",
-                  href:"#"
+                  href: "#"
                 }
               ]
             },
             {
-              title: "Our Beliefs",
-              id: "ourbeliefs",
+              title: "Learning Resources",
+              id: "learningResources",
               links: [
                 {
-                  title: "The Gospel",
-                  href: "#"
+                  short: "service-sermons",
+                  title: "Service Sermons",
+                  href: "/pages/share/service-sermons",
+                  text: `dfas`,
+                  components: [
+                    // (<ReactPlayer url= "https://soundcloud.com/hillcrestclt/confidence-to-enter" width="100%" height="100%" />),
+                    ( <SermonTable />)
+                  ]
                 },
                 {
                   title: "Statement of Faith",
@@ -271,12 +373,11 @@ class App extends Component {
                   href: "#"
                 },
                 {
-                  title:"deacons",
+                  title: "deacons",
                   href: "#"
                 }
               ]
             }
-
           ]
         }
       }
@@ -295,7 +396,6 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-
   render() {
     return (
       <MuiThemeProvider theme={HillcrestTheme}>
@@ -303,15 +403,22 @@ class App extends Component {
           <div className="App">
             <TopNav />
             <PageContainer>
-              <MainNav isOpen={this.state.isOpen}
-                onPageChange={this.handlePageChange} />
+              <MainNav
+                isOpen={this.state.isOpen}
+                onPageChange={this.handlePageChange}
+              />
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/connection" component={ConnectionCard} />
-                <Route path="/pages" render={(props) => <PageTemplate {...props} allMenus={this.state.allMenus} />} />
                 <PrivateRoute path="/dashboard" component={Dashboard} />
+                <Route
+                  path="/pages"
+                  render={props => (
+                    <PageTemplate {...props} allMenus={this.state.allMenus} />
+                  )}
+                />
                 <Route component={NotFound} />
               </Switch>
             </PageContainer>

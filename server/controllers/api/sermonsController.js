@@ -2,9 +2,10 @@ const sermonsController = require('express').Router();
 const db = require('../../models');
 const seedSermon = require('../../lib/seedSermons');
 
+
 sermonsController.get('/', (req, res) => {
-    db.Sermons.find({}).sort( {sermonDate: -1, normalizedBook: 1})   
-        .then(results => {
+    db.Sermons.find({},{sermonDate:1, bookBible:1, title:1, speaker:1, _id:0}).sort( {sermonDate: -1, normalizedBook: 1})   
+    .then(results => {
             res.json(results);
         })
         .catch(error => {
@@ -12,7 +13,18 @@ sermonsController.get('/', (req, res) => {
         })
 });
 
-
+sermonsController.get('/latest', (req, res) => {
+    // db.sermons.find({},{sermonDate:1, bookBible:1, title:1, speaker:1, _id:0})
+ 
+     db.Sermons.findOne({}).sort( {sermonDate: -1, normalizedBook: 1})   
+         .then(results => {
+             res.json(results);
+         })
+         .catch(error => {
+             if (error) throw error
+         })
+ });
+ 
 sermonsController.get('/seedSermons', (req, res) => {
 
     seedSermon.forEach(seed => {

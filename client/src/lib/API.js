@@ -35,6 +35,16 @@ export default {
     }
   },
 
+  Sermons: {
+    get: function () {
+      return axios.get("/api/sermons/");
+    },
+    getLatest: function () {
+      return axios.get("/api/sermons/latest")
+    }
+
+  },
+
   ReadingPlan: {
     get: function () {
       return axios.get("/api/bible-reading-plan/")
