@@ -2,7 +2,7 @@
   text-align: center;
   position: relative;
   min-height: 100vh;
-  background-color: #f9f7f1;
+  background-color: #efebdc;
   background-image: url("./connected.png");
 }
 
@@ -19,7 +19,7 @@
 } */
 
 .MuiFormControl-root {
-  color: black;
+  /* color: black; */
   text-align: center;
 }
 
@@ -31,10 +31,6 @@
   width: 80% !important;
 }
 
-/* .MuiCardActions-root {
-  display: inline !important;
-} */
-
 .dropNav {
   background-color: rgba(71, 61, 46, 0.7);
   background-image: url("./dark-tire.png");
@@ -45,7 +41,7 @@
 .show {
   height: inherit;
   width: inherit;
-  transition: all 1s ease-in-out;
+  transition: all 0.5s ease-in-out;
   padding: 3% 0;
 }
 

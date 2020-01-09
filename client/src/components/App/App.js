@@ -16,8 +16,7 @@ import Dashboard from "../../pages/Dashboard/Dashboard";
 import NotFound from "../../pages/NotFound/NotFound";
 import Footer from '../Footer';
 import PageContainer from "../../components/PageContainer";
-import PageTemplate from "../../components/Pagetemplate"
-
+import PageTemplate from "../../components/Pagetemplate";
 
 import HillcrestTheme from "./theme";
 import "./App.css";
