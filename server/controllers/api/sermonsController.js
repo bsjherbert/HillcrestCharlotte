@@ -16,7 +16,7 @@ sermonsController.get('/', (req, res) => {
 sermonsController.get('/latest', (req, res) => {
     // db.sermons.find({},{sermonDate:1, bookBible:1, title:1, speaker:1, _id:0})
  
-     db.Sermons.findOne({},{sermonDate:1, bookBible:1, title:1, speaker:1, _id:0}).sort( {sermonDate: -1, normalizedBook: 1})   
+     db.Sermons.findOne({}).sort( {sermonDate: -1, normalizedBook: 1})   
          .then(results => {
              res.json(results);
          })

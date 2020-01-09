@@ -7,6 +7,7 @@ import ImageSlide from "../../components/ImageSlide";
 import ImageSlideProps from "../../lib/ImageSlideProps.json";
 import BookCard from "../../components/BookCard";
 import SermonCard from "../../components/SermonCard";
+import SermonTable from "../../components/SermonTable";
 import ReadingCard from "../../components/ReadingCard";
 
 class HomePage extends Component {
@@ -17,15 +18,7 @@ class HomePage extends Component {
       // {/* Map over the ImageSlideProps array to populate the Carousel slides */}
       <div>
         <div style={{ zIndex: 5, marginTop: "6vh" }}>
-          <CarouselWithDots
-            autoPlay={3500}
-            animationSpeed={1500}
-            infinite
-            centered="true"
-            stopAutoPlayOnHover="true"
-            dots
-            addArrowClickHandler
-          >
+          <CarouselWithDots>
             {ImageSlideProps.map(slide => (
               <ImageSlide
                 id={slide.id}
@@ -60,6 +53,7 @@ class HomePage extends Component {
             {/* <Grid item xs={12} md={12}></Grid> */}
           </Grid>
         </div>
+        <SermonTable />
       </div>
     );
   }
