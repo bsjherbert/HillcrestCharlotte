@@ -76,7 +76,7 @@ const ReadingCard = props => {
         <CardMedia
           className={classes.media}
           image="/images/ReadingPlanCard2.jpg"
-          title="Contemplative Reptile"
+          title="Reading Desk 2020"
         />
 
         <CardContent>
@@ -92,21 +92,20 @@ const ReadingCard = props => {
           <Typography variant="h6" color="primary">
             Weekly Memory Verse
           </Typography>
-          <List dense="true" color="textPrimary" className={classes.p}>
+          <List dense="true" className={classes.p}>
             {readingPlanArr.length && (
               <ReadingItems verses={readingPlanArr[weekNumber].memoryVerses} />
             )}
           </List>
         </CardContent>
         <CardActionArea>
-
           <CardActions className={classes.button}>
-            <Button size="small" color="primary">
+            <Button size="small" color="secondary">
               Share
-          </Button>
-            <Button size="small" color="primary">
+            </Button>
+            <Button size="small" color="secondary">
               Learn More
-          </Button>
+            </Button>
           </CardActions>
         </CardActionArea>
       </Card>

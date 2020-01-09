@@ -18,6 +18,7 @@ const ReadingItems = ({ verses }) => {
               paddingTop: "0px !important",
               paddingBottom: "0px !important"
             }}
+            color="textSecondary"
           >
             {verse}
           </Typography>

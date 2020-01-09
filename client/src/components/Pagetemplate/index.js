@@ -25,7 +25,7 @@ const Pagetemplate = (props) => {
 
   const propsToPass = props.allMenus
   return (
-    <div className={classes.root} style={{position: "relative", top: "3vh", zIndex: 5}}>
+    <div className={classes.root} style={{ position: "relative", top: "3vh", zIndex: 5 }}>
       <Grid container spacing={0}>
         <Grid item xs={4}>
           <Sidebar {...props} page={currentPage} />
@@ -41,16 +41,17 @@ const Pagetemplate = (props) => {
               propsToPass[props.match.params.cat].submenus.forEach((element, id) => {
                 element.links.forEach((subElement, subId) => {
                   if (subElement.short === props.match.params.page) {
-                    holder = {id:id, subId: subId}
+                    holder = { id: id, subId: subId }
                   }
                 })
               })
               console.log(holder)
               const theInfo = propsToPass[props.match.params.cat].submenus[holder.id].links[holder.subId]
-            return<ImNew {...props} page={props.match.params.page} theObj={theInfo} cat={props.match.params.cat} />}}
-             />
+              return <ImNew {...props} page={props.match.params.page} theObj={theInfo} cat={props.match.params.cat} />
+            }}
+            />
 
-             <Route exact path="/pages/imnew/about-us" render={(props) => {
+            <Route exact path="/pages/imnew/about-us" render={(props) => {
               console.log(this.props.path)
               return <ImNew {...props} pageEquals={setPage} />
             }} />
