@@ -9,7 +9,7 @@ import Connect from "../Connect"
 
 const useStyles = makeStyles(theme => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   paper: {
     padding: theme.spacing(2),
@@ -25,8 +25,7 @@ const Pagetemplate = (props) => {
 
   const propsToPass = props.allMenus
   return (
-
-    <div className={classes.root}>
+    <div className={classes.root} style={{position: "relative", top: "3vh", zIndex: 5}}>
       <Grid container spacing={0}>
         <Grid item xs={4}>
           <Sidebar {...props} page={currentPage} />

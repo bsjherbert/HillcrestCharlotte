@@ -9,18 +9,19 @@ connCardController.post("/", (req, res) => {
       sgMail.setApiKey(process.env.SENDGRID_API_KEY);
       const msg = {
         to: "bsjherbert@gmail.com",
-        from: "test@example.com",
-        subject: "Connection Card Request",
+        from: "connect@hillcrestcharlotte.com",
+        subject: "New Connection Card!",
         text: `dateCreated: ${req.body.dateCreated}\n
                name: ${req.body.name}\n
-               address: ${req.body.address}\n 
+               address: ${req.body.address.street}\n
+                        ${req.body.address.other}\n
+                        ${req.body.address.city}, ${req.body.address.state} ${req.body.address.zip}\n
                email: ${req.body.email}\n
                phone: ${req.body.telephone}\n
                contactMethod: ${req.body.telephone}\n
                speakPastor: ${req.body.speakPastor}\n
                moreInfo: ${req.body.moreInfo}\n
                questions: ${req.body.questions}\n`
-        // html: "<strong>and easy to do anywhere, even with Node.js</strong>"
       };
       sgMail.send(msg);
       res.json(cc);
