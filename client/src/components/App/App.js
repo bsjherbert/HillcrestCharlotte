@@ -14,7 +14,7 @@ import Register from "../../pages/Register/Register";
 import ConnectionCard from "../../pages/ConnectionCard/ConnectionCard";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import NotFound from "../../pages/NotFound/NotFound";
-import Footer from '../Footer';
+import Footer from "../Footer";
 import PageContainer from "../../components/PageContainer";
 import PageTemplate from "../../components/Pagetemplate";
 
@@ -42,8 +42,8 @@ class App extends Component {
     this.handleMenu = () => {
       this.setState(state => ({
         isOpen: !state.isOpen
-      }))
-    }
+      }));
+    };
 
     this.state = {
       auth: {
@@ -56,7 +56,7 @@ class App extends Component {
         isOpen: false
       },
       allMenus: {
-        imnew:{
+        imnew: {
           title: "I'm New",
           cat: "ImNew",
           submenus: [
@@ -65,7 +65,7 @@ class App extends Component {
               id: "welcomeHillcrest",
               links: [
                 {
-                  short:"about-us",
+                  short: "about-us",
                   title: "About Us",
                   href: "/pages/imnew/about-us",
                   text: `
@@ -79,10 +79,10 @@ class App extends Component {
                   We invite you to explore our website to learn more about our church and we hope you’ll join us for one of our weekly services in the near future.  If you have questions about Hillcrest that aren’t addressed here, please feel free to contact us at churchoffice@hillcrestcharlotte.com.`
                 },
                 {
-                  short:"what-to-expect",
+                  short: "what-to-expect",
                   title: "What to Expect",
                   href: "/pages/imnew/what-to-expect",
-                  text:`
+                  text: `
                   Sunday School
                   
                   Our Sunday School classes meet at 9:30am to study and discuss the Bible using a curriculum called The Gospel Project. 
@@ -133,10 +133,10 @@ class App extends Component {
                   for senior adult attenders and visiting guests.`
                 },
                 {
-                  short:"connection-card",
+                  short: "connection-card",
                   title: "Connection Card",
-                  href: "/connection",
-                },
+                  href: "/connection"
+                }
               ]
             },
             {
@@ -145,7 +145,7 @@ class App extends Component {
               id: "ourBeliefs",
               links: [
                 {
-                  short:"the-gospel",
+                  short: "the-gospel",
                   title: "The Gospel",
                   href: "/pages/imnew/the-gospel",
                   text: `The Gospel is this. That Jesus Christ came to save sinners. He lived a perfect life.
@@ -163,7 +163,7 @@ class App extends Component {
                   title: "Constitution",
                   href: "/pages/imnew/constitution",
                   text: `constitution`
-                },
+                }
               ]
             },
             {
@@ -180,21 +180,21 @@ class App extends Component {
                   short: "deacons",
                   title: "Deacons",
                   href: "/pages/imnew/deacons",
-                  text:``
+                  text: ``
                 },
                 {
                   short: "hillcrest-kids",
                   title: "Hillcrest Kids",
                   href: "/pages/imnew/hillcrest-kids",
                   text: ``
-                },
+                }
               ]
             }
           ]
         },
-        Serve:{
+        serve: {
           title: "Serve",
-          cat:"Serve",
+          cat: "serve",
           submenus: [
             {
               title: "Become member",
@@ -222,101 +222,101 @@ class App extends Component {
                   short: "guest-experience",
                   title: "Guest Experience",
                   href: "/pages/imnew/guest-experience",
-                  text:``
+                  text: ``
                 },
                 {
-                  short:"safety",
+                  short: "safety",
                   title: "Safety",
                   href: "/pages/imnew/safety",
-                  text:``
+                  text: ``
                 },
                 {
                   short: "worship",
                   title: "Worship",
                   href: "/pages/imnew/worship",
-                  text:``
+                  text: ``
                 },
                 {
                   short: "hillcrest-Kids",
                   title: "Hillcrest Kids",
                   href: "/pages/imnew/hillcrest-kids",
-                  text:``
+                  text: ``
                 },
                 {
                   short: "prayer",
                   title: "Prayer",
                   href: "/pages/imnew/prayer",
-                  text:``
+                  text: ``
                 },
                 {
                   short: "care",
                   title: "Care",
                   href: "/pages/imnew/care",
-                  text:``
+                  text: ``
                 },
                 {
                   short: "library",
                   title: "Library",
                   href: "/pages/imnew/library",
-                  text:``
+                  text: ``
                 },
                 {
                   short: "special-events",
                   title: "Special Events",
                   href: "/pages/imnew/special-events",
-                  text:``
-                },
-
-              ]
-            },
-          ]
-        },
-        Support:{
-          title: "Support",
-          cat: "Support",
-          submenus: [
-            {
-              title:"Give",
-              id: "give",
-              links: [
-                {
-                  short:"give",
-                  title: "Give Today",
-                  href:"https://hillcrestcharlotte.churchcenter.com/giving?open-in-church-center-modal=true"
-                },
-                {
-                  title: "Sunday Worship Service",
-                  href:"#"
-                }
-              ]
-            },
-            {
-              title:"Community Involvement",
-              id:"resources",
-              links: [
-                {
-                  title:"Service Sermons",
-                  href:"#"
-                },
-                {
-                  title:"Book of the Month",
-                  href:"#"
-                },
-                {
-                  title: "365 Reading Plan",
-                  href:"#"
-                },
-                {
-                  title:"e-Library",
-                  href:"#"
+                  text: ``
                 }
               ]
             }
           ]
         },
-        Share:{
+        support: {
+          title: "Support",
+          cat: "Support",
+          submenus: [
+            {
+              title: "Give",
+              id: "give",
+              links: [
+                {
+                  short: "give",
+                  title: "Give Today",
+                  href:
+                    "https://hillcrestcharlotte.churchcenter.com/giving?open-in-church-center-modal=true"
+                },
+                {
+                  title: "Sunday Worship Service",
+                  href: "#"
+                }
+              ]
+            },
+            {
+              title: "Community Involvement",
+              id: "resources",
+              links: [
+                {
+                  title: "Service Sermons",
+                  href: "#"
+                },
+                {
+                  title: "Book of the Month",
+                  href: "#"
+                },
+                {
+                  title: "365 Reading Plan",
+                  href: "#"
+                },
+                {
+                  title: "e-Library",
+                  href: "#"
+                }
+              ]
+            }
+          ]
+        },
+        share: {
           title: "Share",
-          cat: "Share",
+          cat: "share",
           submenus: [
             {
               title: "Gather",
@@ -328,11 +328,11 @@ class App extends Component {
                 },
                 {
                   title: "What to Expect",
-                  href:"#"
+                  href: "#"
                 },
                 {
                   title: "FAQs",
-                  href:"#"
+                  href: "#"
                 }
               ]
             },
@@ -341,12 +341,10 @@ class App extends Component {
               id: "learningResources",
               links: [
                 {
-                  short:"service-sermons",
+                  short: "service-sermons",
                   title: "Service Sermons",
                   href: "/pages/share/service-sermons",
                   text: `dfas`
-
-
                 },
                 {
                   title: "Statement of Faith",
@@ -368,12 +366,11 @@ class App extends Component {
                   href: "#"
                 },
                 {
-                  title:"deacons",
+                  title: "deacons",
                   href: "#"
                 }
               ]
             }
-
           ]
         }
       }
@@ -392,7 +389,6 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-
   render() {
     return (
       <MuiThemeProvider theme={HillcrestTheme}>
@@ -400,15 +396,22 @@ class App extends Component {
           <div className="App">
             <TopNav />
             <PageContainer>
-              <MainNav isOpen={this.state.isOpen}
-                onPageChange={this.handlePageChange} />
+              <MainNav
+                isOpen={this.state.isOpen}
+                onPageChange={this.handlePageChange}
+              />
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/connection" component={ConnectionCard} />
                 <PrivateRoute path="/dashboard" component={Dashboard} />
-                <Route path="/pages" render={(props) => <PageTemplate {...props} allMenus={this.state.allMenus} />} />
+                <Route
+                  path="/pages"
+                  render={props => (
+                    <PageTemplate {...props} allMenus={this.state.allMenus} />
+                  )}
+                />
                 <Route component={NotFound} />
               </Switch>
             </PageContainer>
