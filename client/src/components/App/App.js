@@ -69,7 +69,6 @@ class App extends Component {
                   short:"about-us",
                   title: "About Us",
                   href: "/pages/imnew/about-us",
-                  test: 'more stuff',
                   content: `
 
                   Hillcrest Baptist Church exists to love people genuinely, teach scripture faithfully and disciple believers fully in obedience to Christ our Lord.
@@ -84,15 +83,19 @@ class App extends Component {
                   short:"what-to-expect",
                   title: "What to Expect",
                   href: "/pages/imnew/what-to-expect",
-                  content: `test`
+                  content: `what to expect`
                 },
                 {
                   title: "Connection Card",
-                  href: "/pages/connection-card"
+                  href: "/pages/imnew/connection-card",
+                  content: "connection card fam"
                 },
                 {
                   title: "Contact Us",
-                  href: "/pages/contact-us"
+                  href: "/pages/imnew/contact-us",
+                  content:"Contact us"
+
+                  
                 },
               ]
             },
