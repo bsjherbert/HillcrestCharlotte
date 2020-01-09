@@ -22,6 +22,7 @@ class LoginForm extends Component {
 
     this.props.onSubmit(email, password);
     event.preventDefault();
+    window.scrollTo(0, 0)
   }
 
   render() {

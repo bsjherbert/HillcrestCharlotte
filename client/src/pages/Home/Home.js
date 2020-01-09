@@ -12,12 +12,6 @@ class HomePage extends Component {
   render() {
     const infoCardTitle = "This is a test title for Info Card";
 
-    const classes = {
-      cardContainer: {
-        top: "2vh"
-      }
-    };
-
     return (
       // {/* Map over the ImageSlideProps array to populate the Carousel slides */}
       <div>
@@ -62,7 +56,7 @@ class HomePage extends Component {
               <BookCard />
               <SermonCard />
             </Grid>
-            <Grid item xs={12} md={12}></Grid>
+            {/* <Grid item xs={12} md={12}></Grid> */}
           </Grid>
         </div>
       </div>

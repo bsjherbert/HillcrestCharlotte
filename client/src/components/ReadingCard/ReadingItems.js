@@ -11,9 +11,9 @@ const ReadingItems = ({ verses }) => {
           paddingBottom: "0px !important"
         }}
       >
-        <ListItemText>
+        <ListItemText className="verses">
           <Typography
-            fontSize="14"
+            fontSize={14}
             style={{
               paddingTop: "0px !important",
               paddingBottom: "0px !important"

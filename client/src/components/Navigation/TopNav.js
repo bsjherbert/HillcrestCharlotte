@@ -75,7 +75,7 @@ class Navigation extends Component {
               </Grid>
 
               <Grid item component="span">
-                <Typography color="primary">MyHillcrest</Typography>
+                <Typography color="primary" style={{ cursor: "default" }}>MyHillcrest</Typography>
               </Grid>
 
               {/* UserMenu Collapse OR Login link....className={targetClass}  */}
