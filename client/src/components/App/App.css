@@ -4,6 +4,7 @@
   min-height: 100vh;
   background-color: #efebdc;
   background-image: url("./connected.png");
+  cursor: default;
 }
 
 .page-container {
@@ -11,20 +12,17 @@
   padding-top: 2rem;
 }
 
-/* .form-group {
-  font-family: sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 .MuiFormControl-root {
-  /* color: black; */
   text-align: center;
 }
 
-.MuiListItem-root {
+.verses {
   text-align: center !important;
+  color: #efebdc;
+}
+
+.verses>p {
+  line-height: 1rem !important;
 }
 
 .MuiFormControl-fullWidth {

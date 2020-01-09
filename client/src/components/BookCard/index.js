@@ -19,12 +19,10 @@ const useStyles = makeStyles(theme => ({
   media: {
     height: 165
   },
-  title: {
-    fontSize: 14
-  },
-  pos: {
-    marginBottom: 12
-  },
+  text: theme.palette.common.white,
+  // title: {
+  //   fontSize: 14
+  // },
   button: {
     justifyContent: "center",
     paddingTop: "15px",
@@ -40,31 +38,32 @@ export default function BookCard() {
   return (
     <Box boxShadow={3}>
     <Card className={classes.card}>
+      <CardMedia
+        className={classes.media}
+        image="/images/BookCardSing.png"
+        title="Book of the Month"
+      />
+      <CardContent>
+        <Typography component="header" variant="h6" color="primary">
+          Book of the Month
+        </Typography>
+        {/* Book Info: Author & Title */}
+        <Typography variant="body2" component="p" className={classes.text}>
+          God intends for this compelling vision of His people singing—a
+          people joyfully joining together in song with brothers and sisters
+          around the world and around his heavenly throne—to include you.
+        </Typography>
+      </CardContent>
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="/images/BookCardSing.png"
-          title="Contemplative Reptile"
-        />
-        <CardContent>
-          <Typography variant="h6" color="primary">
-            Book of the Month
-          </Typography>
-          <Typography className={classes.para} variant="body2" color="white" component="p">
-            God intends for this compelling vision of His people singing—a
-            people joyfully joining together in song with brothers and sisters
-            around the world and around his heavenly throne—to include you.
-          </Typography>
-        </CardContent>
+        <CardActions className={classes.button}>
+          <Button size="small" color="primary">
+            Share
+        </Button>
+          <Button size="small" color="primary">
+            Learn More
+        </Button>
+        </CardActions>
       </CardActionArea>
-      <CardActions className={classes.button}>
-        <Button size="small" color="primary">
-          Share
-        </Button>
-        <Button size="small" color="primary">
-          Learn More
-        </Button>
-      </CardActions>
     </Card>
     </Box>
   );

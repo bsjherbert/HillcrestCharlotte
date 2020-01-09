@@ -1,10 +1,26 @@
 import React, { Component } from 'react';
-import { Typography, Link } from '@material-ui/core';
+import PropTypes from 'prop-types';
+import { withStyles, CircularProgress } from '@material-ui/core';
+import { Typography, Link, Box, Paper } from '@material-ui/core';
 
 import API from '../../lib/API';
 import AuthContext from '../../contexts/AuthContext';
 import HCBudgetPie from '../../components/Charts/Pie';
 import { labels, maxAmounts, sectionColors, hoverColors } from '../../components/Charts/Pie/testData';
+import HillcrestTheme from '../../components/App/theme';
+
+const styles = () => ({
+  root: {
+    display: 'flex',
+    '& > * + *': {
+      paddingLeft: "30vw",
+      paddingRight: "30vw"
+    },
+    backgroundColor: HillcrestTheme.palette.background.paper,
+    position: "relative",
+    zIndex: 5
+  }
+})
 
 class Dashboard extends Component {
   static contextType = AuthContext;
@@ -25,11 +41,12 @@ class Dashboard extends Component {
       .then(secrets => this.setState({ secrets }))
       .catch(err => {
         if (err.response.status === 401) {
-          return this.setState({ error: 
-            <Typography component="h1" variant="h3" color="textSecondary">
-              "Unauthorized. Please <Link color="primary" href="login">login</Link>."
-            </Typography>
-         });
+          return this.setState({
+            error:
+              <Typography component="h1" variant="h3" color="textSecondary">
+                "Unauthorized. Please <Link color="primary" href="login">login</Link>."
+              </Typography>
+          });
         }
 
         console.log(err);
@@ -39,24 +56,36 @@ class Dashboard extends Component {
 
   render() {
     const { labels, data, backgroundColor, hoverBackgroundColor } = this.state;
+    const { classes } = this.props;
 
     return (
       <main>
         {this.state.isLoading
-          ? <div color="success">Loading...</div>
+          ? (
+            <Box component="body" className={classes.root} textAlign="center" alignContent="center">
+              <Typography component="h1" variant="h3" style={{ color: "rgb(0, 160, 0)", marginTop: "3rem" }}>
+                Loading... <CircularProgress size="large" color="secondary" />
+              </Typography>
+            </Box>
+          )
           : this.state.error
-            ? <div color="error">{this.state.error}</div>
+            ? (
+              <span style={{ marginTop: "3rem" }}>
+                {this.state.error}
+              </span>
+            )
             : (
-              <div>
-                <header>
-                  <h1>Welcome back!</h1>
-                </header>
-                <HCBudgetPie 
+              <Paper style={{ padding: "3vw", marginTop: "1rem" }}>
+                  <Typography component="header" variant="h4" color="textSecondary">
+                    Welcome back!
+                  </Typography>
+
+                <HCBudgetPie
                   labels={labels}
                   data={data}
                   backgroundColor={backgroundColor}
                   hoverBackgroundColor={hoverBackgroundColor} />
-              </div>
+              </Paper>
             )
         }
       </main>
@@ -64,4 +93,8 @@ class Dashboard extends Component {
   }
 }
 
-export default Dashboard;
+Dashboard.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(Dashboard);
