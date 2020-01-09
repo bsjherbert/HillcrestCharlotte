@@ -6,7 +6,8 @@ import Sidebar from '../../components/sidebarcard'
 import { Switch, Route } from "react-router-dom";
 import ImNew from "../ImNew"
 import Connect from "../Connect"
-
+import { set } from 'date-fns';
+import Fourofour from '../../pages/NotFound/NotFound'
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1
@@ -35,16 +36,27 @@ const Pagetemplate = (props) => {
           <Switch>
 
             <Route path="/pages/:cat/:page" render={(props) => {
-              setPage(props.match.params.cat)
-              console.log(props.match.params.page)
-              let holder
+              if(propsToPass[props.match.params.page] === undefined){
+                return <Fourofour/>
+              } 
+              let holder={id: -1, subId: -1}
+              console.log(propsToPass[props.match.params.cat])
               propsToPass[props.match.params.cat].submenus.forEach((element, id) => {
                 element.links.forEach((subElement, subId) => {
                   if (subElement.short === props.match.params.page) {
-                    holder = {id:id, subId: subId}
+                    holder.id = id 
+                    holder.subId = subId
+                  
                   }
                 })
               })
+              console.log(holder.id, holder.subId)
+              if(holder.id === -1 || holder.subID === -1){
+
+                console.log('here <================================')
+                return <Fourofour/>
+              }
+              setPage(props.match.params.cat)
               console.log(holder)
               const theInfo = propsToPass[props.match.params.cat].submenus[holder.id].links[holder.subId]
             return<ImNew {...props} page={props.match.params.page} theObj={theInfo} cat={props.match.params.cat} />}}

@@ -86,6 +86,7 @@ class App extends Component {
                   content: `what to expect`
                 },
                 {
+                  short:"connection-card",
                   title: "Connection Card",
                   href: "/pages/imnew/connection-card",
                   content: "connection card fam"
@@ -313,8 +314,8 @@ class App extends Component {
                 <Route path="/login" component={Login} />
                 <Route path="/register" component={Register} />
                 <Route path="/connection" component={ConnectionCard} />
-                <Route path="/pages" render={(props) => <PageTemplate {...props} allMenus={this.state.allMenus} />} />
                 <PrivateRoute path="/dashboard" component={Dashboard} />
+                <Route path="/pages" render={(props) => <PageTemplate {...props} allMenus={this.state.allMenus} />} />
                 <Route component={NotFound} />
               </Switch>
             </PageContainer>
