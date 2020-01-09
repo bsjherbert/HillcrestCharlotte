@@ -5,6 +5,7 @@
   background-color: #efebdc;
   background-image: url("./connected.png");
   cursor: default;
+  text-decoration: none;
 }
 
 .page-container {
@@ -46,6 +47,7 @@
 /* NavTab State Colors */
 .navTab:active {
   color: "rgb(223, 202, 151)";
+  text-decoration: underline;
 }
 
 .navTab:hover {

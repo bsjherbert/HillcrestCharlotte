@@ -56,10 +56,12 @@ export default function MainNavTabs(props) {
           </span>
           {/* HOME Tab */}
           <Grid item component="span">
-            <Link underline="hover" className="navTab" color="textSecondary" variant="h6"
-              title="Home" href="/" to="/" style={{ cursor: "pointer" }} aria-label="Home" aria-controls="home" aria-haspopup="false">
-              Home
-            </Link>
+            <RouterLink to="/" style={{textDecoration: "none"}}>
+              <Link underline="hover" className="navTab" color="textSecondary" variant="h6" href="/"
+                title="Home" style={{ cursor: "pointer" }} aria-label="Home" aria-controls="home" aria-haspopup="false">
+                Home
+              </Link>
+            </RouterLink>
           </Grid>
           {/* NEW Tab */}
           <Grid item component="span">
@@ -73,21 +75,21 @@ export default function MainNavTabs(props) {
             <Link underline="hover" className="navTab" color="textSecondary" variant="h6"
               title="Serve" style={{ cursor: "pointer" }} aria-label="Serve Menu" aria-controls="serve-menu" aria-haspopup="false" onClick={handleOpen}>
               Serve
-          </Link>
+            </Link>
           </Grid>
           {/* SUPPORT Tab */}
           <Grid item component="span">
             <Link underline="hover" className="navTab" color="textSecondary" variant="h6"
               title="Support" style={{ cursor: "pointer" }} aria-label="Support Menu" aria-controls="support-menu" aria-haspopup="false" onClick={handleOpen}>
               Support
-          </Link>
+            </Link>
           </Grid>
           {/* SHARE Tab */}
           <Grid item component="span">
             <Link underline="hover" className="navTab" color="textSecondary" variant="h6"
               title="Share" style={{ cursor: "pointer" }} aria-label="Share Menu" aria-controls="share-menu" aria-haspopup="false" onClick={handleOpen}>
               Share
-          </Link>
+            </Link>
           </Grid>
         </Grid>
 
@@ -124,20 +126,12 @@ export default function MainNavTabs(props) {
                         </ListItem>
                       </RouterLink>
 
-                      <RouterLink to="/pages/imnew/connection-card">
-                      <ListItem className="subNav">
-                        <ListItemText>
-                          <Link href="connection" color="inherit">
-                            Connection Card
-                          </Link>
-                        </ListItemText>
-                      </ListItem>
-                      </RouterLink>
-
-                      <RouterLink to="/pages/imnew/contact-us">
+                      <RouterLink to="/connection">
                         <ListItem className="subNav">
                           <ListItemText>
-                            Contact Us
+                            <Link href="connection" color="inherit">
+                              Connection Card
+                            </Link>
                           </ListItemText>
                         </ListItem>
                       </RouterLink>
@@ -338,7 +332,7 @@ export default function MainNavTabs(props) {
                   <strong>Give</strong>
                 </Typography>
 
-                <Typography variant="subtitle2" style={{color: "rgb(249, 247, 241)"}}>
+                <Typography variant="subtitle2" style={{ color: "rgb(249, 247, 241)" }}>
                   <List dense disablePadding>
                     <ListItem>
                       <ListItemText>
@@ -346,7 +340,7 @@ export default function MainNavTabs(props) {
                         <Typography variant="caption" color="primary">2 Corinthians 9:6-8</Typography>
                       </ListItemText>
                     </ListItem>
-                    
+
                     <ListItem className="subNav">
                       <ListItemText>
                         Give Today
