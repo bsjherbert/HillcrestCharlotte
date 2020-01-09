@@ -37,16 +37,7 @@ React.useEffect(() => {
         <Typography className={classes.title} color="textSecondary" gutterBottom>
           {props.theObj.title}
         </Typography>
-        {/* <Typography variant="h3" component="p">
-          {props.theObj.title}
-        </Typography>
-        <Typography variant="h4" component="p">
-          Add  bigger subtitle here
-        </Typography>
-        <Typography variant="body1" component="p">
-          Add yellow text here
-          <br />
-        </Typography>*/}
+
         <Typography variant="h4" component="p">
           {props.theObj.test}
         </Typography> 
