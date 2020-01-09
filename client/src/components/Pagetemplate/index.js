@@ -5,7 +5,7 @@ import flower from './images/flower.jpg'
 import Sidebar from '../../components/sidebarcard'
 import { Switch, Route } from "react-router-dom";
 import ImNew from "../ImNew"
-import Connect from "../Connect"
+import Connect from "../Serve"
 import { set } from 'date-fns';
 import Fourofour from '../../pages/NotFound/NotFound'
 const useStyles = makeStyles(theme => ({
