@@ -7,15 +7,21 @@ import Api from "../../lib/API";
 import ReadingItems from "./ReadingItems";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardMedia from "@material-ui/core/CardMedia";
+import { shadows } from '@material-ui/system';
+import Box from '@material-ui/core/Box';
 
 //style text content here
 const useStyles = makeStyles(theme => ({
+  box: {
+    height: "100%"
+  },
   card: {
     height: "100%",
-    backgroundColor: theme.palette.secondary.main
+    // backgroundColor: theme.palette.secondary.main
   },
   media: {
-    height: 140
+    height: 165,
+    
   },
   title: {
     fontSize: 14
@@ -28,7 +34,8 @@ const useStyles = makeStyles(theme => ({
     height: 450
   },
   button: {
-    justifyContent: "center"
+    justifyContent: "center",
+    paddingTop: "15px"
   }
 }));
 
@@ -63,10 +70,12 @@ const ReadingCard = props => {
   const classes = useStyles();
 
   return (
+    
+<Box className={classes.box} boxShadow={3}>   
     <Card className={classes.card}>
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
+        <CardMedia 
+          className={classes.media} 
           image="/images/ReadingPlanCard2.jpg"
           title="Contemplative Reptile"
         />
@@ -90,8 +99,8 @@ const ReadingCard = props => {
             )}
           </List>
         </CardContent>
-        
-        <CardActions className={classes.button}>
+      </CardActionArea>
+      <CardActions className={classes.button}>
           <Button size="small" color="primary">
             Share
           </Button>
@@ -99,8 +108,8 @@ const ReadingCard = props => {
             Learn More
           </Button>
         </CardActions>
-      </CardActionArea>
     </Card>
+    </Box>  
   );
 };
 

@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel, { Dots } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
+import Box from '@material-ui/core/Box';
 
 class CarouselWithDots extends React.Component {
     constructor() {
