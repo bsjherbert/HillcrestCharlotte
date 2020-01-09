@@ -1,9 +1,7 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import { Link as RouterLink} from"react-router-dom";
 import { makeStyles } from "@material-ui/core/styles";
 import { Modal, Backdrop, Typography, Fade } from "@material-ui/core";
-import { HomeRounded } from "@material-ui/icons";
 
 import Background from "../../App/connected.png";
 
@@ -27,9 +25,6 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.primary.main,
     borderStyle: "solid",
     borderWidth: 1
-  },
-  days: {
-    color: "#473d2e"
   },
   message: {
     color: theme.palette.success.dark,

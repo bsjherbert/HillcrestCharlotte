@@ -5,14 +5,15 @@ import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from "@material-ui/pickers";
 import { Checkbox, Button, Radio, RadioGroup, TextField } from "@material-ui/core";
-import { FormControl, FormControlLabel, FormGroup, FormLabel } from "@material-ui/core";
+import { FormControl, FormControlLabel, FormGroup, FormLabel, FormHelperText } from "@material-ui/core";
 import { SendRounded } from "@material-ui/icons";
 
 import API from "../../lib/API";
 import Modal from "../Modals/ConformationModal";
+import usaStates from './usaStates';
 
 
-const styles = (theme) => ({
+const styles = theme => ({
   root: {
     display: "block",
     [theme.breakpoints.down('sm')]: {
@@ -28,25 +29,37 @@ const styles = (theme) => ({
     top: "3vh",
     zIndex: 5
   },
-  input: {
-    color: "black"
+  state: {
+    marginLeft: theme.spacing(2),
   }
 });
+
+const error = {
+  name: null
+};
 
 class ConnectionCardForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       dateCreated: Date.now(),
-      name: "",
-      address: "",
+      name: null,
+      address: {
+        street: "",
+        other: "",
+        city: "",
+        state: "",
+        zip: Number
+      },
       email: "",
       telephone: "",
       contactMethod: "",
       speakPastor: false,
       moreInfo: false,
       questions: false,
-      status: false
+      status: false,
+      // error: false,
+      message: ""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -67,32 +80,50 @@ class ConnectionCardForm extends Component {
   }
 
   handleSubmit = e => {
-    e.preventDefault();
     console.log(this.state);
+    
+    // if(this.state.address.other != "" && (this.state.address.street === "" || this.state.address.city === "" || this.state.address.zip === "") ) {
+    //   e.preventDefault()
+    //   this.setState({ error: true })
+    // }
+    
     API.ConnectionCard.create(this.state)
       .then(connCard => {
         console.log(connCard);
         this.setState({ status: true });
       })
-      .catch(err => console.log(err));
+      .catch(err => {
+        console.log(err)
+        this.setState({
+          status: true,
+          message: "There was an error submitting your connection card. Please try again later!"
+        })
+      });
   };
 
+  // handleError = e => {
+  //   if(error){
+  //     switch(this.state.message) {
+  //       case 'name': this.setState({message: "You must provide a full name."})
+  //     }
+  //   }
+  //   return this.setState({error: false})
+  // }
 
   render() {
     const { classes } = this.props;
     return (
-      <FormControl component="form" onSubmit={this.handleSubmit} fullWidth>
+      <FormControl component="form" onSubmit={this.handleSubmit} fullWidth style={classes.formControl}>
         <div>
           <MuiPickersUtilsProvider utils={DateFnsUtils}>
             <KeyboardDatePicker
-              InputProps={{ className: classes.input }}
               fullWidth
               disableToolbar
               variant="inline"
               format="MM/dd/yyyy"
               margin="normal"
               name="dateCreated"
-              id="date-picker-inline"
+              id="field-date-picker"
               label="Date"
               value={this.state.dateCreated}
               onChange={this.handleInputChange}
@@ -102,39 +133,79 @@ class ConnectionCardForm extends Component {
             />
           </MuiPickersUtilsProvider>
           <TextField
-            fullWidth
+            fullWidth required
             name="name"
-            id="standard-name"
-            label="Name"
+            id="field-name"
+            label="Name (First and Last)"
+            placeholder="Ex: John Doe"
             value={this.state.name}
             onChange={this.handleInputChange}
+            // error={this.handleError}
+            // helperText={this.state.message}
           />
           <TextField
             fullWidth
-            name="address"
-            id="standard-address"
-            label="Address"
-            value={this.state.address}
+            name="street"
+            id="field-street"
+            label="Street"
+            type="address-line-1"
+            placeholder="Ex: 8501 Bellhaven Blvd"
+            value={this.state.address.street}
+            onChange={this.handleInputChange}
+            // error={this.handleError}
+          />
+          <TextField
+            fullWidth
+            name="other"
+            id="field-other"
+            label="Apt/PO Box/Suite/Other"
+            type="address-line-2"
+            placeholder="Ex: Apt 301, Suite 405, etc."
+            value={this.state.address.other}
+            onChange={this.handleInputChange}
+            helperText="Optional"
+          />
+          <TextField
+            name="city"
+            id="field-city"
+            label="City"
+            type="address-level2"
+            placeholder="Ex: Charlotte"
+            value={this.state.address.city}
             onChange={this.handleInputChange}
           />
           <TextField
-            fullWidth
+            name="state"
+            id="field-state"
+            label="State"
+            type="address-level1"
+            placeholder="NC"
+            value={this.state.address.state.toUpperCase()}
+            onChange={this.handleInputChange}
+            className={classes.state}
+          />
+          <TextField
+            fullWidth required
             name="email"
-            id="standard-email"
+            id="field-email"
+            type="email"
             label="Email"
             value={this.state.email}
             onChange={this.handleInputChange}
+            // error={this.handleError}
           />
           <TextField
-            fullWidth
+            fullWidth required
             name="telephone"
-            id="standard-telephone"
+            id="field-telephone"
             label="Phone Number"
+            type="tel"
             value={this.state.telephone}
             onChange={this.handleInputChange}
+            // error={this.handleError}
           />
 
-          <FormControl component="fieldset" style={{ marginTop: "2rem", justifyContent: "center" }}>
+          <FormControl component="fieldset" style={{ marginTop: "2rem", justifyContent: "center" }} required>
             <FormLabel component="legend" style={{ paddingBottom: "1%", fontWeight: "bolder" }}>Preferred Contact Method:</FormLabel>
             <RadioGroup
               aria-label="preferred contact method"
@@ -155,8 +226,16 @@ class ConnectionCardForm extends Component {
                 label="Phone"
                 labelPlacement="end"
               />
+              <FormControlLabel
+                value="both"
+                control={<Radio color="primary" />}
+                label="Either"
+                labelPlacement="end"
+              />
             </RadioGroup>
+          </FormControl>
 
+          <FormControl required component="fieldset">
             <FormLabel component="legend" style={{ paddingBottom: "2%", fontWeight: "bolder" }}>What would you like to do?</FormLabel>
             <FormGroup aria-label="options" className={classes.root}>
               <FormControlLabel
@@ -170,6 +249,7 @@ class ConnectionCardForm extends Component {
                   />
                 }
                 label="I would like to speak to a pastor."
+                aria-label="I would like to speak to a pastor."
                 labelPlacement="end"
               />
               <FormControlLabel
@@ -183,6 +263,7 @@ class ConnectionCardForm extends Component {
                   />
                 }
                 label="I would like more info about Hillcrest."
+                aria-label="I would like more info about Hillcrest."
                 labelPlacement="end"
               />
               <FormControlLabel
@@ -196,11 +277,14 @@ class ConnectionCardForm extends Component {
                   />
                 }
                 label="I have questions about my relationship with God."
+                aria-label="I have questions about my relationship with God."
                 labelPlacement="end"
               />
             </FormGroup>
           </FormControl>
         </div>
+
+        {/* Connection card submit button */}
         <Button
           onClick={e => this.handleSubmit(e)}
           type="submit"
@@ -213,13 +297,15 @@ class ConnectionCardForm extends Component {
         >
           Submit
         </Button>
-        {/* Button, Button needs to call function that is coded at top. Console log the state */}
+
         <Modal opened={this.state.status} />
       </FormControl>
     );
   }
 }
+
 ConnectionCardForm.propTypes = {
   classes: PropTypes.object.isRequired
-};
+}
+
 export default withStyles(styles)(ConnectionCardForm);
