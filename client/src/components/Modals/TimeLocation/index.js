@@ -45,7 +45,7 @@ function TimeLocationModal() {
 
   return (
     <div>
-      <Link color="primary" onClick={handleOpen}>Times & Location</Link>
+      <Link color="primary" style={{ cursor: "pointer" }} onClick={handleOpen}>Times & Location</Link>
       <Modal
         aria-labelledby="modal-title"
         aria-describedby="modal-description"
