@@ -21,6 +21,7 @@ const useStyles = makeStyles(theme => ({
   },
   button: {
     justifyContent: "center",
+    marginBottom: "2%"
   }
 }));
 
@@ -29,24 +30,23 @@ export default function BookCard() {
 
   return (
     <Box boxShadow={3}>
-    <Card className={classes.card}>
-      <CardMedia
-        className={classes.media}
-        image="/images/BookCardSing.png"
-        title="Book of the Month"
-      />
-      <CardContent>
-        <Typography component="header" variant="h6" color="primary" style={{paddingBottom: "2%"}}>
-          Book of the Month
+      <Card className={classes.card}>
+        <CardMedia
+          className={classes.media}
+          image="/images/BookCardSing.png"
+          title="Book of the Month"
+        />
+        <CardContent>
+          <Typography component="header" variant="h6" color="primary" style={{ paddingBottom: "2%" }}>
+            Book of the Month
         </Typography>
-        {/* Book Info: Author & Title */}
-        <Typography variant="body2" component="p" color="textSecondary">
-          God intends for this compelling vision of His people singing—a
-          people joyfully joining together in song with brothers and sisters
-          around the world and around his heavenly throne—to include you.
+          {/* Book Info: Author & Title */}
+          <Typography variant="body2" component="p" color="textSecondary">
+            God intends for this compelling vision of His people singing—a
+            people joyfully joining together in song with brothers and sisters
+            around the world and around his heavenly throne—to include you.
         </Typography>
-      </CardContent>
-      <CardActionArea style={{marginBottom: "2%"}}>
+        </CardContent>
         <CardActions className={classes.button}>
           <Button color="secondary">
             Share
@@ -55,8 +55,7 @@ export default function BookCard() {
             Learn More
           </Button>
         </CardActions>
-      </CardActionArea>
-    </Card>
+      </Card>
     </Box>
   );
 }

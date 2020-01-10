@@ -37,6 +37,9 @@ const useStyles = makeStyles(theme => ({
   playIcon: {
     height: 38,
     width: 38
+  },
+  info: {
+    color: theme.palette.background.default
   }
 }));
 
@@ -53,13 +56,13 @@ export default function MediaControlCard() {
               <Typography variant="h6" color="primary">
                 Sermon
               </Typography>
-              <Typography variant="subtitle1" color="white">
+              <Typography variant="subtitle1" className={classes.info}>
                 Speaker: Brad Herbert
               </Typography>
-              <Typography variant="subtitle1" color="white">
+              <Typography variant="subtitle1" className={classes.info}>
                 Title: "Confidence to Enter"
               </Typography>
-              <Typography variant="subtitle1" color="white">
+              <Typography variant="subtitle1" className={classes.info}>
                 Verse: "Hebrews 10:1-25"
               </Typography>
             </CardContent>

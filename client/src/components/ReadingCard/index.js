@@ -82,7 +82,7 @@ const ReadingCard = props => {
           <Typography variant="h6" color="primary">
             Weekly Reading Plan
           </Typography>
-          <List dense="true">
+          <List dense={true}>
             {readingPlanArr.length && (
               <ReadingItems verses={readingPlanArr[weekNumber].dailyVerses} />
             )}
@@ -91,13 +91,13 @@ const ReadingCard = props => {
           <Typography variant="h6" color="primary">
             Weekly Memory Verse
           </Typography>
-          <List dense="true" className={classes.p}>
+          <List dense={true} className={classes.p}>
             {readingPlanArr.length && (
               <ReadingItems verses={readingPlanArr[weekNumber].memoryVerses} />
             )}
           </List>
         </CardContent>
-        <CardActionArea>
+        {/* <CardActionArea> */}
           <CardActions className={classes.button}>
             <Button color="secondary">
               Share
@@ -106,7 +106,7 @@ const ReadingCard = props => {
               Learn More
             </Button>
           </CardActions>
-        </CardActionArea>
+        {/* </CardActionArea> */}
       </Card>
     </Box>
   );
