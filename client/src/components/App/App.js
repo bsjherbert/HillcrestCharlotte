@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
-
 import API from "../../lib/API";
 import TokenStore from "../../lib/TokenStore";
 import AuthContext from "../../contexts/AuthContext";
@@ -17,8 +16,6 @@ import NotFound from "../../pages/NotFound/NotFound";
 import Footer from "../Footer";
 import PageContainer from "../../components/PageContainer";
 import PageTemplate from "../../components/Pagetemplate";
-
-import ReactPlayer from "react-player";
 import SermonTable from "../../components/SermonTable";
 
 import HillcrestTheme from "./theme";
