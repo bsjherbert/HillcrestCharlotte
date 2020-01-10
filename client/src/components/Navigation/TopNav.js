@@ -96,11 +96,11 @@ class Navigation extends Component {
                         <Collapse in={isOpen} timeout="auto" unmountOnExit>
                           <List component="menu" disablePadding>
                             {/* Dashboard link */}
-                            <ListItem button href="/dashboard">
+                            <ListItem button>
                               <ListItemIcon>
                                 <DashboardRounded />
                               </ListItemIcon>
-                              <ListItemText color="primary" variant="subtitle1">Dashboard</ListItemText>
+                              <ListItemText color="primary" variant="subtitle1"><Link href="/dashboard" to="/dashboard">Dashboard</Link></ListItemText>
                             </ListItem>
                             {/* Settings link */}
                             <ListItem button href="#" to="#">
