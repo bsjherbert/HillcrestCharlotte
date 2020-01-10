@@ -20,8 +20,7 @@ connCardController.post("/", (req, res) => {
                         ${req.body.address.zip}\n
                email: ${req.body.email}\n
                phone: ${req.body.telephone}\n
-               either: ${req.body.either}\n
-               contactMethod: ${req.body.telephone}\n
+               contactMethod: ${req.body.contactMethod}\n
                speakPastor: ${req.body.speakPastor}\n
                moreInfo: ${req.body.moreInfo}\n
                questions: ${req.body.questions}\n`
