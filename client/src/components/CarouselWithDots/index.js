@@ -25,6 +25,11 @@ class CarouselWithDots extends React.Component {
           value={this.state.value}
           slides={this.props.children}
           onChange={this.onchange}
+                     autoPlay={3500}
+            animationSpeed={1500}
+            infinite
+            // centered="true"
+            stopAutoPlayOnHover="true"
         />
         <Dots value={this.state.value} onChange={this.onchange} number={this.props.children.length} />
       </div>
