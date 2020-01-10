@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Link as RouterLink } from "react-router-dom";
+import { Link as RouterLink, Router } from "react-router-dom";
 import { Box, Grid, Link, Typography, ClickAwayListener } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { List, ListItem, ListItemText } from '@material-ui/core';
@@ -110,7 +110,7 @@ export default function MainNavTabs(props) {
                   <Typography variant="subtitle2">
                     <List dense disablePadding>
 
-                      <RouterLink to="/pages/imnew/about-us">
+                      <RouterLink to = "/pages/imnew/about-us">
                         <ListItem className="subNav">
                           <ListItemText>
                             About Us
@@ -118,7 +118,7 @@ export default function MainNavTabs(props) {
                         </ListItem>
                       </RouterLink>
 
-                      <RouterLink to="/pages/imnew/what-to-expect">
+                      <RouterLink to = "/pages/imnew/what-to-expect">
                         <ListItem className="subNav">
                           <ListItemText>
                             What to Expect
@@ -126,7 +126,7 @@ export default function MainNavTabs(props) {
                         </ListItem>
                       </RouterLink>
 
-                      <RouterLink to="/connection">
+                      <RouterLink to = "/connection">
                         <ListItem className="subNav">
                           <ListItemText>
                             <Link href="connection" color="inherit">
@@ -148,7 +148,7 @@ export default function MainNavTabs(props) {
                   <Typography variant="subtitle2">
                     <List dense disablePadding>
 
-                      <RouterLink to="/pages/imnew/the-gospel">
+                      <RouterLink to = "/pages/imnew/the-gospel">
                         <ListItem className="subNav">
                           <ListItemText>
                             The Gospel
@@ -156,7 +156,7 @@ export default function MainNavTabs(props) {
                         </ListItem>
                       </RouterLink>
 
-                      <RouterLink to="/pages/imnew/statement-of-faith">
+                      <RouterLink to = "/pages/imnew/statement-of-faith">
                         <ListItem className="subNav">
                           <ListItemText>
                             Statement of Faith
@@ -164,7 +164,7 @@ export default function MainNavTabs(props) {
                         </ListItem>
                       </RouterLink>
 
-                      <RouterLink to="/pages/imnew/constitution">
+                      <RouterLink to = "/pages/imnew/constitution">
                         <ListItem className="subNav">
                           <ListItemText>
                             Constitution
@@ -183,7 +183,7 @@ export default function MainNavTabs(props) {
                   <Typography variant="subtitle2">
                     <List dense disablePadding>
 
-                      <RouterLink to="/pages/imnew/pastors">
+                      <RouterLink to = "/pages/imnew/pastors">
                         <ListItem className="subNav">
                           <ListItemText>
                             Pastors
@@ -191,7 +191,7 @@ export default function MainNavTabs(props) {
                         </ListItem>
                       </RouterLink>
 
-                      <RouterLink to="/pages/imnew/deacons">
+                      <RouterLink to = "/pages/imnew/deacons">
                         <ListItem className="subNav">
                           <ListItemText>
                             Deacons
@@ -199,7 +199,7 @@ export default function MainNavTabs(props) {
                         </ListItem>
                       </RouterLink>
 
-                      <RouterLink to="/pages/imnew/hillcrest-kids">
+                      <RouterLink to = "/pages/imnew/hillcrest-kids">
                         <ListItem className="subNav">
                           <ListItemText>
                             Hillcrest Kids
@@ -224,11 +224,16 @@ export default function MainNavTabs(props) {
 
                 <Typography variant="subtitle2">
                   <List dense disablePadding>
+
+                      <RouterLink to = "/pages/serve/information">
                     <ListItem className="subNav">
                       <ListItemText>
                         Information
                       </ListItemText>
                     </ListItem>
+                      </RouterLink>
+
+                      <RouterLink to = "/pages/serve/my-hillcrest">
 
                     <ListItem className="subNav">
                       <ListItemText>
@@ -237,6 +242,8 @@ export default function MainNavTabs(props) {
                         </Link>
                       </ListItemText>
                     </ListItem>
+                      </RouterLink>
+                      
                   </List>
                 </Typography>
               </Grid>
@@ -250,59 +257,80 @@ export default function MainNavTabs(props) {
                   <Grid item>
                     <Typography variant="subtitle2">
                       <List dense disablePadding>
+
+                        <RouterLink to = "/pages/serve/guest-experience">
                         <ListItem className="subNav">
                           <ListItemText>
                             Guest Experience
                           </ListItemText>
                         </ListItem>
-
+                        </RouterLink>
+                        
+                        <RouterLink to = "/pages/serve/safety">
                         <ListItem className="subNav">
                           <ListItemText>
                             Safety
                           </ListItemText>
                         </ListItem>
+                        </RouterLink>
 
+                        <RouterLink to = "/pages/serve/worship">
                         <ListItem className="subNav">
                           <ListItemText>
                             Worship
                           </ListItemText>
                         </ListItem>
+                        </RouterLink>
 
+                        <RouterLink to = "/pages/serve/production">
                         <ListItem className="subNav">
                           <ListItemText>
                             Production
                           </ListItemText>
                         </ListItem>
+                        </RouterLink>
+
                       </List>
                     </Typography>
                   </Grid>
                   {/* SERVE: Sub Menu 2 Col 2 */}
                   <Grid item>
+
                     <Typography variant="subtitle2">
                       <List dense disablePadding>
+
+                        <RouterLink to = "/pages/serve/hillcrest-kids">
                         <ListItem className="subNav">
                           <ListItemText>
                             Hillcrest Kids
                           </ListItemText>
                         </ListItem>
+                        </RouterLink>
 
+                        <RouterLink to = "/pages/serve/prayer">
                         <ListItem className="subNav">
                           <ListItemText>
                             Prayer
                           </ListItemText>
                         </ListItem>
-
+                        </RouterLink>
+                        
+                        <RouterLink to = "/pages/serve/care">
                         <ListItem className="subNav">
                           <ListItemText>
                             Care
                           </ListItemText>
                         </ListItem>
+                        </RouterLink>
 
+                        <RouterLink to = "/pages/serve/library">
                         <ListItem className="subNav">
                           <ListItemText>
                             Library
                           </ListItemText>
                         </ListItem>
+                        </RouterLink>
+
                       </List>
                     </Typography>
                   </Grid>
@@ -310,11 +338,15 @@ export default function MainNavTabs(props) {
                   <Grid item>
                     <Typography variant="subtitle2">
                       <List dense disablePadding>
+
+                        <RouterLink to = "/pages/serve/special-events">
                         <ListItem className="subNav">
                           <ListItemText>
                             Special Events
                           </ListItemText>
                         </ListItem>
+                        </RouterLink>
+
                       </List>
                     </Typography>
                   </Grid>
@@ -342,11 +374,14 @@ export default function MainNavTabs(props) {
                       </ListItemText>
                     </ListItem>
 
+                    <Link href="https://hillcrestcharlotte.churchcenter.com/giving?open-in-church-center-modal=true">
                     <ListItem className="subNav">
                       <ListItemText>
                         Give Today
                       </ListItemText>
                     </ListItem>
+                    </Link>
+
                   </List>
                 </Typography>
               </Grid>
@@ -358,35 +393,48 @@ export default function MainNavTabs(props) {
 
                 <Typography variant="subtitle2">
                   <List dense disablePadding>
+                    
+                  <RouterLink to = "/pages/support/charlotte-rescue-mission">
                     <ListItem className="subNav">
                       <ListItemText>
                         Charlotte Rescue Mission
                       </ListItemText>
                     </ListItem>
+                    </RouterLink>
 
+
+                    <RouterLink to = "/pages/support/human-coalition">
                     <ListItem className="subNav">
                       <ListItemText>
                         Human Coalition
                       </ListItemText>
                     </ListItem>
-
+                    </RouterLink>
+                    
+                    <RouterLink to = "/pages/support/kdm">
                     <ListItem className="subNav">
                       <ListItemText>
                         King's Daughter's Ministry
                       </ListItemText>
                     </ListItem>
+                    </RouterLink>
 
+                    <RouterLink to = "/pages/support/mt-holly-community-relief-organization">
                     <ListItem className="subNav">
                       <ListItemText>
                         Mt. Holly Community Relief Organization
                       </ListItemText>
                     </ListItem>
-
+                    </RouterLink>
+                    
+                    <Link href="https://schools.cms.k12.nc.us/pawcreekES/Pages/Default.aspx" color="inherit">
                     <ListItem className="subNav">
                       <ListItemText>
                         Paw Creek Elementary
                       </ListItemText>
                     </ListItem>
+                    </Link>
+
                   </List>
                 </Typography>
               </Grid>
@@ -421,6 +469,7 @@ export default function MainNavTabs(props) {
 
                 <Typography variant="subtitle2">
                   <List dense disablePadding>
+
                     <ListItem className="subNav">
                       <ListItemText>
                         Sunday School (All ages) <br />
@@ -447,13 +496,16 @@ export default function MainNavTabs(props) {
                         </Typography>
                       </ListItemText>
                     </ListItem>
-
+                    
+                    <RouterLink to = "/pages/share/discipleship-group">
                     <ListItem className="subNav">
                       <ListItemText>
                         Discipleship Group (D-Groups)
                       </ListItemText>
                     </ListItem>
+                    </RouterLink>
                   </List>
+
                 </Typography>
               </Grid>
               {/* SHARE: Sub Menu 2 */}
@@ -473,23 +525,30 @@ export default function MainNavTabs(props) {
                     </ListItem>
                     </RouterLink>
 
+                    <RouterLink to = "/pages/share/book-of-the-month">
                     <ListItem className="subNav">
                       <ListItemText>
                         Book of the Month
                       </ListItemText>
                     </ListItem>
-
+                    </RouterLink>
+                    
+                    <RouterLink to = "/pages/share/365-reading-plan">
                     <ListItem className="subNav">
                       <ListItemText>
                         365 Reading Plan
                       </ListItemText>
                     </ListItem>
+                    </RouterLink>
 
+                    <RouterLink to = "/pages/share/e-library">
                     <ListItem className="subNav">
                       <ListItemText>
                         e-Library
                       </ListItemText>
                     </ListItem>
+                    </RouterLink>
+
                   </List>
                 </Typography>
               </Grid>
