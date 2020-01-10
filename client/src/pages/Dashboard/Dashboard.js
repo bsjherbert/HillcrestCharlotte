@@ -19,6 +19,15 @@ const styles = () => ({
     backgroundColor: HillcrestTheme.palette.background.paper,
     position: "relative",
     zIndex: 5
+  },
+  hr: {
+    display: "block",
+    borderColor: HillcrestTheme.palette.primary.main,
+    backgroundColor: HillcrestTheme.palette.primary.main,
+    borderStyle: "solid",
+    borderWidth: 2,
+    marginTop: "0.5em",
+    marginBottom: "1rem",
   }
 })
 
@@ -43,7 +52,7 @@ class Dashboard extends Component {
         if (err.response.status === 401) {
           return this.setState({
             error:
-              <Typography component="h1" variant="h3" color="textSecondary">
+              <Typography component="h1" variant="h4" color="textSecondary">
                 "Unauthorized. Please <Link color="primary" href="login">login</Link>."
               </Typography>
           });
@@ -62,7 +71,7 @@ class Dashboard extends Component {
       <main>
         {this.state.isLoading
           ? (
-            <Box component="body" className={classes.root} textAlign="center" alignContent="center">
+            <Box component="body" className={classes.root} textAlign="center" alignContent="center" alignItems="center">
               <Typography component="h1" variant="h3" style={{ color: "rgb(0, 160, 0)", marginTop: "3rem" }}>
                 Loading... <CircularProgress size="large" color="secondary" />
               </Typography>
@@ -75,10 +84,11 @@ class Dashboard extends Component {
               </span>
             )
             : (
-              <Paper style={{ padding: "3vw", marginTop: "1rem" }}>
-                  <Typography component="header" variant="h4" color="textSecondary">
+              <Paper style={{ padding: "3vw", marginTop: "2rem" }}>
+                  <Typography component="header" variant="h3" color="textSecondary">
                     Welcome back!
                   </Typography>
+                  <hr className={classes.hr} />
 
                 <HCBudgetPie
                   labels={labels}
