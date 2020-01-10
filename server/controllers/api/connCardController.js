@@ -7,7 +7,7 @@ connCardController.post("/", (req, res) => {
   db.ConnCard.create(req.body).then(cc => {
     sgMail.setApiKey(process.env.SENDGRID_API_KEY);
     const msg = {
-      to: "lbernadel7@gmail.com",
+      to: "bsjherbert@gmail.com",
       from: {
         name: "Hillcrest Connection Card - Online",
         email: "connection@hillcrestcharlotte.com"
