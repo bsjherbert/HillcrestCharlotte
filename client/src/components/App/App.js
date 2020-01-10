@@ -164,7 +164,7 @@ class App extends Component {
                   short: "constitution",
                   title: "Constitution",
                   href: "/pages/imnew/constitution",
-                  text: `I couldnt find a constitution.`
+                  text: `Brad said not to put "I couldnt find a constitution." so Ima just leave it here.`
                 }
               ]
             },
@@ -415,7 +415,7 @@ class App extends Component {
                   short:"dicipleshipgroup",
                   title: "Dicipleship Group (D-Groups)",
                   href: "/pages/share/discipleship-group",
-                  text:``
+                  text:`Do it`
 
                 }
               ]
