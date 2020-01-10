@@ -45,7 +45,9 @@ React.useEffect(() => {
         </Typography>
       </CardContent>
       <CardActions>
+        <Link to="https://charlotterescuemission.org/">
         <Button size="small">Learn More</Button>
+        </Link>
       </CardActions>
     </Card>
   );

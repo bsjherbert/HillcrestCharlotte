@@ -159,13 +159,15 @@ class App extends Component {
                   short: "statement-of-faith",
                   title: "Statement of Faith",
                   href: "/pages/imnew/statement-of-faith",
-                  text: `Statement of faith`
+                  text: `
+                  You have confessed Jesus Christ as Lord of your life and have been baptized by immersion after 
+                  salvation, but are not currently a member of another church.`
                 },
                 {
                   short: "constitution",
                   title: "Constitution",
                   href: "/pages/imnew/constitution",
-                  text: `constitution`
+                  text: `I couldnt find a constitution.`
                 }
               ]
             },
@@ -177,19 +179,90 @@ class App extends Component {
                   short: "pastors",
                   title: "Pastors",
                   href: "/pages/imnew/pastors",
-                  text: `pastors`
+                  text: `Pastor: Steven Gompers,
+                  Associate Pastor: my man man BRAAD HILLCREST!`
                 },
                 {
                   short: "deacons",
-                  title: "Deacons",
+                  title: "Deacons Board",
                   href: "/pages/imnew/deacons",
-                  text: ``
+                  text: `Michael Costa, Stan Foster, ​Doug McClure, Joe Penner, Don Smith, Dave Vanek,`
                 },
                 {
                   short: "hillcrest-kids",
                   title: "Hillcrest Kids",
                   href: "/pages/imnew/hillcrest-kids",
-                  text: ``
+                  text: `HELLO PARENTS & CAREGIVERS!
+
+                  We consider it quite a privilege to serve your little one in Hillcrest Kids while you attend Sunday School or 
+                  one of our Worship Services!  Our goal is to provide a safe and exciting experience for your child and peace of 
+                  mind for you while your child is in our care.
+                  
+                  ​As a church, we believe that one of the most important things we can do is equip parents with a Biblical understanding 
+                  of their role as the primary disciplers of their children and to help them understand what that looks like practically.
+                  Throughout its pages, the Bible speaks about the important task parents have in training their children to know the 
+                  Lord and understand His Word. As a children’s ministry, we want to teach parents what the Bible says about parenting, 
+                  how it applies to them, and how to disciple their children at home.
+                  
+                  We would love the opportunity to come alongside you as you strive to raise children who not only know about Jesus, 
+                  but who enter into a thriving relationship with Him as their Savior. 
+                   
+                  
+                  OUR STRUCTURE
+                  
+                  Hillcrest Kids offers age appropriate care and classes for children ages six weeks through preschool weekly during
+                   Sunday School and our Midweek service. If you have a preschool or elementary aged child, we offer an excellent 
+                   Sunday School curriculum that will expose them to essential doctrines of the faith and show them how the whole 
+                   Bible is about the greatest rescue story ever told. Our midweek curriculum takes students through an exploration 
+                   of the New City Catechism which seeks to ground them with Biblical truth and an understanding of Christian doctrine.
+                   
+                  Our older preschoolers (ages 5 and up) and elementary students join their family in our Worship Hour. We believe that
+                   this is a biblical model that is beneficial for both children and adults as we worship together as the family of God.
+                    We provide special worship guides for children to help them follow along with the service, and we recommend THIS 
+                    article that explains some of the benefits of worshipping this way and offers some ideas for helping children
+                     prepare for the worship hour.
+                  
+                  
+                  We know that some parents will be more comfortable bringing their nursery aged children with them to our Worship 
+                  Hour.  We welcome these families but do offer a Family Viewing Room if you need to step out during the service.
+                  This room is located below the sanctuary and is outfitted with a television and live stream of the service.
+                  
+                  
+                  
+                  KEEPING EVERYONE SAFE
+                  
+                  We recognize that the safety of children is typically one of a parent’s primary concerns when introducing the child
+                   to a new environment.  Here are a few ways we work to ensure the safety of our children and volunteers:
+                  
+                  * Trained and Background Checked Volunteers
+                  
+                  * Security System
+                  
+                  * Food / Allergy Policy
+                  
+                  * Wellness Guidelines
+                  
+                  * Safety Team Volunteers
+                  
+                  * Diapering / Bathroom Guidelines
+                  
+                  * Strict Volunteer-to-Child Ratios
+                  
+                  * Emergency Procedure Plan
+                  
+                  
+                  
+                  CHECKING IN
+                  
+                  If you have a birth—Pre K aged child, you will be asked to fill out an information form with a few details that 
+                  will help us serve your child well while in our care.  Our Team Leader will give your child a name tag with a 
+                  security code and you will be issued a matching parent security tag.  Your child will not be released to anyone 
+                  who does not have this tag.  Additionally, if we need to reach you during the service, the security code will 
+                  flash on the monitor in the sanctuary. 
+                  
+                  If you join us again for another service, you will be able to use our automated check-in system.  You will 
+                  enter the telephone number you provided on the information form onto the tablet at our check in kiosk.  You can 
+                  then select your child’s name and the security tags will automatically print.`
                 }
               ]
             }
@@ -206,13 +279,13 @@ class App extends Component {
                 {
                   short: "information",
                   title: "Information",
-                  href: "/pages/imnew/information",
+                  href: "/pages/serve/information",
                   text: `info`
                 },
                 {
                   short: "my-hillcrest",
                   title: "My Hillcrest",
-                  href: "/pages/imnew/my-hillcrest",
+                  href: "/pages/serve/my-hillcrest",
                   text: ``
                 }
               ]
@@ -224,49 +297,62 @@ class App extends Component {
                 {
                   short: "guest-experience",
                   title: "Guest Experience",
-                  href: "/pages/imnew/guest-experience",
+                  href: "/pages/serve/guest-experience",
                   text: ``
                 },
                 {
                   short: "safety",
                   title: "Safety",
-                  href: "/pages/imnew/safety",
+                  href: "/pages/serve/safety",
                   text: ``
                 },
                 {
                   short: "worship",
                   title: "Worship",
-                  href: "/pages/imnew/worship",
+                  href: "/pages/serve/worship",
                   text: ``
                 },
                 {
-                  short: "hillcrest-Kids",
+                  short: "production",
+                  title: "Production",
+                  href: "/pages/serve/production",
+                  text:  ``
+                },
+                {
+                  short: "hillcrest-kids",
                   title: "Hillcrest Kids",
-                  href: "/pages/imnew/hillcrest-kids",
-                  text: ``
+                  href: "/pages/serve/hillcrest-kids",
+                  text: `HILLCREST KIDS
+                  A vibrant children’s ministry is made possible by dedicated volunteers who serve the Lord through loving and leading
+                  our youngest attenders. Your service in this vital ministry area will help ensure that Hillcrest is a place where
+                  families thrive. Hillcrest Kids is staffed with volunteers who love children and are ready to be trained and
+                  prepared to meet the needs of the little ones entrusted to us. Whether you’ve been a long time nursery volunteer
+                  or are interested in becoming one now, we look forward to working together to create an excellent ministry
+                  to children! (Please note that all volunteers who serve with children or students are required to submit to 
+                   a background check.)`
                 },
                 {
                   short: "prayer",
                   title: "Prayer",
-                  href: "/pages/imnew/prayer",
+                  href: "/pages/serve/prayer",
                   text: ``
                 },
                 {
                   short: "care",
                   title: "Care",
-                  href: "/pages/imnew/care",
+                  href: "/pages/serve/care",
                   text: ``
                 },
                 {
                   short: "library",
                   title: "Library",
-                  href: "/pages/imnew/library",
+                  href: "/pages/serve/library",
                   text: ``
                 },
                 {
                   short: "special-events",
                   title: "Special Events",
-                  href: "/pages/imnew/special-events",
+                  href: "/pages/serve/special-events",
                   text: ``
                 }
               ]
@@ -275,7 +361,7 @@ class App extends Component {
         },
         support: {
           title: "Support",
-          cat: "Support",
+          cat: "support",
           submenus: [
             {
               title: "Give",
@@ -284,34 +370,37 @@ class App extends Component {
                 {
                   short: "give",
                   title: "Give Today",
-                  href:
-                    "https://hillcrestcharlotte.churchcenter.com/giving?open-in-church-center-modal=true"
+                  href:"https://hillcrestcharlotte.churchcenter.com/giving?open-in-church-center-modal=true"
                 },
-                {
-                  title: "Sunday Worship Service",
-                  href: "#"
-                }
               ]
             },
             {
               title: "Community Involvement",
-              id: "resources",
+              id: "community-involvement",
               links: [
                 {
-                  title: "Service Sermons",
-                  href: "#"
+                  short: "charlotterescuemission",
+                  title: "Charlotte Rescue Mission",
+                  href: "/pages/support/charlotte-rescue-mission",
+                  text: "what"
                 },
                 {
-                  title: "Book of the Month",
-                  href: "#"
+                  short: "humancoalition",
+                  title: "Human Coalition",
+                  href: "/pages/support/human-coalition",
+                  text: `Human Coalition`
                 },
                 {
-                  title: "365 Reading Plan",
-                  href: "#"
+                  short: "kingsdaughtersministry",
+                  title: "King's Daughter's Ministry",
+                  href: "/pages/support/kdm",
+                  text: `kings daughter's ministry`
                 },
                 {
-                  title: "e-Library",
-                  href: "#"
+                  short: "mthollycommunityrelieforganizaion",
+                  title: "Mt Holly Community Relief Organization",
+                  href: "/pages/support/mt-holly-community-relief-organization",
+                  text: "Mt Holly Community Relief Organization"
                 }
               ]
             }
@@ -326,16 +415,11 @@ class App extends Component {
               id: "gather",
               links: [
                 {
-                  title: "Connection Card",
-                  href: "#"
-                },
-                {
-                  title: "What to Expect",
-                  href: "#"
-                },
-                {
-                  title: "FAQs",
-                  href: "#"
+                  short:"dicipleshipgroup",
+                  title: "Dicipleship Group (D-Groups)",
+                  href: "/pages/share/discipleship-group",
+                  text:``
+
                 }
               ]
             },
@@ -347,37 +431,31 @@ class App extends Component {
                   short: "service-sermons",
                   title: "Service Sermons",
                   href: "/pages/share/service-sermons",
-                  text: `dfas`,
                   components: [
                     // (<ReactPlayer url= "https://soundcloud.com/hillcrestclt/confidence-to-enter" width="100%" height="100%" />),
                     ( <SermonTable />)
                   ]
                 },
                 {
-                  title: "Statement of Faith",
-                  href: "#"
+                  short:"bookofthemonth",
+                  title: "Book of The Month",
+                  href: "/pages/share/book-of-the-month",
+                  text: `Book of the Month`
+                },
+                { 
+                  short: "readingplan",
+                  title: "365 Reading Plan",
+                  href: "/pages/share/365-reading-plan",
+                  text: `365 reading plan`
                 },
                 {
-                  title: "Constitution",
-                  href: "#"
+                  short: "elibrary",
+                  title: "E-Library",
+                  href: "/pages/share/e-library",
+                  text: `its Electric`
                 }
               ]
             },
-            {
-              title: "LeaderShip Team",
-
-              id: "leadershipTeam",
-              links: [
-                {
-                  title: "Elders",
-                  href: "#"
-                },
-                {
-                  title: "deacons",
-                  href: "#"
-                }
-              ]
-            }
           ]
         }
       }
