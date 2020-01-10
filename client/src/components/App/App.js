@@ -406,10 +406,10 @@ class App extends Component {
               />
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/login" component={Login} />
-                <Route path="/register" component={Register} />
-                <Route path="/connection" component={ConnectionCard} />
-                <PrivateRoute path="/dashboard" component={Dashboard} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/connection" component={ConnectionCard} />
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <Route
                   path="/pages"
                   render={props => (
