@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -12,23 +12,16 @@ import Box from '@material-ui/core/Box';
 //style text content here
 const useStyles = makeStyles(theme => ({
   card: {
-    // backgroundColor: theme.palette.secondary.main,
+    backgroundColor: theme.palette.background.default,
     minHeight: "350px",
-    maxHeight: "350px"
+    maxHeight: "350px",
   },
   media: {
     height: 165
   },
-  text: theme.palette.common.white,
-  // title: {
-  //   fontSize: 14
-  // },
   button: {
     justifyContent: "center",
-    paddingTop: "15px",
-  },
-  para: {
-    paddingTop: "5px"
+    marginBottom: "2%"
   }
 }));
 
@@ -37,34 +30,32 @@ export default function BookCard() {
 
   return (
     <Box boxShadow={3}>
-    <Card className={classes.card}>
-      <CardMedia
-        className={classes.media}
-        image="/images/BookCardSing.png"
-        title="Book of the Month"
-      />
-      <CardContent>
-        <Typography component="header" variant="h6" color="primary">
-          Book of the Month
+      <Card className={classes.card}>
+        <CardMedia
+          className={classes.media}
+          image="/images/BookCardSing.png"
+          title="Book of the Month"
+        />
+        <CardContent>
+          <Typography component="header" variant="h6" color="primary" style={{ paddingBottom: "2%" }}>
+            Book of the Month
         </Typography>
-        {/* Book Info: Author & Title */}
-        <Typography variant="body2" component="p" className={classes.text}>
-          God intends for this compelling vision of His people singing—a
-          people joyfully joining together in song with brothers and sisters
-          around the world and around his heavenly throne—to include you.
+          {/* Book Info: Author & Title */}
+          <Typography variant="body2" component="p" color="textSecondary">
+            God intends for this compelling vision of His people singing—a
+            people joyfully joining together in song with brothers and sisters
+            around the world and around his heavenly throne—to include you.
         </Typography>
-      </CardContent>
-      <CardActionArea>
+        </CardContent>
         <CardActions className={classes.button}>
-          <Button size="small" color="primary">
+          <Button color="secondary">
             Share
-        </Button>
-          <Button size="small" color="primary">
+          </Button>
+          <Button color="secondary">
             Learn More
-        </Button>
+          </Button>
         </CardActions>
-      </CardActionArea>
-    </Card>
+      </Card>
     </Box>
   );
 }

@@ -4,7 +4,7 @@ import { withStyles } from "@material-ui/styles";
 import "date-fns";
 import DateFnsUtils from "@date-io/date-fns";
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from "@material-ui/pickers";
-import { Checkbox, Button, Radio, RadioGroup, TextField, isWidthDown } from "@material-ui/core";
+import { Checkbox, Button, Radio, RadioGroup, TextField } from "@material-ui/core";
 import { FormControl, FormControlLabel, FormGroup, FormLabel, FormHelperText } from "@material-ui/core";
 import { SendRounded } from "@material-ui/icons";
 
@@ -51,13 +51,11 @@ class ConnectionCardForm extends Component {
     this.state = {
       dateCreated: Date.now(),
       name: null,
-      address: {
-        street: "",
-        other: "",
-        city: "",
-        state: "",
-        zip: Number
-      },
+      street: "",
+      other: "",
+      city: "",
+      state: "",
+      zip: 0,
       email: "",
       telephone: "",
       contactMethod: "",
@@ -88,13 +86,33 @@ class ConnectionCardForm extends Component {
 
   handleSubmit = e => {
     console.log(this.state);
+    e.preventDefault();
 
     // if(this.state.address.other != "" && (this.state.address.street === "" || this.state.address.city === "" || this.state.address.zip === "") ) {
     //   e.preventDefault()
     //   this.setState({ error: true })
     // }
 
-    API.ConnectionCard.create(this.state)
+    API.ConnectionCard.create({
+      dateCreated: this.state.dateCreated,
+      name: this.state.name,
+      address: {
+        street: this.state.street,
+        other: this.state.other,
+        city: this.state.city,
+        state: this.state.state,
+        zip: this.state.zip
+      },
+      email: this.state.email,
+      telephone: this.state.telephone,
+      contactMethod: this.state.contactMethod,
+      speakPastor: this.state.speakPastor,
+      moreInfo: this.state.moreInfo,
+      questions: this.state.questions,
+      status: this.state.status,
+      // error: false,
+      message: this.state.message
+    })
       .then(connCard => {
         console.log(connCard);
         this.setState({ status: true });
@@ -157,7 +175,7 @@ class ConnectionCardForm extends Component {
             label="Street"
             type="address-line-1"
             placeholder="Ex: 8501 Bellhaven Blvd"
-            value={this.state.address.street}
+            value={this.state.street}
             onChange={this.handleInputChange}
           // error={this.handleError}
           />
@@ -168,7 +186,7 @@ class ConnectionCardForm extends Component {
             label="Apt/PO Box/Suite/Other"
             type="address-line-2"
             placeholder="Ex: Apt 301, Suite 405, etc."
-            value={this.state.address.other}
+            value={this.state.other}
             onChange={this.handleInputChange}
             helperText="Optional"
           />
@@ -178,7 +196,7 @@ class ConnectionCardForm extends Component {
             label="City"
             type="address-level2"
             placeholder="Ex: Charlotte"
-            value={this.state.address.city}
+            value={this.state.city}
             onChange={this.handleInputChange}
             className={classes.city}
           />
@@ -188,7 +206,7 @@ class ConnectionCardForm extends Component {
             label="State"
             type="address-level1"
             placeholder="NC"
-            value={this.state.address.state}
+            value={this.state.state}
             onChange={this.handleInputChange}
             className={classes.state}
           />
@@ -198,7 +216,7 @@ class ConnectionCardForm extends Component {
             label="Zip Code"
             type="address-level1"
             placeholder="28214"
-            value={this.state.address.zip}
+            value={this.state.zip}
             onChange={this.handleInputChange}
           />
           <TextField

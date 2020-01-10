@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 
 export default () => (
   <div className='NotFound'>
-    <h1>Oops!</h1>
+    <h1>Uh-oh!</h1>
     <p>
-      Sorry, the page you requested cannot be found. <Link to='/'>Click
-      here</Link> to return to the home page.
+      Sorry, the page you requested cannot be found. <Link to='/'>Return to the home page</Link>.
     </p>
   </div>
 );

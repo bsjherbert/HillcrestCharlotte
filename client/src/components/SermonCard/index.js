@@ -1,5 +1,5 @@
 import React from "react";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { makeStyles} from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
@@ -25,8 +25,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function MediaControlCard() {
   const classes = useStyles();
-  const theme = useTheme();
-
+  
   return (
     <Box boxShadow={3}>
       <Card className={classes.card}>
@@ -35,7 +34,7 @@ export default function MediaControlCard() {
             <CardContent className={classes.content}>
               <Typography variant="h6" color="primary">
                 Latest Sermon
-          </Typography>
+              </Typography>
             </CardContent>
             <ReactPlayer url= "https://soundcloud.com/hillcrestclt/confidence-to-enter" width="100%" height="154px"/>
           </CardActionArea>
