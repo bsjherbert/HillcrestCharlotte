@@ -64,7 +64,7 @@ const seedSermons = [
     },
     {
         sermonDate: "2019-06-02",
-        bookBible: "Ephesians",
+        bookBible: "EPHESIANS",
         normalizedBook: "ephesians",
         verses: "Ephesians 6:18-20",
         title: "The Praying Church - Part 1",   
@@ -73,7 +73,7 @@ const seedSermons = [
     },
     {
         sermonDate: "2019-05-26",
-        bookBible: "Ephesians",
+        bookBible: "EPHESIANS",
         normalizedBook: "ephesians",
         verses: "Ephesians 6:17b",
         title: "The Armor - Part 9",   
@@ -82,7 +82,7 @@ const seedSermons = [
     },
     {
         sermonDate: "2019-05-19",
-        bookBible: "Ephesians",
+        bookBible: "EPHESIANS",
         normalizedBook: "ephesians",
         verses: "Ephesians 6:17b",
         title: "The Armor - Part 8",   
@@ -91,7 +91,7 @@ const seedSermons = [
     },
     {
         sermonDate: "2019-05-12",
-        bookBible: "Ephesians",
+        bookBible: "EPHESIANS",
         normalizedBook: "ephesians",
         verses: "Ephesians 6:17b",
         title: "The Armor - Part 7",   
@@ -100,7 +100,7 @@ const seedSermons = [
     },
     {
         sermonDate: "2019-04-21",
-        bookBible: "Ephesians",
+        bookBible: "EPHESIANS",
         normalizedBook: "ephesians",
         verses: "Ephesians 6:17a",
         title: "The Armor - Part 6",   
@@ -109,20 +109,12 @@ const seedSermons = [
     },
     {
         sermonDate: "2019-04-21",
-        bookBible: "Ephesians",
+        bookBible: "EPHESIANS",
         normalizedBook: "ephesians",
         verses: "Ephesians 6:15",
         title: "Gospel of Reconciliation",   
         speaker: "Steven Gompers",
         audioFileLink: "https://soundcloud.com/hillcrestclt/confidence-to-enter"
     }
-
-
-
-
-
-
-
-
 ]
     module.exports = seedSermons;

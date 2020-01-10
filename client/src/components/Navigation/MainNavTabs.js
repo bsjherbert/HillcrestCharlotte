@@ -57,7 +57,7 @@ export default function MainNavTabs(props) {
           {/* HOME Tab */}
           <Grid item component="span">
             <RouterLink to="/" style={{ textDecoration: "none" }}>
-              <Link underline="hover" className="navTab" color="textSecondary" variant="h6" href="/"
+              <Link underline="hover" component="p" className="navTab" color="textSecondary" variant="h6" href="/"
                 title="Home" style={{ cursor: "pointer" }} aria-label="Home" aria-controls="home" aria-haspopup="false">
                 Home
               </Link>

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
-
 import API from "../../lib/API";
 import TokenStore from "../../lib/TokenStore";
 import AuthContext from "../../contexts/AuthContext";
@@ -17,8 +16,6 @@ import NotFound from "../../pages/NotFound/NotFound";
 import Footer from "../Footer";
 import PageContainer from "../../components/PageContainer";
 import PageTemplate from "../../components/Pagetemplate";
-
-import ReactPlayer from "react-player";
 import SermonTable from "../../components/SermonTable";
 
 import HillcrestTheme from "./theme";
@@ -487,10 +484,10 @@ class App extends Component {
               />
               <Switch>
                 <Route exact path="/" component={Home} />
-                <Route path="/login" component={Login} />
-                <Route path="/register" component={Register} />
-                <Route path="/connection" component={ConnectionCard} />
-                <PrivateRoute path="/dashboard" component={Dashboard} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/register" component={Register} />
+                <Route exact path="/connection" component={ConnectionCard} />
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
                 <Route
                   path="/pages"
                   render={props => (

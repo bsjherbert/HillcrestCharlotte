@@ -2,6 +2,7 @@ import React from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
+import Box from '@material-ui/core/Box';
 import {
   List,
   ListSubheader,
@@ -21,7 +22,9 @@ import {
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%",
-    backgroundColor: theme.palette.background.paper
+    zIndex: 5,
+    backgroundColor: theme.palette.background.default,
+    marginRight: theme.spacing(4)
   },
   nested: {
     paddingLeft: theme.spacing(4)
@@ -48,6 +51,7 @@ export default function NestedList(props) {
   };
 
   return (
+    <Box boxShadow={1}>
     <List
       component="nav"
       aria-labelledby="sideNav"
@@ -94,5 +98,6 @@ export default function NestedList(props) {
         );
       })}
     </List>
+    </Box>
   );
 }

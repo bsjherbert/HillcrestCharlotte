@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
-const states = []
+// const path = require('path')
+// const statesArray = require(__dirname + path('./usaStates'))
 
 const ConnCardSchema = new Schema({
   name: {
@@ -25,14 +25,13 @@ const ConnCardSchema = new Schema({
     state: {
       type: String,
       trim: true,
-      uppercase: true,
-      enum: states
+      uppercase: true
+      // enum: statesArray
     },
     zip: Number
   },
   email: {
     type: String,
-    unique: true,
     match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
   },
   telephone: {
