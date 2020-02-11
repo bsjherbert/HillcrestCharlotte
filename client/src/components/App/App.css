@@ -61,3 +61,8 @@
 .subNav:hover {
   color: #bfbfbf;
 }
+
+/* Sidebar Card */
+.subLink:hover {
+  color: rgba(223, 202, 151, 1)
+}

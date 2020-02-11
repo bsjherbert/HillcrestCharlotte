@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Connect(props) {
   const classes = useStyles();
-  console.log(props)
+  // console.log(props)
 
 React.useEffect(() => {
   console.log(props.theObj.content)
@@ -46,7 +46,7 @@ React.useEffect(() => {
         
           <br />
         </Typography>
-        {props.theObj.components ? props.theObj.components.map(component => component) : (null)}
+        {/* {props.theObj.components ? props.theObj.components.map(component => component) : (null)} */}
       </CardContent>
       <CardActions>
         <Button size="small">Learn More</Button>

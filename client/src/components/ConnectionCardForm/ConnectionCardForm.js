@@ -55,7 +55,7 @@ class ConnectionCardForm extends Component {
       other: "",
       city: "",
       state: "",
-      zip: 0,
+      zip: null,
       email: "",
       telephone: "",
       contactMethod: "",

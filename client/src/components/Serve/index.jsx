@@ -25,11 +25,11 @@ const useStyles = makeStyles({
 
 export default function Connect(props) {
   const classes = useStyles();
-  console.log(props)
+  // console.log(props)
 
-React.useEffect(() => {
-  console.log(props.theObj.content)
- })
+// React.useEffect(() => {
+//   console.log(props.theObj.content)
+//  })
   return (
     <Card className={classes.card}>
       <CardContent>
