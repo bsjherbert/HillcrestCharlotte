@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link as RouterLink } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 import { List, ListItemText, ListItemIcon, ListItem } from '@material-ui/core';
 import { Link, Grid, Typography, ListItemAvatar } from '@material-ui/core';
@@ -123,10 +124,12 @@ class Navigation extends Component {
                   </>
                   :
                   <Typography color="initial" component="span">
-                    (<Link color="inherit" href="login" to="login" title="Log In to MyHillcrest" aria-label="Log In to MyHillcrest">
+                    (
+                      <Link component={RouterLink} color="inherit" to="/login" title="Log In to MyHillcrest" aria-label="Log In to MyHillcrest">
                       <LockOpenRounded fontSize="inherit" style={{ position: "relative", right: 2, top: 2 }} />
                       Login
-                    </Link>)
+                      </Link>
+                    )
 
                   </Typography>
                 }
