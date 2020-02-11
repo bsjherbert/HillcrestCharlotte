@@ -12,10 +12,10 @@ import {
   Collapse
 } from "@material-ui/core";
 import {
-  InboxRounded,
+  DoubleArrowRounded,
   ExpandLessRounded,
   ExpandMoreRounded,
-  StarBorder
+  StarBorderRounded
 } from "@material-ui/icons";
 // import { Link } from '@material-ui/core';
 
@@ -27,7 +27,11 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(4)
   },
   nested: {
-    paddingLeft: theme.spacing(4)
+    paddingLeft: theme.spacing(4),
+    color: theme.palette.text.secondary,
+  },
+  subTitle: {
+    color: theme.palette.default.main
   }
 }));
 
@@ -57,7 +61,7 @@ export default function NestedList(props) {
       aria-labelledby="sideNav"
       subheader={
         <ListSubheader
-          style={{ marginBlockStart: 0 }}
+          style={{ marginBlockStart: 0, fontSize: "1.2rem", marginBlockEnd: 0 }}
           component="menu"
           id="sideNav"
         >
@@ -72,20 +76,20 @@ export default function NestedList(props) {
           <div>
             <ListItem button onClick={() => handleClick(submenu.id)}>
               <ListItemIcon>
-                <InboxRounded />
+                <StarBorderRounded style={{position: "relative", bottom: "2px"}} />
               </ListItemIcon>
-              <ListItemText primary={submenu.title} />
+              <ListItemText primary={submenu.title} className="subTitle" />
               {open[submenu.id] ? <ExpandLessRounded /> : <ExpandMoreRounded />}
             </ListItem>
 
             {submenu.links.map(link => {
               return (
-                <RouterLink to={link.href}>
+                <RouterLink to={link.href} style={{textDecorationLine: "none"}}>
                   <Collapse in={open[submenu.id]} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
-                      <ListItem button className={classes.nested}>
+                      <ListItem button className={`${classes.nested} && subLink`}>
                         <ListItemIcon>
-                          <StarBorder />
+                          <DoubleArrowRounded />
                         </ListItemIcon>
                         <ListItemText primary={link.title} />
                       </ListItem>

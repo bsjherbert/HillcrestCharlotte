@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Switch, Route } from "react-router-dom";
 import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
+import { BuildRounded } from '@material-ui/icons';
+import { Typography } from '@material-ui/core'
 import API from "../../lib/API";
 import TokenStore from "../../lib/TokenStore";
 import AuthContext from "../../contexts/AuthContext";
@@ -161,7 +163,12 @@ class App extends Component {
                   short: "constitution",
                   title: "Constitution",
                   href: "/pages/imnew/constitution",
-                  text: `Brad said not to put "I couldnt find a constitution." so Ima just leave it here.`
+                  text: (<>
+                    <BuildRounded fontSize="small" color="secondary" />
+                    <Typography component="p" variant="p" color="error">
+                       This page is currently under construction.
+                    </Typography>
+                    </>)
                 }
               ]
             },
@@ -173,8 +180,12 @@ class App extends Component {
                   short: "pastors",
                   title: "Pastors",
                   href: "/pages/imnew/pastors",
-                  text: `Pastor: Steven Gompers,
-                  Associate Pastor: my man man BRAAD HERBERT!`
+                  text: (<>
+                  <BuildRounded fontSize="small" color="secondary" />
+                  <Typography component="p" variant="p" color="error">
+                     This page is currently under construction.
+                  </Typography>
+                  </>)
                 },
                 {
                   short: "deacons",
@@ -261,25 +272,35 @@ class App extends Component {
           cat: "serve",
           submenus: [
             {
-              title: "Become member",
+              title: "Become a Member",
               id: "becomeMember",
               links: [
                 {
                   short: "information",
                   title: "Information",
                   href: "/pages/serve/information",
-                  text: `Page is under construction`
-                },
+                  text: (<>
+                    <BuildRounded fontSize="small" color="secondary" />
+                    <Typography component="p" variant="p" color="error">
+                       This page is currently under construction.
+                    </Typography>
+                    </>)
+                  },
                 {
                   short: "my-hillcrest",
                   title: "My Hillcrest",
                   href: "/pages/serve/my-hillcrest",
-                  text: `Page Under Construction`
-                }
+                  text: (<>
+                    <BuildRounded fontSize="small" color="secondary" />
+                    <Typography component="p" variant="p" color="error">
+                       This page is currently under construction.
+                    </Typography>
+                    </>)
+                  }
               ]
             },
             {
-              title: "Join a team",
+              title: "Join a Team",
               id: "joinTeam",
               links: [
                 {
@@ -391,25 +412,45 @@ class App extends Component {
                   short: "charlotterescuemission",
                   title: "Charlotte Rescue Mission",
                   href: "/pages/support/charlotte-rescue-mission",
-                  text: "what"
-                },
+                  text: (<>
+                    <BuildRounded fontSize="small" color="secondary" />
+                    <Typography component="p" variant="p" color="error">
+                       This page is currently under construction.
+                    </Typography>
+                    </>)
+                  },
                 {
                   short: "humancoalition",
                   title: "Human Coalition",
                   href: "/pages/support/human-coalition",
-                  text: `Human Coalition`
+                  text: (<>
+                    <BuildRounded fontSize="small" color="secondary" />
+                    <Typography component="p" variant="p" color="error">
+                       This page is currently under construction.
+                    </Typography>
+                    </>)
                 },
                 {
                   short: "kingsdaughtersministry",
                   title: "King's Daughter's Ministry",
                   href: "/pages/support/kdm",
-                  text: `kings daughter's ministry`
+                  text: (<>
+                    <BuildRounded fontSize="small" color="secondary" />
+                    <Typography component="p" variant="p" color="error">
+                       This page is currently under construction.
+                    </Typography>
+                    </>)
                 },
                 {
                   short: "mthollycommunityrelieforganizaion",
                   title: "Mt Holly Community Relief Organization",
-                  href: "/pages/support/mt-holly-community-relief-organization",
-                  text: "Mt Holly Community Relief Organization"
+                  href: "/pages/support/mt-holly-community-relief-org",
+                  text: (<>
+                    <BuildRounded fontSize="small" color="secondary" />
+                    <Typography component="p" variant="p" color="error">
+                       This page is currently under construction.
+                    </Typography>
+                    </>)
                 }
               ]
             }
@@ -444,10 +485,11 @@ class App extends Component {
                   short: "service-sermons",
                   title: "Service Sermons",
                   href: "/pages/share/service-sermons",
-                  components: [
+                  text: 
                     // (<ReactPlayer url= "https://soundcloud.com/hillcrestclt/confidence-to-enter" width="100%" height="100%" />),
-                    (<SermonTable />)
-                  ]
+                    (<div style={{marginTop: "3rem"}}>
+                    <SermonTable />
+                    </div>)
                 },
                 {
                   short: "bookofthemonth",
@@ -465,7 +507,12 @@ class App extends Component {
                   short: "elibrary",
                   title: "E-Library",
                   href: "/pages/share/e-library",
-                  text: `its Electric`
+                  text: (<>
+                    <BuildRounded fontSize="small" color="secondary" />
+                    <Typography component="p" variant="p" color="error">
+                       This page is currently under construction.
+                    </Typography>
+                    </>)
                 }
               ]
             },
