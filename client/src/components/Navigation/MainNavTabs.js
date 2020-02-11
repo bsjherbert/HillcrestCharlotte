@@ -223,24 +223,21 @@ export default function MainNavTabs(props) {
                 <Typography variant="subtitle2">
                   <List dense disablePadding>
 
-                      <RouterLink to = "/pages/serve/information">
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Information
-                      </ListItemText>
-                    </ListItem>
-                      </RouterLink>
+                    <RouterLink to = "/pages/serve/information">
+                      <ListItem className="subNav">
+                        <ListItemText>
+                          Information
+                        </ListItemText>
+                      </ListItem>
+                    </RouterLink>
 
-                      <RouterLink to = "/pages/serve/my-hillcrest">
-
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        <Link href="login" color="inherit">
-                          MyHillcrest
-                        </Link>
-                      </ListItemText>
-                    </ListItem>
-                      </RouterLink>
+                    <RouterLink to = "/pages/serve/my-hillcrest">
+                      <ListItem className="subNav">
+                        <ListItemText>
+                            MyHillcrest
+                        </ListItemText>
+                      </ListItem>
+                    </RouterLink>
                       
                   </List>
                 </Typography>
@@ -257,19 +254,19 @@ export default function MainNavTabs(props) {
                       <List dense disablePadding>
 
                         <RouterLink to = "/pages/serve/guest-experience">
-                        <ListItem className="subNav">
-                          <ListItemText>
-                            Guest Experience
-                          </ListItemText>
-                        </ListItem>
+                          <ListItem className="subNav">
+                            <ListItemText>
+                              Guest Experience
+                            </ListItemText>
+                          </ListItem>
                         </RouterLink>
                         
                         <RouterLink to = "/pages/serve/safety">
-                        <ListItem className="subNav">
-                          <ListItemText>
-                            Safety
-                          </ListItemText>
-                        </ListItem>
+                          <ListItem className="subNav">
+                            <ListItemText>
+                              Safety
+                            </ListItemText>
+                          </ListItem>
                         </RouterLink>
 
                         <RouterLink to = "/pages/serve/worship">
@@ -298,35 +295,35 @@ export default function MainNavTabs(props) {
                       <List dense disablePadding>
 
                         <RouterLink to = "/pages/serve/hillcrest-kids">
-                        <ListItem className="subNav">
-                          <ListItemText>
-                            Hillcrest Kids
-                          </ListItemText>
-                        </ListItem>
+                          <ListItem className="subNav">
+                            <ListItemText>
+                              Hillcrest Kids
+                            </ListItemText>
+                          </ListItem>
                         </RouterLink>
 
                         <RouterLink to = "/pages/serve/prayer">
-                        <ListItem className="subNav">
-                          <ListItemText>
-                            Prayer
-                          </ListItemText>
-                        </ListItem>
+                          <ListItem className="subNav">
+                            <ListItemText>
+                              Prayer
+                            </ListItemText>
+                          </ListItem>
                         </RouterLink>
                         
                         <RouterLink to = "/pages/serve/care">
-                        <ListItem className="subNav">
-                          <ListItemText>
-                            Care
-                          </ListItemText>
-                        </ListItem>
+                          <ListItem className="subNav">
+                            <ListItemText>
+                              Care
+                            </ListItemText>
+                          </ListItem>
                         </RouterLink>
 
                         <RouterLink to = "/pages/serve/library">
-                        <ListItem className="subNav">
-                          <ListItemText>
-                            Library
-                          </ListItemText>
-                        </ListItem>
+                          <ListItem className="subNav">
+                            <ListItemText>
+                              Library
+                            </ListItemText>
+                          </ListItem>
                         </RouterLink>
 
                       </List>
@@ -338,11 +335,11 @@ export default function MainNavTabs(props) {
                       <List dense disablePadding>
 
                         <RouterLink to = "/pages/serve/special-events">
-                        <ListItem className="subNav">
-                          <ListItemText>
-                            Special Events
-                          </ListItemText>
-                        </ListItem>
+                          <ListItem className="subNav">
+                            <ListItemText>
+                              Special Events
+                            </ListItemText>
+                          </ListItem>
                         </RouterLink>
 
                       </List>
@@ -373,11 +370,11 @@ export default function MainNavTabs(props) {
                     </ListItem>
 
                     <Link href="https://hillcrestcharlotte.churchcenter.com/giving?open-in-church-center-modal=true">
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Give Today
-                      </ListItemText>
-                    </ListItem>
+                      <ListItem className="subNav">
+                        <ListItemText>
+                          Give Today
+                        </ListItemText>
+                      </ListItem>
                     </Link>
 
                   </List>
@@ -392,47 +389,45 @@ export default function MainNavTabs(props) {
                 <Typography variant="subtitle2">
                   <List dense disablePadding>
                     
-                  <RouterLink to = "/pages/support/charlotte-rescue-mission">
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Charlotte Rescue Mission
-                      </ListItemText>
-                    </ListItem>
+                    <RouterLink to="/pages/support/charlotte-rescue-mission">
+                      <ListItem className="subNav">
+                        <ListItemText>
+                          Charlotte Rescue Mission
+                        </ListItemText>
+                      </ListItem>
                     </RouterLink>
 
-
-                    <RouterLink to = "/pages/support/human-coalition">
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Human Coalition
-                      </ListItemText>
-                    </ListItem>
+                    <RouterLink to="/pages/support/human-coalition">
+                      <ListItem className="subNav">
+                        <ListItemText>
+                          Human Coalition
+                        </ListItemText>
+                      </ListItem>
                     </RouterLink>
                     
-                    <RouterLink to = "/pages/support/kdm">
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        King's Daughter's Ministry
-                      </ListItemText>
-                    </ListItem>
+                    <RouterLink to="/pages/support/kdm">
+                      <ListItem className="subNav">
+                        <ListItemText>
+                          King's Daughter's Ministry
+                        </ListItemText>
+                      </ListItem>
                     </RouterLink>
 
-                    <RouterLink to = "/pages/support/mt-holly-community-relief-organization">
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Mt. Holly Community Relief Organization
-                      </ListItemText>
-                    </ListItem>
+                    <RouterLink to="/pages/support/mt-holly-community-relief-org">
+                      <ListItem className="subNav">
+                        <ListItemText>
+                          Mt. Holly Community Relief Organization
+                        </ListItemText>
+                      </ListItem>
                     </RouterLink>
                     
-                    <Link href="https://schools.cms.k12.nc.us/pawcreekES/Pages/Default.aspx" color="inherit">
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Paw Creek Elementary
-                      </ListItemText>
-                    </ListItem>
+                    <Link to="/pages/support/paw-creek" color="inherit">
+                      <ListItem className="subNav">
+                        <ListItemText>
+                          Paw Creek Elementary
+                        </ListItemText>
+                      </ListItem>
                     </Link>
-
                   </List>
                 </Typography>
               </Grid>

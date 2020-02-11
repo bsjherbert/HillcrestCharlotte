@@ -5,10 +5,10 @@ import PageTemp from "./images/PageTemp.jpg";
 import Sidebar from "../../components/sidebarcard";
 import { Switch, Route } from "react-router-dom";
 import ImNew from "../ImNew";
-import Connect from "../Serve";
-import { set } from "date-fns";
+// import Connect from "../Serve";
+// import { set } from "date-fns";
 import Fourofour from "../../pages/NotFound/NotFound";
-import zIndex from "@material-ui/core/styles/zIndex";
+// import zIndex from "@material-ui/core/styles/zIndex";
 
 const useStyles = makeStyles(theme => ({
   root: {
