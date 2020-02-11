@@ -106,7 +106,6 @@ export default function MainNavTabs(props) {
                   <Typography component="p" variant="subtitle1" color="primary">
                     <strong>Welcome to Hillcrest</strong>
                   </Typography>
-
                   <Typography variant="subtitle2">
                     <List dense disablePadding>
 
@@ -144,7 +143,6 @@ export default function MainNavTabs(props) {
                   <Typography component="p" variant="subtitle1" color="primary" align="left">
                     <strong>Our Beliefs</strong>
                   </Typography>
-
                   <Typography variant="subtitle2">
                     <List dense disablePadding>
 
@@ -438,22 +436,6 @@ export default function MainNavTabs(props) {
                   </List>
                 </Typography>
               </Grid>
-              {/* SUPPORT: Sub Menu 3
-              <Grid item>
-                <Typography component="p" variant="subtitle1" color="primary">
-                  <strong>Life Services</strong>
-                </Typography>
-
-                <Typography variant="subtitle2">
-                  <List dense disablePadding>
-                    <ListItem className="subNav">
-                      <ListItemText>
-                        Marriage counseling
-                      </ListItemText>
-                    </ListItem>
-                  </List>
-                </Typography>
-              </Grid> */}
             </Grid>
           )}
 
@@ -500,7 +482,7 @@ export default function MainNavTabs(props) {
                     <RouterLink to = "/pages/share/discipleship-group">
                     <ListItem className="subNav">
                       <ListItemText>
-                        Discipleship Group (D-Groups)
+                        Discipleship Group
                       </ListItemText>
                     </ListItem>
                     </RouterLink>
