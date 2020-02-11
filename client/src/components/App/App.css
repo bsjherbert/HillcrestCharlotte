@@ -60,6 +60,7 @@
 }
 .subNav:hover {
   color: #bfbfbf;
+  text-decoration: underline;
 }
 
 /* Sidebar Card */

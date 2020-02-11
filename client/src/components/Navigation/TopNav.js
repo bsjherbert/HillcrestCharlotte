@@ -6,7 +6,7 @@ import { List, ListItemText, ListItemIcon, ListItem } from '@material-ui/core';
 import { Link, Grid, Typography, ListItemAvatar } from '@material-ui/core';
 import { AppBar, Toolbar, Collapse, ClickAwayListener } from '@material-ui/core';
 // import { ToggleButton } from "@material-ui/lab";
-import { MenuRounded, LockOpenRounded, AccountBoxRounded, ExpandLessRounded, ExpandMoreRounded, LockRounded, DashboardRounded, SettingsRounded } from '@material-ui/icons';
+import { LockOpenRounded, AccountBoxRounded, ExpandLessRounded, ExpandMoreRounded, LockRounded, DashboardRounded, SettingsRounded } from '@material-ui/icons';
 
 import TimeLocationModal from '../Modals/TimeLocation';
 import AuthContext from '../../contexts/AuthContext';
@@ -54,7 +54,7 @@ class Navigation extends Component {
 
   render() {
     const { user } = this.context;
-    const { isOpen, collapsed } = this.state;
+    const { isOpen } = this.state;
 
     const { classes } = this.props;
     const dropdownMenuClass = `user-dropdown ${isOpen && 'show'}`;
@@ -79,7 +79,7 @@ class Navigation extends Component {
                 <Typography color="primary" style={{ cursor: "default" }}>MyHillcrest</Typography>
               </Grid>
 
-              {/* UserMenu Collapse OR Login link....className={targetClass}  */}
+              {/* Display UserMenu Collapse OR Login link....className={targetClass}  */}
               <Grid item component="span">
                 {user &&
                   user

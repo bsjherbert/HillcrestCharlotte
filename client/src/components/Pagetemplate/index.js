@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Grid, Link } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import PageTemp from "./images/PageTemp.jpg";
 import Sidebar from "../../components/sidebarcard";
 import { Switch, Route } from "react-router-dom";
@@ -22,7 +22,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Pagetemplate = props => {
-  console.log(props, "<====>");
+  // console.log(props, "<====>");
   const classes = useStyles();
   const [currentPage, setPage] = useState("imnew");
 
@@ -42,12 +42,12 @@ const Pagetemplate = props => {
               <Route
                 path="/pages/:cat/:page"
                 render={props => {
-                  console.log(propsToPass[props.match.params.cat]);
+                  // console.log(propsToPass[props.match.params.cat]);
                   if (propsToPass[props.match.params.cat] === undefined) {
                     return <Fourofour />;
                   }
                   let holder = { id: -1, subId: -1 };
-                  console.log(propsToPass[props.match.params.cat]);
+                  // console.log(propsToPass[props.match.params.cat]);
                   propsToPass[props.match.params.cat].submenus.forEach(
                     (element, id) => {
                       element.links.forEach((subElement, subId) => {
@@ -57,13 +57,13 @@ const Pagetemplate = props => {
                       });
                     }
                   );
-                  console.log(holder.id, holder.subId);
+                  // console.log(holder.id, holder.subId);
                   if (holder.id === -1 || holder.subID === -1) {
-                    console.log("here <================================");
+                    // console.log("here <================================");
                     return <Fourofour />;
                   }
                   setPage(props.match.params.cat);
-                  console.log(holder);
+                  // console.log(holder);
                   const theInfo =
                     propsToPass[props.match.params.cat].submenus[holder.id].links[
                     holder.subId
@@ -83,7 +83,7 @@ const Pagetemplate = props => {
                 exact
                 path="/pages/imnew/about-us"
                 render={props => {
-                  console.log(this.props.path);
+                  // console.log(this.props.path);
                   return <ImNew {...props} pageEquals={setPage} />;
                 }}
               />

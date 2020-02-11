@@ -1,7 +1,6 @@
 import React from "react";
 import Carousel, { Dots } from "@brainhubeu/react-carousel";
 import "@brainhubeu/react-carousel/lib/style.css";
-import Box from '@material-ui/core/Box';
 
 class CarouselWithDots extends React.Component {
     constructor() {
@@ -28,7 +27,6 @@ class CarouselWithDots extends React.Component {
                      autoPlay={3500}
             animationSpeed={1500}
             infinite
-            // centered="true"
             stopAutoPlayOnHover="true"
         />
         <Dots value={this.state.value} onChange={this.onchange} number={this.props.children.length} />

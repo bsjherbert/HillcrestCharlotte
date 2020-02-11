@@ -1,11 +1,6 @@
 import React, { useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-// import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-// import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
+import { Typography, Box, Card, CardContent } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -31,11 +26,11 @@ const useStyles = makeStyles(theme => ({
 
 export default function Connect(props) {
   const classes = useStyles();
-  console.log(props)
+//   console.log(props)
 
-React.useEffect(() => {
-  console.log(props.theObj.content)
- })
+// React.useEffect(() => {
+//   console.log(props.theObj.content)
+//  })
   return (
     <Box boxShadow={1}>
     <Card className={classes.card}>

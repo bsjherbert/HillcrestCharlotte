@@ -7,7 +7,6 @@ import ImageSlide from "../../components/ImageSlide";
 import ImageSlideProps from "../../lib/ImageSlideProps.json";
 import BookCard from "../../components/BookCard";
 import SermonCard from "../../components/SermonCard";
-import SermonTable from "../../components/SermonTable";
 import ReadingCard from "../../components/ReadingCard";
 
 class HomePage extends Component {

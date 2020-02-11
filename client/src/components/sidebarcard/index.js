@@ -36,12 +36,12 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export default function NestedList(props) {
-  console.log(props);
+  // console.log(props);
   const classes = useStyles();
 
   const initOpen = {};
   props.allMenus[props.page].submenus.forEach(all => {
-    console.log(all);
+    // console.log(all);
     initOpen[all.id] = false;
   });
 
@@ -71,9 +71,9 @@ export default function NestedList(props) {
       className={classes.root}
     >
       {props.allMenus[props.page].submenus.map(submenu => {
-        console.log(open);
+        // console.log(open);
         return (
-          <div>
+          <div key={submenu.title}>
             <ListItem button onClick={() => handleClick(submenu.id)}>
               <ListItemIcon>
                 <StarBorderRounded style={{position: "relative", bottom: "2px"}} />
@@ -84,7 +84,7 @@ export default function NestedList(props) {
 
             {submenu.links.map(link => {
               return (
-                <RouterLink to={link.href} style={{textDecorationLine: "none"}}>
+                <RouterLink to={link.href} style={{textDecorationLine: "none"}} key={link.title}>
                   <Collapse in={open[submenu.id]} timeout="auto" unmountOnExit>
                     <List component="div" disablePadding>
                       <ListItem button className={`${classes.nested} && subLink`}>
