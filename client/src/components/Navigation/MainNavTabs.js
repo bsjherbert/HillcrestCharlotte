@@ -49,11 +49,11 @@ export default function MainNavTabs(props) {
           direction="row"
           justify="space-around"
           alignItems="center" className={classes.navTabs}>
-          <span style={{ float: "left", maxHeight: "25%", maxWidth: "25%", padding: "0.5rem" }}>
+          {/* <span style={{ float: "right", maxHeight: "10%", maxWidth: "10%", paddingTop: "5rem" }}>
             <RouterLink href="/" to="/" title="Hillcrest Charlotte | Home">
               <HillcrestLogo />
             </RouterLink>
-          </span>
+          </span> */}
           {/* HOME Tab */}
           <Grid item component="span">
             <RouterLink to="/" style={{ textDecoration: "none" }}>

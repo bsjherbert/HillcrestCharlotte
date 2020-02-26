@@ -7,6 +7,7 @@ import AuthContext from "../../contexts/AuthContext";
 import TopNav from "../Navigation/TopNav";
 import PrivateRoute from "../../components/PrivateRoute/PrivateRoute";
 import MainNav from "../../components/Navigation/MainNav";
+import SecondNav from "../../components/Navigation/SecondNav";
 import Home from "../../pages/Home/Home";
 import Login from "../../pages/Login/Login";
 import Register from "../../pages/Register/Register";
@@ -477,6 +478,7 @@ class App extends Component {
         <AuthContext.Provider value={this.state.auth}>
           <div className="App">
             <TopNav />
+            <SecondNav />
               <MainNav
                 isOpen={this.state.isOpen}
                 onPageChange={this.handlePageChange}

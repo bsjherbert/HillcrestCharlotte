@@ -8,12 +8,12 @@ import MainNavTabs from './MainNavTabs';
 
 const styles = () => ({
   tool: {
-    borderStyle: "solid none",
-    borderBottomWidth: 6,
-    borderTopWidth: 6,
+    // borderStyle: "solid none",
+    // borderBottomWidth: 6,
+    // borderTopWidth: 6,
     borderColor: "#08356c",
     position: "relative",
-    zIndex: 0,
+    zIndex: 5,
     height: "inherit"
   }
 })
