@@ -14,7 +14,7 @@ import ConnectionCard from "../../pages/ConnectionCard/ConnectionCard";
 import Dashboard from "../../pages/Dashboard/Dashboard";
 import NotFound from "../../pages/NotFound/NotFound";
 import Footer from "../Footer";
-import PageContainer from "../../components/PageContainer";
+// import PageContainer from "../../components/PageContainer";
 import PageTemplate from "../../components/Pagetemplate";
 import SermonTable from "../../components/SermonTable";
 
@@ -477,7 +477,6 @@ class App extends Component {
         <AuthContext.Provider value={this.state.auth}>
           <div className="App">
             <TopNav />
-            <PageContainer>
               <MainNav
                 isOpen={this.state.isOpen}
                 onPageChange={this.handlePageChange}
@@ -496,7 +495,6 @@ class App extends Component {
                 />
                 <Route component={NotFound} />
               </Switch>
-            </PageContainer>
             <Footer />
           </div>
         </AuthContext.Provider>

@@ -14,12 +14,12 @@ const styles = theme => ({
   list: {
     width: '100%',
     maxWidth: "300px",
-    border: "1px solid #736757"
+    // border: "1px solid #736757"
   },
   tool: {
-    borderBottomStyle: "solid",
-    borderBottom: 8,
-    borderBottomColor: theme.palette.primary.main,
+    // borderBottomStyle: "solid",
+    // borderBottom: 8,
+    // borderBottomColor: theme.palette.primary.main,
     position: "relative",
     top: 0,
     zIndex: 5
