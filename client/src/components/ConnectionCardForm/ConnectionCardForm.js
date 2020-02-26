@@ -168,7 +168,7 @@ class ConnectionCardForm extends Component {
           // error={this.handleError}
           // helperText={this.state.message}
           />
-          <TextField
+          {/* <TextField
             fullWidth
             name="street"
             id="field-street"
@@ -176,10 +176,10 @@ class ConnectionCardForm extends Component {
             type="address-line-1"
             placeholder="Ex: 8501 Bellhaven Blvd"
             value={this.state.street}
-            onChange={this.handleInputChange}
-          // error={this.handleError}
-          />
-          <TextField
+            onChange={this.handleInputChange} */}
+          {/* // error={this.handleError} */}
+          {/* /> */}
+          {/* <TextField
             fullWidth
             name="other"
             id="field-other"
@@ -189,8 +189,8 @@ class ConnectionCardForm extends Component {
             value={this.state.other}
             onChange={this.handleInputChange}
             helperText="Optional"
-          />
-          <TextField fullWidth
+          /> */}
+          {/* <TextField fullWidth
             name="city"
             id="field-city"
             label="City"
@@ -199,8 +199,8 @@ class ConnectionCardForm extends Component {
             value={this.state.city}
             onChange={this.handleInputChange}
             className={classes.city}
-          />
-          <TextField fullWidth
+          /> */}
+          {/* <TextField fullWidth
             name="state"
             id="field-state"
             label="State"
@@ -209,8 +209,8 @@ class ConnectionCardForm extends Component {
             value={this.state.state}
             onChange={this.handleInputChange}
             className={classes.state}
-          />
-          <TextField fullWidth
+          /> */}
+          {/* <TextField fullWidth
             name="zip"
             id="field-zip"
             label="Zip Code"
@@ -218,7 +218,7 @@ class ConnectionCardForm extends Component {
             placeholder="28214"
             value={this.state.zip}
             onChange={this.handleInputChange}
-          />
+          /> */}
           <TextField
             fullWidth required
             name="email"
