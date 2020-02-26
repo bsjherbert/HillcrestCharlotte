@@ -4,7 +4,6 @@ import { Box, Grid, Link, Typography, ClickAwayListener } from '@material-ui/cor
 import { makeStyles } from '@material-ui/core/styles';
 import { List, ListItem, ListItemText } from '@material-ui/core';
 
-import HillcrestLogo from '../Logo/HillcrestLogo'
 
 const useStyles = makeStyles(theme => ({
   navTabs: {
@@ -49,11 +48,6 @@ export default function MainNavTabs(props) {
           direction="row"
           justify="space-around"
           alignItems="center" className={classes.navTabs}>
-          {/* <span style={{ float: "right", maxHeight: "10%", maxWidth: "10%", paddingTop: "5rem" }}>
-            <RouterLink href="/" to="/" title="Hillcrest Charlotte | Home">
-              <HillcrestLogo />
-            </RouterLink>
-          </span> */}
           {/* HOME Tab */}
           <Grid item component="span">
             <RouterLink to="/" style={{ textDecoration: "none" }}>
@@ -63,45 +57,45 @@ export default function MainNavTabs(props) {
               </Link>
             </RouterLink>
           </Grid>
-          {/* NEW Tab */}
+          {/* About Us Tab */}
           <Grid item component="span">
             <Link underline="hover" className="navTab" color="textSecondary" variant="h6"
-              title="I'm New" style={{ cursor: "pointer" }} aria-label="I'm New" aria-controls="new-menu" aria-haspopup="false" onClick={handleOpen}>
-              I'm New
+              title="About Us" style={{ cursor: "pointer" }} aria-label="About Us" aria-controls="aboutus-menu" aria-haspopup="false" onClick={handleOpen}>
+              About Us
             </Link>
           </Grid>
-          {/* SERVE Tab */}
+          {/* Learn Tab */}
           <Grid item component="span">
             <Link underline="hover" className="navTab" color="textSecondary" variant="h6"
-              title="Serve" style={{ cursor: "pointer" }} aria-label="Serve Menu" aria-controls="serve-menu" aria-haspopup="false" onClick={handleOpen}>
-              Serve
+              title="Learn" style={{ cursor: "pointer" }} aria-label="Learn Menu" aria-controls="learn-menu" aria-haspopup="false" onClick={handleOpen}>
+              Learn
             </Link>
           </Grid>
-          {/* SUPPORT Tab */}
+          {/* Engage Tab */}
           <Grid item component="span">
             <Link underline="hover" className="navTab" color="textSecondary" variant="h6"
-              title="Support" style={{ cursor: "pointer" }} aria-label="Support Menu" aria-controls="support-menu" aria-haspopup="false" onClick={handleOpen}>
-              Support
+              title="Engage" style={{ cursor: "pointer" }} aria-label="Engage Menu" aria-controls="engage-menu" aria-haspopup="false" onClick={handleOpen}>
+              Engage
             </Link>
           </Grid>
-          {/* SHARE Tab */}
+          {/* The Gospel Tab */}
           <Grid item component="span">
             <Link underline="hover" className="navTab" color="textSecondary" variant="h6"
-              title="Share" style={{ cursor: "pointer" }} aria-label="Share Menu" aria-controls="share-menu" aria-haspopup="false" onClick={handleOpen}>
-              Share
+              title="The Gospel" style={{ cursor: "pointer" }} aria-label="The Gospel Menu" aria-controls="thegospel-menu" aria-haspopup="false" onClick={handleOpen}>
+              The Gospel
             </Link>
           </Grid>
         </Grid>
 
         {/* DROP MENUS */}
         <Box className={`dropNav ${showMenu && 'show'}`}>
-          {/* NEW MENU */}
-          {anchor === "I'm New" && (
+          {/* About Us MENU */}
+          {anchor === "About Us" && (
             <ClickAwayListener onClickAway={handleClose}>
 
               <Grid container direction="row" alignItems="flex-start" style={{ height: "inherit", width: "inherit" }}
                 justify="space-around" alignContent="center" aria-label="Visitor Resources">
-                {/* NEW: Sub Menu 1 */}
+                {/* About Us: Sub Menu 1 */}
                 <Grid item>
                   <Typography component="p" variant="subtitle1" color="primary">
                     <strong>Welcome to Hillcrest</strong>
@@ -139,7 +133,7 @@ export default function MainNavTabs(props) {
                     </List>
                   </Typography>
                 </Grid>
-                {/* NEW: Sub Menu 2 */}
+                {/* About Us: Sub Menu 2 */}
                 <Grid item>
                   <Typography component="p" variant="subtitle1" color="primary" align="left">
                     <strong>Our Beliefs</strong>
@@ -174,7 +168,7 @@ export default function MainNavTabs(props) {
                     </List>
                   </Typography>
                 </Grid>
-                {/* NEW: Sub Menu 3 */}
+                {/* About Us: Sub Menu 3 */}
                 <Grid item>
                   <Typography component="p" variant="subtitle1" color="primary">
                     <strong>Leadership Team</strong>
@@ -212,10 +206,10 @@ export default function MainNavTabs(props) {
               </Grid>
             </ClickAwayListener>
           )}
-          {/* SERVE MENU */}
-          {anchor === "Serve" && (
+          {/* Learn MENU */}
+          {anchor === "Learn" && (
             <Grid container direction="row" alignItems="flex-start" style={{ height: "inherit", width: "inherit" }}
-              justify="space-around" alignContent="center" aria-label="Serve Resources">
+              justify="space-around" alignContent="center" aria-label="Learn Resources">
               {/* SERVE: Sub Menu 1 */}
               <Grid item>
                 <Typography component="p" variant="subtitle1" color="primary">
@@ -247,7 +241,7 @@ export default function MainNavTabs(props) {
                   </List>
                 </Typography>
               </Grid>
-              {/* SERVE: Sub Menu 2 Col 1 */}
+              {/* Learn: Sub Menu 2 Col 1 */}
               <Grid item>
                 <Typography component="p" variant="subtitle1" color="primary" align="left">
                   <strong>Join a Team</strong>
@@ -293,7 +287,7 @@ export default function MainNavTabs(props) {
                       </List>
                     </Typography>
                   </Grid>
-                  {/* SERVE: Sub Menu 2 Col 2 */}
+                  {/* Learn: Sub Menu 2 Col 2 */}
                   <Grid item>
 
                     <Typography variant="subtitle2">
@@ -334,7 +328,7 @@ export default function MainNavTabs(props) {
                       </List>
                     </Typography>
                   </Grid>
-                  {/* SERVE: Sub Menu 2 Col 3*/}
+                  {/* Learn: Sub Menu 2 Col 3*/}
                   <Grid item>
                     <Typography variant="subtitle2">
                       <List dense disablePadding>
@@ -355,11 +349,11 @@ export default function MainNavTabs(props) {
             </Grid>
           )}
 
-          {/* SUPPORT MENU */}
-          {anchor === "Support" && (
+          {/* Engage MENU */}
+          {anchor === "Engage" && (
             <Grid container direction="row" alignItems="flex-start" style={{ height: "inherit", width: "inherit" }}
-              justify="space-around" alignContent="center" aria-label="Support Resources">
-              {/* SUPPORT: Sub Menu 1 */}
+              justify="space-around" alignContent="center" aria-label="Engage Resources">
+              {/* Engage: Sub Menu 1 */}
               <Grid item>
                 <Typography component="p" variant="subtitle1" color="primary" align="left">
                   <strong>Give</strong>
@@ -385,7 +379,7 @@ export default function MainNavTabs(props) {
                   </List>
                 </Typography>
               </Grid>
-              {/* SUPPORT: Sub Menu 2 */}
+              {/* Engage: Sub Menu 2 */}
               <Grid item>
                 <Typography component="p" variant="subtitle1" color="primary" align="left">
                   <strong>Community Involvement</strong>
@@ -457,10 +451,10 @@ export default function MainNavTabs(props) {
             </Grid>
           )}
 
-          {/* SHARE MENU */}
-          {anchor === "Share" && (
+          {/* The Gospel MENU */}
+          {anchor === "The Gospel" && (
             <Grid container direction="row" alignItems="flex-start" style={{ height: "inherit", width: "inherit", padding: "1rem 0" }}
-              justify="space-around" alignContent="center" aria-label="Share Resources">
+              justify="space-around" alignContent="center" aria-label="The Gospel Resources">
               {/* SHARE: Sub Menu 1 */}
               <Grid item>
                 <Typography component="p" variant="subtitle1" align="left" color="primary">
