@@ -10,7 +10,7 @@
     "@material-ui/icons": "^4.5.1",
     "@material-ui/lab": "^4.0.0-alpha.39",
     "axios": "^0.18.1",
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-helmet": "^5.2.1",
